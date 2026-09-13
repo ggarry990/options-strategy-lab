@@ -364,6 +364,9 @@ def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, ma
                 "Annualized Return": ret * 365.0 / dte if dte > 0 else np.nan,
                 "Earnings in Period": f"YES · {earnings_date}" if earnings_inside else "No",
                 "Has Earnings": bool(earnings_inside),
+                "Earnings Known": any(d >= today for d in earnings_dates),
+                "Open Interest": safe_float(option.get("openInterest"), 0.0),
+                "Last Trade Date": option.get("lastTradeDate"),
             })
     df = apply_put_scores(pd.DataFrame(rows), return_weight_pct)
     if df.empty:

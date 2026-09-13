@@ -1,29 +1,40 @@
-# Options Strategy Lab v0.2
+# Automated Options Strategy Lab
 
-A separate Streamlit paper-trading research lab. It uses the same Opportunity Index logic as the wheel dashboard, but can scan a broad market universe and run competing $100,000 virtual management models side-by-side.
+Ten independent $100,000 paper portfolios compare cash-secured put entry/exit rules using the existing 30% return / 70% protection Opportunity Index. No broker integration or real orders.
 
-## Broad universe
+## Schedule and persistence
 
-- **S&P 500 + custom** loads the current S&P 500 constituent list from an auto-updated public mirror and adds custom tickers such as SHOP or SPCX.
-- A cheap underlying pre-screen evaluates every index constituent first.
-- **Full eligible S&P 500** requests option chains for every constituent that can plausibly fit the collateral rules.
-- **Fast broad scan** requests option chains for the top N pre-screen candidates to reduce Yahoo throttling. The speed proxy does not change the Opportunity Index.
-- **Custom watchlist only** behaves like the original small-universe lab.
+`.github/workflows/paper.yml` requests runs at :07 and :37, 13:00–21:59 UTC on weekdays. The NYSE calendar gates trading to regular sessions and handles daylight saving, holidays and early closes. Entries stop 15 minutes before close. After-close runs settle expiry positions only when their expiry-session close is available. GitHub schedules are best effort, not exact-time guarantees: https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule
 
-## Paper models
+The single serialized runner persists `state.json` on `paper-results`; this avoids Streamlit restart data loss and main-branch redeployment on every scan. Never delete/reset that branch during an experiment. Dashboard reads are read-only. Corrupt or inaccessible existing state causes a failed run, never a fresh portfolio. GitHub Actions logs show failed/late runs; the dashboard displays last saved time and stale results.
 
-A: hold puts to expiration/assignment.
+## Common entry rules
 
-B: 50% winner.
+Current S&P 500 and Nasdaq-100 union, refreshed daily. Screen all underlyings for affordable collateral and 1m average daily volume; fetch option chains for top 20 plus 20 rotating candidates per cycle. Runtime budget may defer remaining stocks. This is not a full option-chain scan of all constituents each half hour. Index-source failure pauses new entries. Existing holdings are still managed.
 
-C: 50% winner + DTE risk exit.
+21–60 DTE, OTM puts, $3,000–$20,000 collateral, positive bid, spread <=25% of ask, open interest >=100, last trade today, known upcoming earnings outside the option window. Maximum five different stocks, 20% of initial capital per stock, 10% cash reserve. One contract per stock. Missing earnings or quotes means skip, not invented data. Entry candidates are re-quoted by exact contract; adverse changes defer entry rather than using an obsolete score.
 
-D10 / D25 / D50: opportunity-redeployment models with different required forward-return/day improvements.
+| Strategy | Minimum Index | Exit |
+|---|---:|---|
+| A | 75 | Hold to expiry |
+| B | 75 | 25% premium capture |
+| C | 75 | 50% premium capture |
+| D | 75 | 75% premium capture |
+| E | 75 | 50% capture or 7 DTE |
+| F | 75 | 50% capture or ask >=3x entry credit |
+| G | 75 | Positive capture >=35 percentage points ahead of theoretical decay |
+| H | 100 | 50% capture |
+| I | 125 | 50% capture |
+| J | 100 | 25% capture, 14 DTE, or ask >=2x credit |
 
-E: D25 plus a wide loss-control experiment.
+G uses constant entry spot/IV, 4% rate, Black–Scholes put decay normalized to entry theoretical price. This is a heuristic baseline, not promised income. Rules stay fixed for version 1. Changing them mid-experiment invalidates comparisons; use a new version and separate state for a new experiment.
 
-## Important
+## Accounting and limitations
 
-Yahoo/yfinance is a free unofficial data source and can throttle or return 401 errors. Full S&P option-chain scans are therefore slower and less reliable than a paid bulk options API. The app never fabricates missing quotes; failures are shown in Data Warnings.
+Sell at bid, buy back at ask, $1 fee per contract per side. Short option liabilities are included in NAV. Missing quotes retain last mark and are labeled stale. Periodic loss checks do not guarantee an exit at the limit. Expiry uses cash-equivalent intrinsic settlement at unadjusted expiry-session stock close; no expiry fee. This deliberately excludes physical assignment/covered calls, dividends, interest, early exercise and market impact. It is an option-management experiment, not a full wheel simulation. Yahoo data may be stale or throttled; a same-day last trade is not proof of a fresh bid/ask. Results are forward paper results, not backtests or evidence of profitability.
 
-Streamlit Cloud local disk is ephemeral. Download the paper-state backup periodically.
+`legacy_app.py` preserves the prior manual app. Its local `data/paper_state.json` is not read or reset by this new experiment.
+
+## Tests and local run
+
+Install `requirements.txt`, then `python -m unittest test_paper.py`. Run `python auto_runner.py --state /path/to/state.json` for a market-gated evaluation. Run `streamlit run app.py` for the read-only dashboard. Initialize production through GitHub Actions **Run workflow**; never upload test fixtures as production results.
