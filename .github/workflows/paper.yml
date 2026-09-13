@@ -1,0 +1,60 @@
+name: Automated paper strategies
+on:
+  schedule:
+    - cron: '7,37 13-21 * * 1-5'
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/paper.yml'
+permissions:
+  contents: write
+concurrency:
+  group: automated-paper-strategies
+  cancel-in-progress: false
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Test accounting and strategy rules
+        run: python -m unittest test_paper.py
+      - name: Load durable results branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${RUNNER_TEMP}/paper-results"
+          cd "${RUNNER_TEMP}/paper-results"
+          git init
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          set +e
+          git ls-remote --exit-code --heads origin paper-results > /tmp/paper-ref
+          result=$?
+          set -e
+          if [ "$result" -eq 0 ]; then
+            git fetch --depth=1 origin paper-results
+            git checkout -b paper-results FETCH_HEAD
+            test -s state.json
+          elif [ "$result" -eq 2 ]; then
+            git checkout --orphan paper-results
+          else
+            echo "Could not check saved state; refusing to initialize."
+            exit 1
+          fi
+      - name: Evaluate paper portfolios
+        run: python auto_runner.py --state "${RUNNER_TEMP}/paper-results/state.json"
+      - name: Save results
+        run: |
+          cd "${RUNNER_TEMP}/paper-results"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Save automated paper experiment"
+            git push origin HEAD:paper-results
+          fi
