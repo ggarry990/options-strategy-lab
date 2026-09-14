@@ -11,7 +11,7 @@ from types import SimpleNamespace
 
 import pandas as pd
 
-from engine import apply_put_scores, scan_put_ticker, scan_calls_for_basis
+from engine import apply_put_scores, scan_put_ticker, scan_calls_for_basis, normalize_dates
 from paper_core import fresh_state, migrate_state, run_cycle, STRATEGIES, VERSION
 from pipeline import (ScanConfig, candidate_from_row, rolling_ranking, best_by_weight,
                       missed_opportunities, scan_pipeline, atm_snapshot, rotate, clean)
@@ -138,6 +138,11 @@ class CacheTests(unittest.TestCase):
 
 
 class PipelineTests(unittest.TestCase):
+    def test_missing_earnings_dates_do_not_break_comparisons(self):
+        dates = normalize_dates([None, pd.NaT, float('nan'), 'not a date', '2026-10-16'])
+        self.assertEqual(dates, [datetime(2026, 10, 16).date()])
+        self.assertTrue(all(d >= NOW.date() for d in dates))
+
     def test_full_scan_scores_all_qualifying_expiries_and_audits_exclusions(self):
         contracts = pd.DataFrame([dict(strike=k, bid=2., ask=2.2, impliedVolatility=.4,
             contractSymbol=f'TEST-{k}', openInterest=500, lastTradeDate=NOW) for k in (20,100,105,120)])

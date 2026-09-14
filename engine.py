@@ -48,6 +48,8 @@ def normalize_dates(values: Iterable) -> list[date]:
     for value in values:
         try:
             ts = pd.Timestamp(value)
+            if pd.isna(ts):
+                continue
             if ts.tzinfo is not None:
                 ts = ts.tz_convert(None)
             out.append(ts.date())

@@ -28,7 +28,10 @@ class DashboardTests(unittest.TestCase):
         state['version'] = 1
         for k in ('A40', 'A50', 'A60'):
             state['models'].pop(k)
-        self.render(state)
+        app = self.render(state)
+        self.assertTrue(any('previous scanner' in m.value for m in app.info))
+        rules = next(t.value for t in app.table if 'Portfolio status' in t.value.columns)
+        self.assertEqual(rules.loc[rules['Strategy']=='A40', 'Portfolio status'].iloc[0], 'Waiting for first saved run')
 
     def test_expanded_results_and_diagnostics_render(self):
         state = fresh_state(NOW.isoformat())

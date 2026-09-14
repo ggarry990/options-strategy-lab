@@ -15,7 +15,8 @@ URL = 'https://raw.githubusercontent.com/ggarry990/options-strategy-lab/paper-re
 
 @st.cache_data(ttl=60, show_spinner=False)
 def load_results():
-    r = requests.get(URL, timeout=20, headers={'Cache-Control':'no-cache'})
+    r = requests.get(URL, timeout=20, headers={'Cache-Control':'no-cache'},
+        params={'refresh':int(datetime.now(timezone.utc).timestamp())//60})
     if r.status_code == 404:
         return None
     r.raise_for_status()
@@ -23,6 +24,16 @@ def load_results():
     if data.get('version') not in (1, VERSION) or not set('ABCDEFGHIJ').issubset(data.get('models', {})) or set(data.get('models', {}))-set(STRATEGIES):
         raise ValueError('Unexpected results format')
     return data
+
+
+@st.fragment(run_every='60s')
+def refresh_when_results_change(saved_at):
+    try:
+        latest = load_results()
+    except Exception:
+        return  # Keep the last visible results during a temporary refresh failure.
+    if latest and latest.get('last_success') != saved_at:
+        st.rerun()
 
 
 @st.cache_data(show_spinner=False)
@@ -59,6 +70,11 @@ if state is None:
 
 last = state.get('last_run', {})
 stamp = state.get('last_success')
+refresh_when_results_change(stamp)
+if state.get('version') == 1:
+    st.info('The updated scanner is installed, but the page is still showing results from the previous scanner. The new strategies and scan audit will appear after the first updated run saves. Results refresh automatically every minute.')
+else:
+    st.caption('Saved results refresh automatically every minute. Scan tables update after a run finishes and saves; they are not a live progress feed.')
 c1,c2,c3,c4 = st.columns(4)
 c1.metric('Last run', last.get('status', 'Waiting'))
 c2.metric('Index stocks screened', last.get('checked', 0))
@@ -104,7 +120,7 @@ with decisions:
     st.dataframe(pd.DataFrame(list(reversed(m['events']))[:500]),use_container_width=True,hide_index=True)
     st.download_button('Download all portfolios & history',json.dumps(state,indent=2),file_name='automated_paper_results.json',mime='application/json')
 with rules:
-    st.table(pd.DataFrame([{'Strategy':k,'Rule':v['name'],'Minimum entry Index':v['minimum'], 'Return / protection':f"{v['return_weight']}/{100-v['return_weight']}", 'Active':k in state['models']} for k,v in STRATEGIES.items()]))
+    st.table(pd.DataFrame([{'Strategy':k,'Rule':v['name'],'Minimum entry Index':v['minimum'], 'Return / protection':f"{v['return_weight']}/{100-v['return_weight']}", 'Portfolio status':'Initialized' if k in state['models'] else 'Waiting for first saved run'} for k,v in STRATEGIES.items()]))
     st.write('Default entry scan: 21–60 DTE OTM puts, $3,000–$20,000 collateral. A–J retain 30% return / 70% protection. A40, A50 and A60 use the same rules as A with only entry weights changed. Scores are weighted harmonic means of return/day relative to 0.10%/day and cushion/expected move relative to 1.0. Expected move uses the larger of HV30 and ATM-IV moves. Each strategy ranks all cached contracts independently.')
     st.write('Baseline put execution excludes earnings in the holding period and unknown earnings timing. Earnings candidates remain visible with their scores. Entries require positive bids, spread at most 25% of ask, at least 100 open interest and a trade today. Saved run configuration shows the actual thresholds.')
     st.caption('A–J retain their historical portfolios. New weight portfolios start when migration runs; compare overlapping periods, since their start dates and capital paths differ. The entry pipeline change is recorded in migration history.')
