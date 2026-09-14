@@ -23,7 +23,7 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - name: Test accounting and strategy rules
-        run: python -m unittest test_paper.py
+        run: python -m unittest discover -p 'test_*.py'
       - name: Load durable results branch
         env:
           GH_TOKEN: ${{ github.token }}
@@ -54,6 +54,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add state.json
+          if [ -d audits ]; then
+            git add audits/
+          fi
           if ! git diff --cached --quiet; then
             git commit -m "Save automated paper experiment"
             git push origin HEAD:paper-results

@@ -2,19 +2,22 @@
 from __future__ import annotations
 import argparse
 import json
+import gzip
 import os
 import time
 from datetime import datetime, timedelta, timezone
 from io import StringIO
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from dataclasses import asdict
 import pandas as pd
 import pandas_market_calendars as mcal
 import requests
 import yfinance as yf
-from engine import scan_put_ticker
-from universe import load_sp500_constituents, prescreen_underlyings
-from paper_core import fresh_state, run_cycle, valid_number, VERSION
+from universe import load_sp500_constituents
+from paper_core import fresh_state, run_cycle, valid_number, migrate_state
+from pipeline import ScanConfig, scan_pipeline, rolling_ranking, best_by_weight, clean
+from scoring import score_candidate
 
 NY = ZoneInfo('America/New_York')
 CAL = mcal.get_calendar('NYSE')
@@ -38,8 +41,18 @@ def load_universe(state, now):
     symbols = sorted(set(sp['Symbol']) | {str(s).replace('.', '-') for s in nasdaq['Ticker']})
     return dict(date=now.date().isoformat(), symbols=symbols, sp500=len(sp), nasdaq100=len(nasdaq), source=f'S&P: {source}; Nasdaq-100: Wikipedia constituents')
 
-def exact_quote(p, today):
-    frame = yf.Ticker(p['ticker']).option_chain(p['expiry']).puts
+def exact_quote(p, today, chain_cache=None):
+    # Reuse a newly fetched expiry across exact contracts in this verification pass.
+    # Existing-position calls keep their original behavior (no shared cache).
+    key = (p['ticker'], p['expiry'])
+    cached = chain_cache.get(key) if chain_cache is not None else None
+    if cached is not None and 0 <= time.time()-cached[0] <= 45:
+        observed, frame = cached
+    else:
+        frame = yf.Ticker(p['ticker']).option_chain(p['expiry']).puts
+        observed = time.time()
+        if chain_cache is not None:
+            chain_cache[key] = (observed, frame)
     match = frame[frame['contractSymbol'] == p['contract']]
     if len(match) != 1:
         raise ValueError('Exact contract absent')
@@ -48,7 +61,7 @@ def exact_quote(p, today):
     traded = pd.Timestamp(row['lastTradeDate']).tz_convert(NY)
     if not (ask > 0 and bid >= 0 and ask >= bid and traded.date() == today):
         raise ValueError('Invalid spread or no trade today; keep prior valuation')
-    return dict(ask=ask, bid=bid)
+    return dict(ask=ask, bid=bid, observed_at=observed)
 
 def expiry_close(p, now):
     # The previous session handles rare expirations falling on a market holiday.
@@ -66,66 +79,30 @@ def expiry_close(p, now):
         raise ValueError('Invalid expiry close')
     return value
 
-def run(path):
+def run(path, config=None):
+    config = config or ScanConfig()
     now = datetime.now(NY)
-    state = json.loads(path.read_text()) if path.exists() else fresh_state(now.isoformat())
-    if state.get('version') != VERSION or set(state.get('models', {})) != set(fresh_state('')['models']):
-        raise RuntimeError('Unexpected state schema; refusing to reset portfolios')
+    state = migrate_state(json.loads(path.read_text(encoding='utf-8')), now.isoformat()) if path.exists() else fresh_state(now.isoformat())
     started = time.monotonic()
-    warnings, candidates, quotes, settlements = [], [], {}, {}
+    warnings, quotes, settlements = [], {}, {}
     sched = session(now.date())
     is_open = sched is not None and sched['market_open'] <= now <= sched['market_close']
     report = dict(time=now.isoformat(), status='Market closed', checked=0, selected=0, candidates=0)
     slot = now.strftime('%Y-%m-%dT%H:')+('00' if now.minute < 30 else '30')
     if state.get('last_slot') == slot:
         return
+    audit = dict(config=asdict(config), stage1=[], stage2=[], stage3=[], rolling_ranking=[], eligible_symbols=[])
     if is_open:
         try:
             universe = load_universe(state, now)
             state['universe'] = universe
-            pre, warns = prescreen_underlyings(tuple(universe['symbols']), 3000., 20000., 50., 1_000_000.)
-            warnings.extend(warns)
-            report['checked'] = len(universe['symbols'])
-            report['eligible_underlyings'] = len(pre)
-            # Top 20 plus rotating 20: bounded public-data load, broad coverage over time.
-            ranked = pre['Ticker'].tolist() if not pre.empty else []
-            rest = sorted(ranked[20:])
-            cursor = int(state.get('scan_cursor', 0)) % max(len(rest), 1)
-            rotating = (rest[cursor:]+rest[:cursor])[:20]
-            selected = ranked[:20]+rotating
-            state['scan_cursor'] = cursor+20
-            report['selected'] = len(selected)
-            report['option_scanned'] = 0
-            for symbol in selected:
-                if time.monotonic()-started > 780:
-                    warnings.append('Scan time budget reached; remaining names deferred')
-                    break
-                try:
-                    frame, warns = scan_put_ticker(symbol, 21, 60, 3000., 20000., 0., 30, True)
-                    warnings.extend(warns)
-                    report['option_scanned'] += 1
-                    for _, r in frame.iterrows():
-                        bid, ask = float(r['Bid']), float(r['Ask'])
-                        if not (bid > 0 and ask >= bid and (ask-bid)/ask <= .25):
-                            continue
-                        # Earnings unknown is not treated as earnings-free.
-                        if r['Earnings in Period'] != 'No' or not bool(r.get('Earnings Known', False)):
-                            continue
-                        oi, iv = float(r['Opportunity Index']), float(r['Contract IV'])
-                        if not valid_number(oi) or not valid_number(iv) or iv <= 0:
-                            continue
-                        if float(r.get('Open Interest', 0)) < 100:
-                            continue
-                        traded = pd.Timestamp(r.get('Last Trade Date'))
-                        if pd.isna(traded) or traded.tz_convert(NY).date() != now.date():
-                            continue
-                        candidates.append(dict(ticker=symbol, contract=str(r['Contract']), expiry=str(r['Expiry']), strike=float(r['Strike']), dte=int(r['DTE']), bid=bid, ask=ask, score=oi, iv=iv, spot=float(r['Stock Price']), fetched=time.time()))
-                except Exception as exc:
-                    warnings.append(f'{symbol}: {exc}')
+            audit = scan_pipeline(state, universe, now, config, started)
+            warnings.extend(audit['warnings'])
             report['status'] = 'Completed' if not warnings else 'Completed with data warnings'
         except Exception as exc:
             warnings.append(f'New entries paused: {exc}')
             report['status'] = 'Entry scan unavailable'
+    # Preserve exit/valuation behavior with the existing exact-quote and settlement rules.
     positions = {p['contract']:p for m in state['models'].values() for p in m['positions']}
     for contract, p in positions.items():
         try:
@@ -138,37 +115,99 @@ def run(path):
                 quotes[contract] = exact_quote(p, now.date())
         except Exception as exc:
             warnings.append(f'{contract}: {exc}')
-    finished = datetime.now(NY)
-    still_open = sched is not None and sched['market_open'] <= finished < sched['market_close']-timedelta(minutes=15)
-    candidates = [c for c in candidates if time.time()-c['fetched'] <= 600]
-    # Entries are re-quoted by exact contract, preventing stale scan fills.
-    verified = []
-    for c in sorted(candidates, key=lambda x:-x['score']):
-        if time.monotonic()-started > 1000 or len(verified) >= 20 or not still_open:
-            break
+    # Recompute age after scanning and position checks; a failed universe gates entries.
+    candidates = rolling_ranking(state.get('option_cache', {}), time.time(), config, set(audit['eligible_symbols']))
+    # Interleave rankings so verification budgets do not privilege the 30/70 model.
+    queues = [sorted((c for c in candidates if not c['rejections']),
+                     key=lambda c: (-score_candidate(c, w), c['contract'])) for w in (30, 40, 50, 60)]
+    order, seen = [], set()
+    for rank in range(max((len(q) for q in queues), default=0)):
+        for q in queues:
+            if rank < len(q) and q[rank]['contract'] not in seen:
+                order.append(q[rank])
+                seen.add(q[rank]['contract'])
+    verification_chains = {}
+    for c in order:
+        finished = datetime.now(NY)
+        still_open = sched is not None and sched['market_open'] <= finished < sched['market_close']-timedelta(minutes=15)
+        if not still_open:
+            c['rejections'].append('entry window closed')
+            continue
+        if time.monotonic()-started >= config.entry_budget_seconds:
+            c['rejections'].append('verification deferred: time budget')
+            continue
+        if not 0 <= time.time()-c['fetched'] <= config.freshness_minutes*60:
+            c['rejections'].append('stale data: cache freshness')
+            continue
         try:
-            q = exact_quote(c, finished.date())
+            q = exact_quote(c, finished.date(), verification_chains)
             if q['bid'] < c['bid'] or q['ask'] > c['ask']:
-                continue  # Re-score on next cycle instead of using an obsolete entry score.
-            verified.append(c)
+                c['rejections'].append('quote changed adversely: rescan required')
+            elif q['bid'] <= 0 or (q['ask']-q['bid'])/q['ask'] > config.max_spread:
+                c['rejections'].append('spread on entry verification')
+            else:
+                c['verified_at'] = q.get('observed_at', time.time())
         except Exception as exc:
+            c['rejections'].append('exact quote unavailable')
             warnings.append(f"Entry {c['contract']}: {exc}")
     finished = datetime.now(NY)
     still_open = sched is not None and sched['market_open'] <= finished < sched['market_close']-timedelta(minutes=15)
-    report['candidates'] = len(verified)
-    report['warnings'] = warnings[-100:]
-    report['duration_seconds'] = round(time.monotonic()-started)
-    state = run_cycle(state, verified, quotes if is_open and finished <= sched['market_close'] else {}, settlements, finished.isoformat(), slot, still_open)
+    for c in candidates:
+        c['age_minutes'] = round((time.time()-c['fetched'])/60, 2)
+        if not 0 <= time.time()-c['fetched'] <= config.freshness_minutes*60:
+            c['rejections'].append('stale data: cache freshness')
+        if not c['rejections'] and 'verified_at' not in c:
+            c['rejections'].append('exact quote unverified')
+        c['rejections'] = list(dict.fromkeys(c['rejections']))
+    fresh_rows = rolling_ranking(state.get('option_cache', {}), time.time(), config, set(audit['eligible_symbols']))
+    if any('verification deferred: time budget' in c['rejections'] for c in candidates):
+        warnings.append('Entry verification budget reached; unverified contracts were not executed')
+    report.update(checked=len(state.get('universe', {}).get('symbols', [])),
+        eligible_underlyings=len(audit['eligible_symbols']), stage2_checked=len(audit['stage2']),
+        stage2_successful=sum(r.get('status') == 'checked' for r in audit['stage2']),
+        selected=len(audit['stage3']), option_scanned=sum(r['status'] == 'complete' for r in audit['stage3']),
+        rolling_fresh_coverage=len({c['ticker'] for c in fresh_rows if not c['rejections']}),
+        candidates=sum(not c['rejections'] for c in candidates), warnings=warnings,
+        duration_seconds=round(time.monotonic()-started))
+    if warnings and report['status'] == 'Completed':
+        report['status'] = 'Completed with data warnings'
+    state = run_cycle(state, candidates, quotes if is_open and finished <= sched['market_close'] else {},
+        settlements, finished.isoformat(), slot, still_open)
+    audit.update(time=now.isoformat(), summary=report, rolling_ranking=candidates,
+        portfolio_constraints=state['entry_audit'],
+        execution=[r for r in state['entry_audit'] if r['decision'] == 'selected'],
+        path=['universe', 'stage1', 'stage2', 'stage3', 'rolling_ranking', 'portfolio_constraints', 'execution'])
+    # Each complete audit is an immutable file. State retains the latest metadata.
+    audit_name = 'audits/'+now.strftime('%Y%m%dT%H%M%S%z')+'.json.gz'
+    report['audit_file'] = audit_name
     state['last_run'] = report
     state['runs'] = (state.get('runs', [])+[report])[-200:]
-    state['candidates'] = verified
+    # Keep large contract/decision tables in the compressed immutable audit, not
+    # duplicated throughout state.json. The dashboard loads them on demand.
+    state['last_audit'] = {k:v for k,v in audit.items() if k not in
+        ('contract_audit', 'rolling_ranking', 'portfolio_constraints')}
+    state.pop('entry_audit', None)
+    winners = {}
+    for ticker in {c['ticker'] for c in candidates}:
+        for c in best_by_weight([c for c in candidates if c['ticker'] == ticker]).values():
+            winners[c['contract']] = c
+    state['candidates'] = list(winners.values())
+    discoveries = [dict(r, time=now.isoformat(), audit_file=audit_name) for r in audit.get('missed_opportunities', [])]
+    state['missed_opportunity_audit'] = (state.get('missed_opportunity_audit', [])+discoveries)[-2000:]
+    state = clean(state)
     path.parent.mkdir(parents=True, exist_ok=True)
+    audit_path = path.parent/audit_name
+    audit_path.parent.mkdir(parents=True, exist_ok=True)
+    audit_path.write_bytes(gzip.compress(json.dumps(clean(audit), allow_nan=False).encode('utf-8'), mtime=0))
     tmp = path.with_suffix('.tmp')
     tmp.write_text(json.dumps(state, indent=2, allow_nan=False), encoding='utf-8')
     os.replace(tmp, path)
     print(json.dumps(report))
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--state', type=Path, default=Path('state.json'))
-    run(parser.parse_args().state)
+    parser.add_argument('--config', type=Path, default=Path(__file__).with_name('scan_config.json'))
+    args = parser.parse_args()
+    run(args.state, ScanConfig(**json.loads(args.config.read_text(encoding='utf-8'))))

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+import time
 from dataclasses import dataclass
 from datetime import date, datetime
 from types import SimpleNamespace
@@ -284,9 +285,11 @@ def apply_put_scores(df: pd.DataFrame, return_weight_pct: int) -> pd.DataFrame:
 
 
 def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, max_cash: float,
-                    min_cushion_pct: float, return_weight_pct: int = 30, otm_only: bool = True):
+                    min_cushion_pct: float, return_weight_pct: int = 30, otm_only: bool = True,
+                    audit_rows: list | None = None, asof: date | None = None,
+                    deadline: float | None = None):
     warnings: list[str] = []
-    today = date.today()
+    today = asof or date.today()
     ticker = yf.Ticker(symbol)
     stock_price = get_stock_price(ticker)
     earnings_dates = get_earnings_dates(ticker)
@@ -296,6 +299,9 @@ def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, ma
         raise ValueError(f"Could not load option expirations: {expiration_error}")
     rows = []
     for expiry_str in expirations:
+        if deadline is not None and time.monotonic() >= deadline:
+            warnings.append(f'{symbol}: full scan incomplete; time budget reached')
+            break
         try:
             expiry = datetime.strptime(expiry_str, "%Y-%m-%d").date()
         except Exception:
@@ -304,6 +310,7 @@ def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, ma
         if dte < min_dte or dte > max_dte:
             continue
         chain, chain_error = get_option_chain(ticker, symbol, expiry_str)
+        observed = time.time()
         if chain is None:
             warnings.append(f"{symbol} {expiry_str}: unavailable ({chain_error})")
             continue
@@ -314,6 +321,7 @@ def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, ma
         atm_iv = get_atm_iv(chain, stock_price)
         _, _, expected_move, expected_source = expected_move_for_expiry(hv30, atm_iv, dte)
         if not np.isfinite(expected_move) or expected_move <= 0:
+            warnings.append(f'{symbol} {expiry_str}: expected move unavailable')
             continue
         for _, option in puts.iterrows():
             strike = safe_float(option.get("strike"))
@@ -321,12 +329,18 @@ def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, ma
             ask = safe_float(option.get("ask"), 0.0)
             last = safe_float(option.get("lastPrice"), np.nan)
             contract_iv = safe_float(option.get("impliedVolatility"), np.nan)
+            reasons = []
             if not np.isfinite(strike) or strike <= 0 or bid <= 0:
-                continue
+                reasons.append('invalid strike or bid')
             if otm_only and strike >= stock_price:
-                continue
+                reasons.append('not OTM')
             cash_required = strike * 100.0
             if not (min_cash <= cash_required <= max_cash):
+                reasons.append('collateral outside configured range')
+            if reasons:
+                if audit_rows is not None:
+                    audit_rows.append(dict(ticker=symbol, contract=str(option.get('contractSymbol', '')),
+                        expiry=expiry_str, strike=strike, bid=bid, ask=ask, rejections=reasons))
                 continue
             premium_received = bid * 100.0
             ret = premium_received / cash_required
@@ -334,11 +348,15 @@ def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, ma
             breakeven = strike - bid
             cushion = (stock_price - breakeven) / stock_price
             if cushion * 100.0 < min_cushion_pct:
+                if audit_rows is not None:
+                    audit_rows.append(dict(ticker=symbol, contract=str(option.get('contractSymbol', '')),
+                        expiry=expiry_str, strike=strike, rejections=['cushion below minimum']))
                 continue
             protection_ratio = cushion / expected_move if expected_move > 0 else 0.0
             earnings_inside, earnings_date = earnings_for_window(earnings_dates, expiry, today)
             rows.append({
                 "Ticker": symbol,
+                "Observed At": observed,
                 "Stock Price": stock_price,
                 "Strike": strike,
                 "Put": f"${strike:g}P",
@@ -495,6 +513,7 @@ def scan_calls_for_basis(symbol: str, adjusted_basis: float, min_dte: int = 14, 
         raise ValueError(error or "No expirations")
     rows = []
     today = date.today()
+    earnings_dates = get_earnings_dates(ticker)
     for expiry_str in expirations:
         try:
             expiry = pd.Timestamp(expiry_str).date()
@@ -523,6 +542,10 @@ def scan_calls_for_basis(symbol: str, adjusted_basis: float, min_dte: int = 14, 
                 "Expiry": expiry_str, "DTE": dte, "Bid": bid, "Ask": ask,
                 "Contract": str(option.get("contractSymbol", "")), "Premium Received": premium,
                 "Return / Day": return_per_day, "Upside": upside,
+                "Earnings in Period": earnings_for_window(earnings_dates, expiry, today)[0],
+                "Earnings Known": any(d >= today for d in earnings_dates),
+                "Next Earnings": next_earnings_date(earnings_dates, today),
+                "Earnings Policy": "Allowed; covered calls are not earnings-filtered",
             })
     df = pd.DataFrame(rows)
     if df.empty:

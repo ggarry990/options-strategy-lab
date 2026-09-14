@@ -1,0 +1,17 @@
+{
+  "stage2_limit": 180,
+  "stage2_rotation": 40,
+  "stage3_limit": 100,
+  "audit_rotation": 20,
+  "freshness_minutes": 30,
+  "min_dte": 21,
+  "max_dte": 60,
+  "min_cash": 3000,
+  "max_cash": 20000,
+  "min_avg_volume": 1000000,
+  "max_spread": 0.25,
+  "min_open_interest": 100,
+  "scan_budget_seconds": 780,
+  "entry_budget_seconds": 1000,
+  "material_improvement": 5
+}
