@@ -2,11 +2,13 @@ from __future__ import annotations
 import json
 import gzip
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import pandas as pd
 import requests
 import streamlit as st
 from paper_core import STRATEGIES, CAPITAL, VERSION
 from pipeline import ScanConfig, rolling_ranking
+from scan_schedule import next_events
 
 st.set_page_config(page_title='Automated Options Lab', page_icon='🧪', layout='wide')
 st.title('Automated Options Lab')
@@ -36,6 +38,26 @@ def refresh_when_results_change(saved_at):
         st.rerun()
 
 
+@st.fragment(run_every='30s')
+def show_next_scan(display_timezone):
+    now = datetime.now(timezone.utc)
+    events = next_events(now)
+    target = events['scan']
+    if target:
+        seconds = max(0, int((target-now).total_seconds()))
+        days, rest = divmod(seconds, 86400)
+        hours, rest = divmod(rest, 3600)
+        minutes = rest//60
+        countdown = (f'{days}d ' if days else '')+f'{hours}h {minutes}m'
+        st.metric('Next scheduled scan', target.astimezone(ZoneInfo(display_timezone)).strftime('%a %b %d, %I:%M %p %Z'))
+        st.write(f'About {countdown} from now')
+    else:
+        st.warning('Next scan time is unavailable from the exchange calendar.')
+    if events['settlement']:
+        st.caption('Next after-close settlement check: '+events['settlement'].astimezone(ZoneInfo(display_timezone)).strftime('%a %b %d, %I:%M %p %Z'))
+    st.caption('Expected schedule, not a confirmed start. GitHub may delay or skip runs; a long-running scan delays the next one. Weekends, exchange holidays and early closes are accounted for.')
+
+
 @st.cache_data(show_spinner=False)
 def load_audit(filename):
     if not filename.startswith('audits/') or '..' in filename:
@@ -49,14 +71,17 @@ def load_audit(filename):
 
 with st.sidebar:
     st.header('Automatic schedule')
-    st.write('Every 30 minutes during US market hours, with an after-close settlement check.')
-    st.caption('Target starts: :07 and :37. Exchange holidays, daylight saving and early closes are handled. GitHub may delay or skip scheduled runs.')
+    st.write('Automated every 15 minutes during US market hours. This runs on GitHub even when this page and your computer are closed.')
+    st.caption('Target minutes: :07, :22, :37 and :52. Runs cannot overlap. After-close runs check settlements rather than scanning new opportunities.')
+    display_timezone = st.selectbox('Schedule timezone', ['America/New_York', 'America/Edmonton', 'UTC'])
     st.link_button('Scheduler & run logs', 'https://github.com/ggarry990/options-strategy-lab/actions/workflows/paper.yml')
     if st.button('Refresh results', use_container_width=True):
         load_results.clear()
     st.divider()
     st.write('Each portfolio starts with $100,000. Maximum five positions, 20% per stock, at least 10% cash reserve.')
     st.caption('No brokerage connection. New experiment portfolios are separate from the original manual lab.')
+
+show_next_scan(display_timezone)
 
 try:
     state = load_results()

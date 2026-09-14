@@ -18,6 +18,7 @@ from universe import load_sp500_constituents
 from paper_core import fresh_state, run_cycle, valid_number, migrate_state
 from pipeline import ScanConfig, scan_pipeline, rolling_ranking, best_by_weight, clean
 from scoring import score_candidate
+from scan_schedule import slot_key
 
 NY = ZoneInfo('America/New_York')
 CAL = mcal.get_calendar('NYSE')
@@ -88,7 +89,7 @@ def run(path, config=None):
     sched = session(now.date())
     is_open = sched is not None and sched['market_open'] <= now <= sched['market_close']
     report = dict(time=now.isoformat(), status='Market closed', checked=0, selected=0, candidates=0)
-    slot = now.strftime('%Y-%m-%dT%H:')+('00' if now.minute < 30 else '30')
+    slot = slot_key(now)
     if state.get('last_slot') == slot:
         return
     audit = dict(config=asdict(config), stage1=[], stage2=[], stage3=[], rolling_ranking=[], eligible_symbols=[])

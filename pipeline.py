@@ -30,8 +30,8 @@ class ScanConfig:
     min_avg_volume: float = 1_000_000
     max_spread: float = .25
     min_open_interest: int = 100
-    scan_budget_seconds: int = 780
-    entry_budget_seconds: int = 1000
+    scan_budget_seconds: int = 600
+    entry_budget_seconds: int = 780
     material_improvement: float = 5  # Absolute Opportunity Index points.
 
     def __post_init__(self):
