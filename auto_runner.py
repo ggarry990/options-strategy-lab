@@ -18,7 +18,9 @@ from universe import load_sp500_constituents
 from paper_core import fresh_state, run_cycle, valid_number, migrate_state
 from pipeline import ScanConfig, scan_pipeline, rolling_ranking, best_by_weight, clean
 from scoring import score_candidate
-from scan_schedule import slot_key
+from scan_schedule import slot_key, already_processed
+from yahoo_options import ACTIVE, YahooOptions
+from scan_recovery import record_retry
 
 NY = ZoneInfo('America/New_York')
 CAL = mcal.get_calendar('NYSE')
@@ -50,8 +52,13 @@ def exact_quote(p, today, chain_cache=None):
     if cached is not None and 0 <= time.time()-cached[0] <= 45:
         observed, frame = cached
     else:
-        frame = yf.Ticker(p['ticker']).option_chain(p['expiry']).puts
-        observed = time.time()
+        if chain_cache is not None and ACTIVE.get():
+            chain = ACTIVE.get().chain(p['ticker'], p['expiry'], max_age=45)
+            frame, observed = chain.puts, chain.observed_at
+        else:
+            # Position management remains independent of the entry-scan cooldown.
+            frame = yf.Ticker(p['ticker']).option_chain(p['expiry']).puts
+            observed = time.time()
         if chain_cache is not None:
             chain_cache[key] = (observed, frame)
     match = frame[frame['contractSymbol'] == p['contract']]
@@ -84,13 +91,18 @@ def run(path, config=None):
     config = config or ScanConfig()
     now = datetime.now(NY)
     state = migrate_state(json.loads(path.read_text(encoding='utf-8')), now.isoformat()) if path.exists() else fresh_state(now.isoformat())
+    with YahooOptions(state, spacing=config.option_request_spacing) as reader:
+        return _run_loaded(path, config, now, state, reader)
+
+
+def _run_loaded(path, config, now, state, reader):
     started = time.monotonic()
     warnings, quotes, settlements = [], {}, {}
     sched = session(now.date())
     is_open = sched is not None and sched['market_open'] <= now <= sched['market_close']
     report = dict(time=now.isoformat(), status='Market closed', checked=0, selected=0, candidates=0)
     slot = slot_key(now)
-    if state.get('last_slot') == slot:
+    if already_processed(state.get('last_slot'), now):
         return
     audit = dict(config=asdict(config), stage1=[], stage2=[], stage3=[], rolling_ranking=[], eligible_symbols=[])
     if is_open:
@@ -118,6 +130,13 @@ def run(path, config=None):
             warnings.append(f'{contract}: {exc}')
     # Recompute age after scanning and position checks; a failed universe gates entries.
     candidates = rolling_ranking(state.get('option_cache', {}), time.time(), config, set(audit['eligible_symbols']))
+    gate = audit.get('entry_gate', dict(allowed=False, reason='Market closed' if not is_open else 'New entries paused: scan coverage unavailable'))
+    if not gate['allowed']:
+        for c in candidates:
+            c['rejections'].append(gate['reason'])
+        if is_open:
+            warnings.append(gate['reason'])
+            report['status'] = 'New entries paused: incomplete scan coverage'
     # Interleave rankings so verification budgets do not privilege the 30/70 model.
     queues = [sorted((c for c in candidates if not c['rejections']),
                      key=lambda c: (-score_candidate(c, w), c['contract'])) for w in (30, 40, 50, 60)]
@@ -128,6 +147,7 @@ def run(path, config=None):
                 order.append(q[rank])
                 seen.add(q[rank]['contract'])
     verification_chains = {}
+    quote_retry_tickers = set()
     for c in order:
         finished = datetime.now(NY)
         still_open = sched is not None and sched['market_open'] <= finished < sched['market_close']-timedelta(minutes=15)
@@ -151,9 +171,14 @@ def run(path, config=None):
         except Exception as exc:
             c['rejections'].append('exact quote unavailable')
             warnings.append(f"Entry {c['contract']}: {exc}")
+            if c['ticker'] not in quote_retry_tickers:
+                record_retry(state, c['ticker'], 'stage3', f'Entry quote unavailable: {exc}', time.time())
+                quote_retry_tickers.add(c['ticker'])
     finished = datetime.now(NY)
     still_open = sched is not None and sched['market_open'] <= finished < sched['market_close']-timedelta(minutes=15)
     for c in candidates:
+        if reader.paused:
+            c['rejections'].append('Yahoo access cooldown: new entries paused')
         c['age_minutes'] = round((time.time()-c['fetched'])/60, 2)
         if not 0 <= time.time()-c['fetched'] <= config.freshness_minutes*60:
             c['rejections'].append('stale data: cache freshness')
@@ -170,10 +195,21 @@ def run(path, config=None):
         rolling_fresh_coverage=len({c['ticker'] for c in fresh_rows if not c['rejections']}),
         candidates=sum(not c['rejections'] for c in candidates), warnings=warnings,
         duration_seconds=round(time.monotonic()-started))
+    state['provider_health'] = reader.health()
+    audit['provider_health'] = reader.health()
+    audit['entry_gate'] = gate
+    audit['retry_queue'] = list(state.get('scan_retries', {}).values())
+    report['entry_gate'] = dict(gate, allowed=gate['allowed'] and not reader.paused)
+    report['pending_retries'] = len(state.get('scan_retries', {}))
+    if reader.paused:
+        report['status'] = 'New entries paused: Yahoo access cooldown'
+        report['entry_gate']['reason'] = 'Yahoo access cooldown: new entries paused'
+    audit['entry_gate'] = report['entry_gate']
     if warnings and report['status'] == 'Completed':
         report['status'] = 'Completed with data warnings'
     state = run_cycle(state, candidates, quotes if is_open and finished <= sched['market_close'] else {},
-        settlements, finished.isoformat(), slot, still_open)
+        settlements, finished.isoformat(), slot, still_open and report['entry_gate']['allowed'],
+        report['entry_gate']['reason'] if still_open and not report['entry_gate']['allowed'] else None)
     audit.update(time=now.isoformat(), summary=report, rolling_ranking=candidates,
         portfolio_constraints=state['entry_audit'],
         execution=[r for r in state['entry_audit'] if r['decision'] == 'selected'],

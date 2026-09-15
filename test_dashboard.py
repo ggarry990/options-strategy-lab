@@ -11,6 +11,7 @@ from streamlit.testing.v1 import AppTest
 from paper_core import fresh_state
 from test_pipeline import NOW, candidate, entry, CFG
 from dataclasses import asdict
+from scan_recovery import record_retry
 
 
 class DashboardTests(unittest.TestCase):
@@ -55,6 +56,16 @@ class DashboardTests(unittest.TestCase):
             app = AppTest.from_file(str(Path(__file__).with_name('app.py'))).run(timeout=20)
         self.assertFalse(list(app.exception))
         self.assertFalse(list(app.error))
+
+    def test_failed_coverage_and_retry_queue_are_visible(self):
+        state=fresh_state(NOW.isoformat())
+        state['last_run']=dict(status='New entries paused',entry_gate=dict(allowed=False,
+            reason='Insufficient scan coverage',stage2_successful=67,stage2_planned=180))
+        record_retry(state,'COST','stage2','Yahoo HTTP 401',NOW.timestamp())
+        app=self.render(state)
+        self.assertTrue(any('Insufficient scan coverage' in r.value for r in app.warning))
+        queue=next(r.value for r in app.dataframe if 'next_retry_at' in r.value.columns)
+        self.assertEqual(queue.iloc[0]['ticker'],'COST')
 
 
 if __name__ == '__main__':

@@ -71,8 +71,8 @@ def load_audit(filename):
 
 with st.sidebar:
     st.header('Automatic schedule')
-    st.write('Automated every 15 minutes during US market hours. This runs on GitHub even when this page and your computer are closed.')
-    st.caption('Target minutes: :07, :22, :37 and :52. Runs cannot overlap. After-close runs check settlements rather than scanning new opportunities.')
+    st.write('Automated every 30 minutes during US market hours. This runs on GitHub even when this page and your computer are closed.')
+    st.caption('Target minutes: :07 and :37. The slower cadence reduces Yahoo request pressure. Runs cannot overlap. After-close runs check settlements rather than scanning new opportunities.')
     display_timezone = st.selectbox('Schedule timezone', ['America/New_York', 'America/Edmonton', 'UTC'])
     st.link_button('Scheduler & run logs', 'https://github.com/ggarry990/options-strategy-lab/actions/workflows/paper.yml')
     if st.button('Refresh results', use_container_width=True):
@@ -106,6 +106,13 @@ c2.metric('Index stocks screened', last.get('checked', 0))
 c3.metric('Option stocks scanned', last.get('option_scanned', 0))
 c4.metric('Eligible entry contracts', last.get('candidates', 0))
 st.caption(f"Last saved: {stamp} • Started: {state['created']} • All times include their UTC offset.")
+gate = last.get('entry_gate')
+if gate and last.get('status') != 'Market closed':
+    if not gate['allowed']:
+        st.warning(gate['reason']+'. Existing positions are still managed. Missing quotes are not evidence that these stocks lack opportunities.')
+    st.caption(f"Planned-scan coverage: ATM {gate.get('stage2_successful', 0)}/{gate.get('stage2_planned', 0)}; full scans {gate.get('stage3_complete', 0)}/{gate.get('stage3_planned', 0)}. This is coverage of the planned sample, not the entire index universe.")
+elif not gate and last.get('stage2_checked', 0) > last.get('stage2_successful', 0):
+    st.warning('This older run had failed ATM checks. The displayed ranking covers only the data that was available; the new recovery rules apply on the next updated run.')
 if stamp and (datetime.now(timezone.utc)-datetime.fromisoformat(stamp)).total_seconds() > 5400:
     st.warning('Results are more than 90 minutes old. Markets may be closed; check run logs if a scheduled market-hours update is missing.')
 st.caption('Full index universe → underlying diagnostics → ATM IV richness → full put scans + rotation → fresh rolling ranking → portfolio constraints → exact-contract verification and paper entry.')
@@ -163,6 +170,19 @@ with health:
     st.json(state.get('migrations', []))
 
 with scanning:
+    with st.expander('Data recovery — failed and deferred stocks', expanded=bool(state.get('scan_retries'))):
+        st.caption('Stocks stay queued until their stage succeeds. Each run reserves up to 40 ATM retry slots and 20 full-scan retry slots. Actual failures wait 30, 60, 120, then up to 240 minutes between attempts; unattempted work remains queued. Neither retries nor caching guarantee that Yahoo will supply the missing data.')
+        health = state.get('provider_health', {})
+        st.write('Last saved option-provider status', health.get('status', 'Not recorded yet'))
+        if health.get('cooldown_until', 0):
+            st.caption('Last cooldown ends: '+datetime.fromtimestamp(health['cooldown_until'], timezone.utc).isoformat())
+        pending = []
+        for r in state.get('scan_retries', {}).values():
+            pending.append(dict(r, next_retry_at=datetime.fromtimestamp(r['next_retry_at'], timezone.utc).isoformat(),
+                first_failed=datetime.fromtimestamp(r['first_failed'], timezone.utc).isoformat(),
+                last_attempt=datetime.fromtimestamp(r['last_attempt'], timezone.utc).isoformat() if r['last_attempt'] else 'Not attempted'))
+        st.dataframe(pd.DataFrame(pending), use_container_width=True, hide_index=True)
+        st.caption(f"Option requests in saved run: {health.get('requests', 0)}; cache reuses: {health.get('cache_hits', 0)}. A cache reuse retains the original observation time.")
     st.subheader('Trace a run from universe to execution')
     audit = state.get('last_audit', {})
     saved_runs = [r for r in reversed(state.get('runs', [])) if r.get('audit_file')]

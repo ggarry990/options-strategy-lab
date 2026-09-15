@@ -1,7 +1,7 @@
 name: Automated paper strategies
 on:
   schedule:
-    - cron: '7,22,37,52 13-21 * * 1-5'
+    - cron: '7,37 13-21 * * 1-5'
   workflow_dispatch:
   push:
     paths:

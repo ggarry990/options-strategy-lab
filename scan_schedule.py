@@ -3,14 +3,24 @@ from datetime import datetime, timedelta, timezone
 from functools import lru_cache
 import pandas_market_calendars as mcal
 
-INTERVAL_MINUTES = 15
-TRIGGER_MINUTES = (7, 22, 37, 52)
-CRON = '7,22,37,52 13-21 * * 1-5'
+INTERVAL_MINUTES = 30
+TRIGGER_MINUTES = (7, 37)
+CRON = '7,37 13-21 * * 1-5'
 
 
 def slot_key(now):
-    """Keep existing timestamp keys; allow one portfolio cycle per quarter hour."""
+    """Keep existing timestamp keys; allow one portfolio cycle per half hour."""
     return now.strftime('%Y-%m-%dT%H:')+f'{now.minute//INTERVAL_MINUTES*INTERVAL_MINUTES:02d}'
+
+
+def already_processed(previous, now):
+    if not previous:
+        return False
+    try:
+        # A saved :15/:45 key from the old frequency is still in this half hour.
+        return slot_key(datetime.fromisoformat(previous)) == slot_key(now)
+    except ValueError:
+        return previous == slot_key(now)
 
 
 @lru_cache(maxsize=32)

@@ -11,7 +11,11 @@
   "min_avg_volume": 1000000,
   "max_spread": 0.25,
   "min_open_interest": 100,
-  "scan_budget_seconds": 600,
-  "entry_budget_seconds": 780,
-  "material_improvement": 5
+  "scan_budget_seconds": 900,
+  "entry_budget_seconds": 1200,
+  "material_improvement": 5,
+  "min_stage2_coverage": 0.9,
+  "min_stage3_coverage": 0.9,
+  "retry_slots": 40,
+  "option_request_spacing": 0.75
 }

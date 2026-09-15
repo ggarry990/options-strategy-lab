@@ -92,7 +92,7 @@ def exit_reason(cfg, p, ask, today):
         return f"Ahead of theoretical decay by {(captured-expected)*100:.1f} percentage points"
     return None
 
-def run_cycle(state, candidates, quotes, settlements, now, slot, allow_entries=True):
+def run_cycle(state, candidates, quotes, settlements, now, slot, allow_entries=True, entry_block_reason=None):
     """quotes are validated exact-contract asks; settlements are expiry-session closes.
 
     A failed quote is NEVER zero. Retain last known liability and label it stale.
@@ -138,7 +138,7 @@ def run_cycle(state, candidates, quotes, settlements, now, slot, allow_entries=T
         for rank, c in enumerate(sorted(ranked, key=lambda x: (-x['score'], x['contract'])), 1):
             reasons = list(c.get('rejections', []))
             if not allow_entries:
-                reasons.append('entry window closed')
+                reasons.append(entry_block_reason or 'entry window closed')
             if len(model['positions']) >= 5:
                 reasons.append('concentration: five-position limit')
             held = {p['ticker'] for p in model['positions']}

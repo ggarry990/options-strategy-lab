@@ -269,7 +269,7 @@ class RunnerTests(unittest.TestCase):
                 return NOW
         def scan(state, *args):
             state['option_cache'] = {'TEST':entry([candidate()])}
-            return dict(stage1=[], stage2=[], stage3=[], eligible_symbols=['TEST'], warnings=[])
+            return dict(stage1=[], stage2=[], stage3=[], eligible_symbols=['TEST'], warnings=[], entry_gate={'allowed':True, 'reason':''})
         sched = pd.Series({'market_open':NOW-timedelta(hours=1), 'market_close':NOW+timedelta(hours=5)})
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory)/'state.json'
@@ -293,7 +293,7 @@ class RunnerTests(unittest.TestCase):
         def scan(state, universe, now, config, started):
             state['option_cache'] = {'TEST':entry([candidate()])}
             return dict(stage1=[{'Ticker':'TEST','Eligible':True}], stage2=[], stage3=[],
-                        eligible_symbols=['TEST'], warnings=[], missed_opportunities=[])
+                        eligible_symbols=['TEST'], warnings=[], missed_opportunities=[], entry_gate={'allowed':True, 'reason':''})
         sched = pd.Series({'market_open':NOW-timedelta(hours=1), 'market_close':NOW+timedelta(hours=5)})
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory)/'state.json'

@@ -12,6 +12,9 @@ from engine import (get_option_expirations, get_option_chain, get_atm_iv,
                     get_earnings_dates, next_earnings_date, scan_put_ticker)
 from scoring import score_candidate
 from universe import prescreen_underlyings
+from yahoo_options import ACTIVE, ticker_for
+from scan_recovery import (record_retry, clear_retry, due_retries, retry_waiting,
+                           seed_previous_failures, coverage_gate)
 
 WEIGHTS = (30, 40, 50, 60)
 
@@ -30,9 +33,13 @@ class ScanConfig:
     min_avg_volume: float = 1_000_000
     max_spread: float = .25
     min_open_interest: int = 100
-    scan_budget_seconds: int = 600
-    entry_budget_seconds: int = 780
+    scan_budget_seconds: int = 900
+    entry_budget_seconds: int = 1200
     material_improvement: float = 5  # Absolute Opportunity Index points.
+    min_stage2_coverage: float = .9
+    min_stage3_coverage: float = .9
+    retry_slots: int = 40
+    option_request_spacing: float = .75
 
     def __post_init__(self):
         if any(not isinstance(v, (int, float)) or not math.isfinite(v) for v in asdict(self).values()):
@@ -54,6 +61,12 @@ class ScanConfig:
             raise ValueError('Budgets must reserve time for entry checks and saving')
         if self.material_improvement < 0:
             raise ValueError('Material improvement cannot be negative')
+        if not 0 < self.min_stage2_coverage <= 1 or not 0 < self.min_stage3_coverage <= 1:
+            raise ValueError('Coverage thresholds must be within (0, 1]')
+        if not isinstance(self.retry_slots, int) or not 0 < self.retry_slots < self.stage2_limit:
+            raise ValueError('Retry slots must be a positive integer below Stage 2 size')
+        if not 0 <= self.option_request_spacing <= 5:
+            raise ValueError('Invalid option request spacing')
 
 
 def clean(value):
@@ -82,7 +95,7 @@ def rotate(symbols, count, cursor):
 
 def atm_snapshot(row, today):
     symbol, spot, hv = row['Ticker'], row['Stock Price'], row['HV30']
-    ticker = yf.Ticker(symbol)
+    ticker = ticker_for(symbol)
     expirations, error = get_option_expirations(ticker, symbol)
     choices = [(abs((pd.Timestamp(e).date()-today).days-37.5), e) for e in expirations
                if 30 <= (pd.Timestamp(e).date()-today).days <= 45]
@@ -115,7 +128,7 @@ def atm_snapshot(row, today):
         next_earnings=next_earnings_date(earnings, today),
         earnings_in_period=any(today <= d <= pd.Timestamp(expiry).date() for d in earnings),
         prescreen_score=rank_score, status='checked' if rank_score is not None else 'ATM data incomplete',
-        observed_at=datetime.now(timezone.utc).isoformat()))
+        observed_at=datetime.fromtimestamp(getattr(chain, 'observed_at', time.time()), timezone.utc).isoformat()))
 
 
 def candidate_from_row(row, today, config):
@@ -221,6 +234,7 @@ def missed_opportunities(rows, primary, rotating, material=5):
 
 
 def scan_pipeline(state, universe, now, config, started):
+    seed_previous_failures(state, time.time())
     deadline = started+config.scan_budget_seconds
     report = dict(config=asdict(config), universe=universe, stage1=[], stage2=[], stage3=[],
                   contract_audit=[], warnings=[], primary=[], rotating=[])
@@ -244,37 +258,58 @@ def scan_pipeline(state, universe, now, config, started):
             stage2_names.append(core[i])
         if i < len(extra):
             stage2_names.append(extra[i])
+    recovery2 = due_retries(state, 'stage2', set(eligible), time.time(), config.retry_slots)
+    stage2_names = list(dict.fromkeys(recovery2+stage2_names))[:config.stage2_limit]
     # Advance only by the rotation names actually attempted, including failures.
     attempted_extra = 0
+    attempted2 = set()
     for symbol in stage2_names:
-        if time.monotonic() >= started+config.scan_budget_seconds*.45:
+        if time.monotonic() >= started+config.scan_budget_seconds*.45 or ACTIVE.get() and ACTIVE.get().paused:
             break
+        if retry_waiting(state, symbol, 'stage2', time.time()):
+            continue
+        attempted2.add(symbol)
         try:
-            report['stage2'].append(atm_snapshot(lookup[symbol], now.date()))
+            snapshot = atm_snapshot(lookup[symbol], now.date())
+            report['stage2'].append(snapshot)
+            if snapshot.get('status') == 'checked':
+                clear_retry(state, symbol, 'stage2')
+            else:
+                record_retry(state, symbol, 'stage2', 'ATM IV or liquidity data incomplete', time.time())
         except Exception as exc:
             report['stage2'].append(dict(ticker=symbol, status='unavailable', error=str(exc)))
             report['warnings'].append(f'{symbol} ATM: {exc}')
+            record_retry(state, symbol, 'stage2', str(exc), time.time())
         attempted_extra += symbol in extra
     _, state['atm_cursor'] = rotate(eligible[top_count:], attempted_extra, state.get('atm_cursor', 0))
     ranked = sorted((r for r in report['stage2'] if r.get('prescreen_score') is not None),
                     key=lambda r: (-r['prescreen_score'], r['ticker']))
-    primary = [r['ticker'] for r in ranked[:config.stage3_limit]]
-    rotating, _ = rotate(set(eligible)-set(primary), config.audit_rotation, state.get('scan_cursor', 0))
-    report.update(primary=primary, rotating=rotating,
-        stage2_planned=stage2_names, stage2_deferred=stage2_names[len(report['stage2']):])
+    recovery3 = due_retries(state, 'stage3', set(eligible), time.time(), min(config.retry_slots, 20))
+    primary = [r['ticker'] for r in ranked if r['ticker'] not in recovery3][:config.stage3_limit-len(recovery3)]
+    rotating, _ = rotate(set(eligible)-set(primary)-set(recovery3), config.audit_rotation, state.get('scan_cursor', 0))
+    report.update(primary=primary, rotating=rotating, recovery_stage2=recovery2, recovery_stage3=recovery3,
+        stage2_planned=stage2_names, stage2_deferred=[s for s in stage2_names if s not in attempted2])
+    for symbol in report['stage2_deferred']:
+        record_retry(state, symbol, 'stage2', 'Deferred: budget, provider cooldown or retry backoff', time.time(), attempted=False)
     cache = state.setdefault('option_cache', {})
     completed_rotating = 0
     # Interleave the audit cohort so a deadline cannot starve it every run.
     order = []
-    for i in range(max(len(primary), len(rotating))):
+    for i in range(max(len(primary), len(rotating), len(recovery3))):
+        if i < len(recovery3):
+            order.append(recovery3[i])
         if i < len(primary):
             order.append(primary[i])
         if i < len(rotating):
             order.append(rotating[i])
     scanned_rows = []
+    attempted3 = set()
     for symbol in order:
-        if time.monotonic() >= deadline:
+        if time.monotonic() >= deadline or ACTIVE.get() and ACTIVE.get().paused:
             break
+        if retry_waiting(state, symbol, 'stage3', time.time()):
+            continue
+        attempted3.add(symbol)
         attempted = time.time()
         entry = cache.setdefault(symbol, dict(contracts=[]))
         try:
@@ -285,22 +320,33 @@ def scan_pipeline(state, universe, now, config, started):
             contracts = [candidate_from_row(r, now.date(), config) for _, r in frame.iterrows()]
             entry.update(contracts=contracts, status='partial' if warns else 'complete',
                 scanned_at=attempted, last_attempt=attempted, warnings=warns,
-                cohort='rotation' if symbol in rotating else 'prescreened')
+                cohort='rotation' if symbol in rotating else 'recovery' if symbol in recovery3 else 'prescreened')
             entry['best_by_weight'] = best_by_weight(contracts)
             report['contract_audit'].extend(contracts)
             if not warns:
                 scanned_rows.extend(contracts)
+                clear_retry(state, symbol, 'stage3')
+            else:
+                record_retry(state, symbol, 'stage3', '; '.join(warns), time.time())
         except Exception as exc:
             entry.update(status='unavailable', last_attempt=attempted, warnings=[str(exc)])
             report['warnings'].append(f'{symbol} full scan: {exc}')
+            record_retry(state, symbol, 'stage3', str(exc), time.time())
         report['stage3'].append(dict(ticker=symbol, status=entry['status'],
-            cohort='rotation' if symbol in rotating else 'prescreened',
+            cohort='rotation' if symbol in rotating else 'recovery' if symbol in recovery3 else 'prescreened',
             contracts=len(entry['contracts']), warnings=entry.get('warnings', [])))
         completed_rotating += symbol in rotating
-    _, state['scan_cursor'] = rotate(set(eligible)-set(primary), completed_rotating, state.get('scan_cursor', 0))
-    report['stage3_deferred'] = order[len(report['stage3']):]
+    _, state['scan_cursor'] = rotate(set(eligible)-set(primary)-set(recovery3), completed_rotating, state.get('scan_cursor', 0))
+    report['stage3_planned'] = order
+    report['stage3_deferred'] = [s for s in order if s not in attempted3]
+    for symbol in report['stage3_deferred']:
+        record_retry(state, symbol, 'stage3', 'Deferred: budget, provider cooldown or retry backoff', time.time(), attempted=False)
     if report['stage2_deferred'] or report['stage3_deferred']:
-        report['warnings'].append('Scan budget reached; deferred names are listed; coverage is incomplete')
+        report['warnings'].append('Some names deferred by budget, provider cooldown or retry backoff; coverage is incomplete')
+    report['entry_gate'] = coverage_gate(report, config)
+    report['retry_queue'] = list(state.get('scan_retries', {}).values())
+    if ACTIVE.get():
+        report['provider_health'] = ACTIVE.get().health()
     report['missed_opportunities'] = missed_opportunities(scanned_rows, primary, rotating, config.material_improvement)
     report['rolling_ranking'] = rolling_ranking(cache, time.time(), config, set(eligible))
     report['eligible_symbols'] = eligible

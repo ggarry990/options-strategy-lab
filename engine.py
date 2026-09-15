@@ -9,29 +9,14 @@ from typing import Iterable
 
 import numpy as np
 import pandas as pd
-import requests
 import streamlit as st
 import yfinance as yf
+from yahoo_options import ACTIVE, YahooOptions, ticker_for
 
 ABS_RETURN_TARGET_PER_DAY = 0.001  # 0.10%/day
 ABS_PROTECTION_TARGET = 1.0
 HV_WINDOW = 30
 EARNINGS_TIE_THRESHOLD = 1.0
-
-_YF_OPTIONS_URLS = (
-    "https://query1.finance.yahoo.com/v7/finance/options/{symbol}",
-    "https://query2.finance.yahoo.com/v7/finance/options/{symbol}",
-)
-_YF_HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/131.0.0.0 Safari/537.36"
-    ),
-    "Accept": "application/json,text/plain,*/*",
-    "Accept-Language": "en-US,en;q=0.9",
-}
-
 
 def safe_float(value, default=np.nan) -> float:
     try:
@@ -132,51 +117,25 @@ def earnings_for_window(earnings_dates: list[date], expiry: date, today: date) -
     return False, next_earnings_date(earnings_dates, today)
 
 
-def _option_chain_from_yahoo_json(payload: dict) -> tuple[list[str], SimpleNamespace, str]:
-    result = (((payload or {}).get("optionChain") or {}).get("result") or [])
-    if not result:
-        err = (((payload or {}).get("optionChain") or {}).get("error") or {})
-        return [], SimpleNamespace(calls=pd.DataFrame(), puts=pd.DataFrame()), str(err or "empty Yahoo option-chain result")
-    root = result[0] or {}
-    expirations = [
-        datetime.fromtimestamp(int(ts)).strftime("%Y-%m-%d")
-        for ts in (root.get("expirationDates") or [])
-        if str(ts).isdigit()
-    ]
-    options = root.get("options") or []
-    block = options[0] if options else {}
-    calls = pd.DataFrame(block.get("calls") or [])
-    puts = pd.DataFrame(block.get("puts") or [])
-    return expirations, SimpleNamespace(calls=calls, puts=puts), ""
-
-
 @st.cache_data(ttl=45, show_spinner=False)
 def yahoo_option_chain_direct(symbol: str, expiry: str | None = None):
-    symbol = str(symbol).upper().strip()
-    params = {}
-    if expiry:
-        try:
-            params["date"] = int(pd.Timestamp(expiry, tz="UTC").timestamp())
-        except Exception:
-            pass
-    errors = []
-    for endpoint in _YF_OPTIONS_URLS:
-        try:
-            response = requests.get(endpoint.format(symbol=symbol), params=params, headers=_YF_HEADERS, timeout=15)
-            if response.status_code != 200:
-                errors.append(f"{endpoint.split('//',1)[1].split('/',1)[0]} HTTP {response.status_code}")
-                continue
-            payload = response.json()
-            expirations, chain, error = _option_chain_from_yahoo_json(payload)
-            if expirations or not chain.calls.empty or not chain.puts.empty:
-                return expirations, chain.calls, chain.puts, error
-            errors.append(error or "empty option-chain result")
-        except Exception as exc:
-            errors.append(str(exc))
-    return [], pd.DataFrame(), pd.DataFrame(), "Yahoo direct fallback failed: " + " | ".join(errors)
+    """Compatibility wrapper: use yfinance's session, never bare HTTP fallback."""
+    reader = ACTIVE.get() or YahooOptions({})
+    try:
+        if expiry:
+            chain = reader.chain(symbol, expiry)
+            return [], chain.calls, chain.puts, ''
+        return reader.expirations(symbol), pd.DataFrame(), pd.DataFrame(), ''
+    except Exception as exc:
+        return [], pd.DataFrame(), pd.DataFrame(), str(exc)
 
 
 def get_option_expirations(ticker: yf.Ticker, symbol: str) -> tuple[list[str], str]:
+    if ACTIVE.get():
+        try:
+            return ACTIVE.get().expirations(symbol), ''
+        except Exception as exc:
+            return [], str(exc)
     try:
         expirations = list(ticker.options)
         if expirations:
@@ -191,6 +150,11 @@ def get_option_expirations(ticker: yf.Ticker, symbol: str) -> tuple[list[str], s
 
 
 def get_option_chain(ticker: yf.Ticker, symbol: str, expiry: str):
+    if ACTIVE.get():
+        try:
+            return ACTIVE.get().chain(symbol, expiry), ''
+        except Exception as exc:
+            return None, str(exc)
     try:
         chain = ticker.option_chain(expiry)
         calls = getattr(chain, "calls", None)
@@ -292,7 +256,7 @@ def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, ma
                     deadline: float | None = None):
     warnings: list[str] = []
     today = asof or date.today()
-    ticker = yf.Ticker(symbol)
+    ticker = ticker_for(symbol)
     stock_price = get_stock_price(ticker)
     earnings_dates = get_earnings_dates(ticker)
     hv30 = get_historical_volatility(ticker, HV_WINDOW)
@@ -312,7 +276,7 @@ def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, ma
         if dte < min_dte or dte > max_dte:
             continue
         chain, chain_error = get_option_chain(ticker, symbol, expiry_str)
-        observed = time.time()
+        observed = getattr(chain, 'observed_at', time.time())
         if chain is None:
             warnings.append(f"{symbol} {expiry_str}: unavailable ({chain_error})")
             continue
@@ -428,7 +392,7 @@ def best_per_ticker(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def quote_option(symbol: str, expiry: str, contract: str, strike: float, option_type: str = "put") -> dict:
-    ticker = yf.Ticker(symbol)
+    ticker = ticker_for(symbol)
     stock_price = get_stock_price(ticker)
     chain, error = get_option_chain(ticker, symbol, expiry)
     if chain is None:
@@ -508,7 +472,7 @@ def expected_capture_fraction(position: dict, asof: date | None = None, rate: fl
 
 
 def scan_calls_for_basis(symbol: str, adjusted_basis: float, min_dte: int = 14, max_dte: int = 45) -> pd.DataFrame:
-    ticker = yf.Ticker(symbol)
+    ticker = ticker_for(symbol)
     price = get_stock_price(ticker)
     expirations, error = get_option_expirations(ticker, symbol)
     if not expirations:
