@@ -1,8 +1,8 @@
 {
   "version": 2,
   "created": "2026-09-13T16:34:01.246224-04:00",
-  "last_slot": "2026-09-15T17:30",
-  "last_success": "2026-09-15T17:42:54.672640-04:00",
+  "last_slot": "2026-09-15T23:30",
+  "last_success": "2026-09-15T23:37:06.622201-04:00",
   "models": {
     "A": {
       "cash": 100915.0,
@@ -383,6 +383,41 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261009P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MRVL",
+          "contract": "MRVL261009P00190000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00054000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00085000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -430,6 +465,12 @@
         },
         {
           "time": "2026-09-15T17:42:54.672640-04:00",
+          "nav": 99833.0,
+          "stale": 5,
+          "drawdown": -0.0016699999999999493
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
           "nav": 99833.0,
           "stale": 5,
           "drawdown": -0.0016699999999999493
@@ -818,6 +859,41 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261009P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MRVL",
+          "contract": "MRVL261009P00190000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00054000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00085000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -865,6 +941,12 @@
         },
         {
           "time": "2026-09-15T17:42:54.672640-04:00",
+          "nav": 99833.0,
+          "stale": 5,
+          "drawdown": -0.0016699999999999493
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
           "nav": 99833.0,
           "stale": 5,
           "drawdown": -0.0016699999999999493
@@ -1253,6 +1335,41 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261009P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MRVL",
+          "contract": "MRVL261009P00190000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00054000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00085000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -1300,6 +1417,12 @@
         },
         {
           "time": "2026-09-15T17:42:54.672640-04:00",
+          "nav": 99833.0,
+          "stale": 5,
+          "drawdown": -0.0016699999999999493
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
           "nav": 99833.0,
           "stale": 5,
           "drawdown": -0.0016699999999999493
@@ -1688,6 +1811,41 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261009P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MRVL",
+          "contract": "MRVL261009P00190000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00054000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00085000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -1735,6 +1893,12 @@
         },
         {
           "time": "2026-09-15T17:42:54.672640-04:00",
+          "nav": 99833.0,
+          "stale": 5,
+          "drawdown": -0.0016699999999999493
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
           "nav": 99833.0,
           "stale": 5,
           "drawdown": -0.0016699999999999493
@@ -2123,6 +2287,41 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261009P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MRVL",
+          "contract": "MRVL261009P00190000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00054000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00085000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -2170,6 +2369,12 @@
         },
         {
           "time": "2026-09-15T17:42:54.672640-04:00",
+          "nav": 99833.0,
+          "stale": 5,
+          "drawdown": -0.0016699999999999493
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
           "nav": 99833.0,
           "stale": 5,
           "drawdown": -0.0016699999999999493
@@ -2558,6 +2763,41 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261009P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MRVL",
+          "contract": "MRVL261009P00190000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00054000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00085000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -2605,6 +2845,12 @@
         },
         {
           "time": "2026-09-15T17:42:54.672640-04:00",
+          "nav": 99833.0,
+          "stale": 5,
+          "drawdown": -0.0016699999999999493
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
           "nav": 99833.0,
           "stale": 5,
           "drawdown": -0.0016699999999999493
@@ -2993,6 +3239,41 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261009P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "MRVL",
+          "contract": "MRVL261009P00190000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00054000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00085000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -3040,6 +3321,12 @@
         },
         {
           "time": "2026-09-15T17:42:54.672640-04:00",
+          "nav": 99833.0,
+          "stale": 5,
+          "drawdown": -0.0016699999999999493
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
           "nav": 99833.0,
           "stale": 5,
           "drawdown": -0.0016699999999999493
@@ -3102,6 +3389,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -3161,6 +3454,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -3217,6 +3516,12 @@
         },
         {
           "time": "2026-09-15T17:42:54.672640-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -3632,6 +3937,41 @@
           "ticker": "KLAC",
           "contract": "KLAC261016P00155000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00056000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00089000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261016P00100000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "KLAC",
+          "contract": "KLAC261016P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -3667,6 +4007,12 @@
         },
         {
           "time": "2026-09-15T17:42:54.672640-04:00",
+          "nav": 99709.0,
+          "stale": 5,
+          "drawdown": -0.002909999999999968
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
           "nav": 99709.0,
           "stale": 5,
           "drawdown": -0.002909999999999968
@@ -4082,6 +4428,41 @@
           "ticker": "KLAC",
           "contract": "KLAC261016P00160000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00056000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00090000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261016P00100000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "KLAC",
+          "contract": "KLAC261016P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -4117,6 +4498,12 @@
         },
         {
           "time": "2026-09-15T17:42:54.672640-04:00",
+          "nav": 99698.0,
+          "stale": 5,
+          "drawdown": -0.0030200000000000227
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
           "nav": 99698.0,
           "stale": 5,
           "drawdown": -0.0030200000000000227
@@ -4532,6 +4919,41 @@
           "ticker": "KLAC",
           "contract": "KLAC261016P00160000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00058000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00092000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261016P00105000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
+          "action": "HOLD",
+          "ticker": "KLAC",
+          "contract": "KLAC261016P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -4567,6 +4989,12 @@
         },
         {
           "time": "2026-09-15T17:42:54.672640-04:00",
+          "nav": 99659.0,
+          "stale": 5,
+          "drawdown": -0.003410000000000024
+        },
+        {
+          "time": "2026-09-15T23:37:06.622201-04:00",
           "nav": 99659.0,
           "stale": 5,
           "drawdown": -0.003410000000000024
@@ -4846,10 +5274,34 @@
       },
       "pending_retries": 13,
       "audit_file": "audits/20260915T174254-0400.json.gz"
+    },
+    {
+      "time": "2026-09-15T23:37:06.440260-04:00",
+      "status": "Market closed",
+      "checked": 518,
+      "selected": 0,
+      "candidates": 0,
+      "eligible_underlyings": 0,
+      "stage2_checked": 0,
+      "stage2_successful": 0,
+      "option_scanned": 0,
+      "rolling_fresh_coverage": 0,
+      "warnings": [],
+      "qualifying_contracts": 0,
+      "verified_contracts": 0,
+      "coverage_blocked_contracts": 0,
+      "duration_seconds": 0,
+      "entry_gate": {
+        "allowed": false,
+        "reason": "Market closed"
+      },
+      "pending_retries": 13,
+      "selected_entries": 0,
+      "audit_file": "audits/20260915T233706-0400.json.gz"
     }
   ],
   "last_run": {
-    "time": "2026-09-15T17:42:54.408508-04:00",
+    "time": "2026-09-15T23:37:06.440260-04:00",
     "status": "Market closed",
     "checked": 518,
     "selected": 0,
@@ -4860,13 +5312,17 @@
     "option_scanned": 0,
     "rolling_fresh_coverage": 0,
     "warnings": [],
+    "qualifying_contracts": 0,
+    "verified_contracts": 0,
+    "coverage_blocked_contracts": 0,
     "duration_seconds": 0,
     "entry_gate": {
       "allowed": false,
       "reason": "Market closed"
     },
     "pending_retries": 13,
-    "audit_file": "audits/20260915T174254-0400.json.gz"
+    "selected_entries": 0,
+    "audit_file": "audits/20260915T233706-0400.json.gz"
   },
   "candidates": [],
   "universe": {
@@ -135772,9 +136228,9 @@
         "error": "MDLZ 2026-10-30: no puts"
       }
     ],
-    "time": "2026-09-15T17:42:54.408508-04:00",
+    "time": "2026-09-15T23:37:06.440260-04:00",
     "summary": {
-      "time": "2026-09-15T17:42:54.408508-04:00",
+      "time": "2026-09-15T23:37:06.440260-04:00",
       "status": "Market closed",
       "checked": 518,
       "selected": 0,
@@ -135785,13 +136241,17 @@
       "option_scanned": 0,
       "rolling_fresh_coverage": 0,
       "warnings": [],
+      "qualifying_contracts": 0,
+      "verified_contracts": 0,
+      "coverage_blocked_contracts": 0,
       "duration_seconds": 0,
       "entry_gate": {
         "allowed": false,
         "reason": "Market closed"
       },
       "pending_retries": 13,
-      "audit_file": "audits/20260915T174254-0400.json.gz"
+      "selected_entries": 0,
+      "audit_file": "audits/20260915T233706-0400.json.gz"
     },
     "execution": [],
     "path": [
