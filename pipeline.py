@@ -14,7 +14,7 @@ from scoring import score_candidate
 from universe import prescreen_underlyings
 from yahoo_options import ACTIVE, ticker_for
 from scan_recovery import (record_retry, clear_retry, due_retries, retry_waiting,
-                           seed_previous_failures, coverage_gate)
+                           seed_previous_failures, coverage_gate, coverage_history, prioritize_blind_spots)
 
 WEIGHTS = (30, 40, 50, 60)
 
@@ -233,7 +233,9 @@ def missed_opportunities(rows, primary, rotating, material=5):
     return discoveries
 
 
-def scan_pipeline(state, universe, now, config, started):
+def scan_pipeline(state, universe, now, config, started, progress=None):
+    progress = progress or (lambda *a, **kw: None)
+    progress('Stage 1 — underlying scan', total=len(universe['symbols']), completed=0)
     seed_previous_failures(state, time.time())
     deadline = started+config.scan_budget_seconds
     report = dict(config=asdict(config), universe=universe, stage1=[], stage2=[], stage3=[],
@@ -242,6 +244,7 @@ def scan_pipeline(state, universe, now, config, started):
         config.max_cash, min_avg_volume=config.min_avg_volume, include_rejected=True)
     report['warnings'].extend(warnings)
     report['stage1'] = clean(pre.to_dict('records'))
+    progress('Stage 1 — underlying scan', total=len(universe['symbols']), completed=len(pre))
     # A daily history without today's bar must not silently pass the price gate.
     for r in report['stage1']:
         if r.get('Eligible') and pd.Timestamp(r['Price Date']).date() != now.date():
@@ -263,6 +266,7 @@ def scan_pipeline(state, universe, now, config, started):
     # Advance only by the rotation names actually attempted, including failures.
     attempted_extra = 0
     attempted2 = set()
+    progress('Stage 2 — ATM IV', completed=0, total=len(stage2_names))
     for symbol in stage2_names:
         if time.monotonic() >= started+config.scan_budget_seconds*.45 or ACTIVE.get() and ACTIVE.get().paused:
             break
@@ -281,12 +285,16 @@ def scan_pipeline(state, universe, now, config, started):
             report['warnings'].append(f'{symbol} ATM: {exc}')
             record_retry(state, symbol, 'stage2', str(exc), time.time())
         attempted_extra += symbol in extra
+        progress('Stage 2 — ATM IV', completed=len(attempted2), total=len(stage2_names), ticker=symbol)
     _, state['atm_cursor'] = rotate(eligible[top_count:], attempted_extra, state.get('atm_cursor', 0))
     ranked = sorted((r for r in report['stage2'] if r.get('prescreen_score') is not None),
                     key=lambda r: (-r['prescreen_score'], r['ticker']))
     recovery3 = due_retries(state, 'stage3', set(eligible), time.time(), min(config.retry_slots, 20))
     primary = [r['ticker'] for r in ranked if r['ticker'] not in recovery3][:config.stage3_limit-len(recovery3)]
     rotating, _ = rotate(set(eligible)-set(primary)-set(recovery3), config.audit_rotation, state.get('scan_cursor', 0))
+    blind = prioritize_blind_spots(state, set(eligible)-set(primary)-set(recovery3),
+        config.audit_rotation, time.time(), config.freshness_minutes)
+    rotating = list(dict.fromkeys(blind+rotating))[:config.audit_rotation]
     report.update(primary=primary, rotating=rotating, recovery_stage2=recovery2, recovery_stage3=recovery3,
         stage2_planned=stage2_names, stage2_deferred=[s for s in stage2_names if s not in attempted2])
     for symbol in report['stage2_deferred']:
@@ -304,6 +312,7 @@ def scan_pipeline(state, universe, now, config, started):
             order.append(rotating[i])
     scanned_rows = []
     attempted3 = set()
+    progress('Stage 3 — full option scans', completed=0, total=len(order))
     for symbol in order:
         if time.monotonic() >= deadline or ACTIVE.get() and ACTIVE.get().paused:
             break
@@ -312,10 +321,13 @@ def scan_pipeline(state, universe, now, config, started):
         attempted3.add(symbol)
         attempted = time.time()
         entry = cache.setdefault(symbol, dict(contracts=[]))
+        expiry_audit = []
+        if 'last_complete_at' not in entry and entry.get('status') == 'complete':
+            entry['last_complete_at'] = entry.get('scanned_at')
         try:
             frame, warns = scan_put_ticker(symbol, config.min_dte, config.max_dte,
                 config.min_cash, config.max_cash, 0., 30, True,
-                audit_rows=report['contract_audit'], asof=now.date(), deadline=deadline)
+                audit_rows=report['contract_audit'], asof=now.date(), deadline=deadline, expiry_audit=expiry_audit)
             report['warnings'].extend(warns)
             contracts = [candidate_from_row(r, now.date(), config) for _, r in frame.iterrows()]
             entry.update(contracts=contracts, status='partial' if warns else 'complete',
@@ -324,6 +336,7 @@ def scan_pipeline(state, universe, now, config, started):
             entry['best_by_weight'] = best_by_weight(contracts)
             report['contract_audit'].extend(contracts)
             if not warns:
+                entry['last_complete_at'] = time.time()
                 scanned_rows.extend(contracts)
                 clear_retry(state, symbol, 'stage3')
             else:
@@ -332,10 +345,12 @@ def scan_pipeline(state, universe, now, config, started):
             entry.update(status='unavailable', last_attempt=attempted, warnings=[str(exc)])
             report['warnings'].append(f'{symbol} full scan: {exc}')
             record_retry(state, symbol, 'stage3', str(exc), time.time())
+        entry['expiry_audit'] = expiry_audit
         report['stage3'].append(dict(ticker=symbol, status=entry['status'],
             cohort='rotation' if symbol in rotating else 'recovery' if symbol in recovery3 else 'prescreened',
-            contracts=len(entry['contracts']), warnings=entry.get('warnings', [])))
+            contracts=len(entry['contracts']), warnings=entry.get('warnings', []), expiry_audit=expiry_audit))
         completed_rotating += symbol in rotating
+        progress('Stage 3 — full option scans', completed=len(attempted3), total=len(order), ticker=symbol)
     _, state['scan_cursor'] = rotate(set(eligible)-set(primary)-set(recovery3), completed_rotating, state.get('scan_cursor', 0))
     report['stage3_planned'] = order
     report['stage3_deferred'] = [s for s in order if s not in attempted3]
@@ -350,4 +365,6 @@ def scan_pipeline(state, universe, now, config, started):
     report['missed_opportunities'] = missed_opportunities(scanned_rows, primary, rotating, config.material_improvement)
     report['rolling_ranking'] = rolling_ranking(cache, time.time(), config, set(eligible))
     report['eligible_symbols'] = eligible
+    report['coverage_history'] = coverage_history(state, eligible, time.time(), config.freshness_minutes)
+    progress('Rolling ranking', completed=len(report['rolling_ranking']), total=len(report['rolling_ranking']))
     return report

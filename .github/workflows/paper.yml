@@ -47,13 +47,22 @@ jobs:
             exit 1
           fi
       - name: Evaluate paper portfolios
-        run: python auto_runner.py --state "${RUNNER_TEMP}/paper-results/state.json"
+        env:
+          SCAN_PROGRESS_PATH: ${{ runner.temp }}/scan-progress.json
+        run: |
+          python scan_progress.py --publish "$SCAN_PROGRESS_PATH" &
+          publisher=$!
+          trap 'kill "$publisher" 2>/dev/null || true' EXIT
+          python auto_runner.py --state "${RUNNER_TEMP}/paper-results/state.json"
       - name: Save results
         run: |
           cd "${RUNNER_TEMP}/paper-results"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add state.json
+          if [ -f option-chains.json.gz ]; then
+            git add option-chains.json.gz
+          fi
           if [ -d audits ]; then
             git add audits/
           fi
@@ -61,3 +70,8 @@ jobs:
             git commit -m "Save automated paper experiment"
             git push origin HEAD:paper-results
           fi
+      - name: Publish final automation status
+        if: always()
+        env:
+          RUN_STATUS: ${{ job.status }}
+        run: python scan_progress.py --publish "${RUNNER_TEMP}/scan-progress.json" --once --status "$RUN_STATUS"

@@ -9,11 +9,53 @@ import streamlit as st
 from paper_core import STRATEGIES, CAPITAL, VERSION
 from pipeline import ScanConfig, rolling_ranking
 from scan_schedule import next_events
+from scan_progress import progress_view
+from scan_recovery import coverage_history
 
 st.set_page_config(page_title='Automated Options Lab', page_icon='🧪', layout='wide')
 st.title('Automated Options Lab')
 st.caption(f'{len(STRATEGIES)} strategies • $100,000 each • S&P 500 + Nasdaq 100 • paper simulations only')
 URL = 'https://raw.githubusercontent.com/ggarry990/options-strategy-lab/paper-results/state.json'
+
+
+@st.cache_data(ttl=60, show_spinner=False)
+def load_live_status():
+    workflow, progress = {}, {}
+    try:
+        response = requests.get('https://api.github.com/repos/ggarry990/options-strategy-lab/actions/workflows/paper.yml/runs',
+            params={'per_page':1}, timeout=8)
+        response.raise_for_status()
+        runs = response.json().get('workflow_runs', [])
+        workflow = runs[0] if isinstance(runs, list) and runs and isinstance(runs[0], dict) else {}
+    except Exception:
+        pass
+    try:
+        response = requests.get('https://raw.githubusercontent.com/ggarry990/options-strategy-lab/scan-progress/progress.json',
+            params={'refresh':int(datetime.now(timezone.utc).timestamp())//60}, timeout=8)
+        response.raise_for_status()
+        payload = response.json()
+        progress = payload if isinstance(payload, dict) else {}
+    except Exception:
+        pass
+    return workflow, progress
+
+
+@st.fragment(run_every='60s')
+def show_live_status():
+    workflow, progress = load_live_status()
+    now = datetime.now(timezone.utc)
+    label, detail = progress_view(progress, workflow, now)
+    st.write(label)
+    if detail:
+        total, completed = detail.get('total', 0), detail.get('completed', 0)
+        if total:
+            st.progress(min(1., completed/total), text=f'{completed}/{total} processed')
+        st.caption(f"Last progress update: {detail['updated_at']} • Current stock: {detail.get('ticker') or '—'}")
+    if workflow.get('status') == 'completed' and workflow.get('updated_at'):
+        expected = next_events(datetime.fromisoformat(workflow['updated_at'].replace('Z', '+00:00')))['scan']
+        if expected and (now-expected).total_seconds() > 600:
+            st.warning('A scheduled scan is overdue; no newer automation is confirmed. Check scheduler logs.')
+    st.caption('Automation status refreshes every minute. Stage progress is published about once a minute; detailed tables show the last saved run.')
 
 @st.cache_data(ttl=60, show_spinner=False)
 def load_results():
@@ -82,6 +124,7 @@ with st.sidebar:
     st.caption('No brokerage connection. New experiment portfolios are separate from the original manual lab.')
 
 show_next_scan(display_timezone)
+show_live_status()
 
 try:
     state = load_results()
@@ -99,13 +142,21 @@ refresh_when_results_change(stamp)
 if state.get('version') == 1:
     st.info('The updated scanner is installed, but the page is still showing results from the previous scanner. The new strategies and scan audit will appear after the first updated run saves. Results refresh automatically every minute.')
 else:
-    st.caption('Saved results refresh automatically every minute. Scan tables update after a run finishes and saves; they are not a live progress feed.')
+    st.caption('Saved results refresh automatically every minute. Detailed scan tables update after a run finishes and saves.')
 c1,c2,c3,c4 = st.columns(4)
 c1.metric('Last run', last.get('status', 'Waiting'))
 c2.metric('Index stocks screened', last.get('checked', 0))
 c3.metric('Option stocks scanned', last.get('option_scanned', 0))
-c4.metric('Eligible entry contracts', last.get('candidates', 0))
-st.caption(f"Last saved: {stamp} • Started: {state['created']} • All times include their UTC offset.")
+c4.metric('Verified entry contracts', last.get('verified_contracts', last.get('candidates', 0)))
+if 'qualifying_contracts' in last:
+    a, b, c = st.columns(3)
+    a.metric('Qualifying before coverage gate', last['qualifying_contracts'])
+    b.metric('Contracts blocked by coverage / access', last.get('coverage_blocked_contracts', 0))
+    c.metric('Selected portfolio entries', last.get('selected_entries', 0))
+    st.caption('Qualifying contracts pass data and contract rules before the run-wide coverage check. Verification and portfolio constraints can reduce this count; selected entries count each portfolio separately.')
+else:
+    st.caption('This older run did not save the pre-gate qualifying count. Zero verified contracts does not mean no opportunities were found.')
+st.caption(f"Last saved: {stamp} • Last run started: {last.get('time', 'Unknown')} • Experiment started: {state['created']} • All times include their UTC offset.")
 gate = last.get('entry_gate')
 if gate and last.get('status') != 'Market closed':
     if not gate['allowed']:
@@ -170,6 +221,18 @@ with health:
     st.json(state.get('migrations', []))
 
 with scanning:
+    with st.expander('Coverage age — persistent blind spots'):
+        eligible = state.get('last_audit', {}).get('eligible_symbols', [])
+        if not eligible:
+            eligible = state.get('universe', {}).get('symbols', [])
+        freshness = state.get('last_audit', {}).get('config', {}).get('freshness_minutes', 30)
+        coverage = coverage_history(state, eligible, datetime.now(timezone.utc).timestamp(), freshness)
+        st.write(f"{sum(r['overdue'] for r in coverage)} of {len(coverage)} tracked stocks have no complete scan within {freshness:g} minutes.")
+        st.caption('Never-scanned and oldest complete scans receive rotation priority, subject to retry backoff. Scan age measures coverage; each contract separately retains its original quote age. Overnight ages naturally increase. Legacy scans without a saved completion time appear unknown.')
+        for row in coverage:
+            if row['last_complete_at'] is not None:
+                row['last_complete_at'] = datetime.fromtimestamp(row['last_complete_at'], timezone.utc).isoformat()
+        st.dataframe(pd.DataFrame(coverage), use_container_width=True, hide_index=True)
     with st.expander('Data recovery — failed and deferred stocks', expanded=bool(state.get('scan_retries'))):
         st.caption('Stocks stay queued until their stage succeeds. Each run reserves up to 40 ATM retry slots and 20 full-scan retry slots. Actual failures wait 30, 60, 120, then up to 240 minutes between attempts; unattempted work remains queued. Neither retries nor caching guarantee that Yahoo will supply the missing data.')
         health = state.get('provider_health', {})
@@ -219,6 +282,8 @@ with scanning:
             st.write('Planned but deferred', audit.get('stage2_deferred', []))
         with st.expander('Stage 3 — full scans, rotation, and all observed contracts'):
             st.dataframe(pd.DataFrame(audit.get('stage3', [])), use_container_width=True, hide_index=True)
+            st.caption('empty_confirmed means Yahoo explicitly returned an empty put list twice with calls present. It is a provider-reported empty result, not independent proof that no puts exist. Missing fields, both sides empty and failed requests remain incomplete.')
+            st.dataframe(pd.DataFrame([e for r in audit.get('stage3', []) for e in r.get('expiry_audit', [])]), use_container_width=True, hide_index=True)
             st.write('Planned but deferred', audit.get('stage3_deferred', []))
             st.dataframe(pd.json_normalize(audit.get('contract_audit', [])), use_container_width=True, hide_index=True)
         st.subheader('Full rolling candidate ranking at this run')

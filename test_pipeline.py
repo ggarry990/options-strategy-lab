@@ -267,7 +267,7 @@ class RunnerTests(unittest.TestCase):
             @classmethod
             def now(cls, tz=None):
                 return NOW
-        def scan(state, *args):
+        def scan(state, *args, **kwargs):
             state['option_cache'] = {'TEST':entry([candidate()])}
             return dict(stage1=[], stage2=[], stage3=[], eligible_symbols=['TEST'], warnings=[], entry_gate={'allowed':True, 'reason':''})
         sched = pd.Series({'market_open':NOW-timedelta(hours=1), 'market_close':NOW+timedelta(hours=5)})
@@ -290,7 +290,7 @@ class RunnerTests(unittest.TestCase):
             @classmethod
             def now(cls, tz=None):
                 return NOW
-        def scan(state, universe, now, config, started):
+        def scan(state, universe, now, config, started, **kwargs):
             state['option_cache'] = {'TEST':entry([candidate()])}
             return dict(stage1=[{'Ticker':'TEST','Eligible':True}], stage2=[], stage3=[],
                         eligible_symbols=['TEST'], warnings=[], missed_opportunities=[], entry_gate={'allowed':True, 'reason':''})

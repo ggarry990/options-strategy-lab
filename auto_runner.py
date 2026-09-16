@@ -21,6 +21,7 @@ from scoring import score_candidate
 from scan_schedule import slot_key, already_processed
 from yahoo_options import ACTIVE, YahooOptions
 from scan_recovery import record_retry
+from scan_progress import Progress
 
 NY = ZoneInfo('America/New_York')
 CAL = mcal.get_calendar('NYSE')
@@ -91,11 +92,21 @@ def run(path, config=None):
     config = config or ScanConfig()
     now = datetime.now(NY)
     state = migrate_state(json.loads(path.read_text(encoding='utf-8')), now.isoformat()) if path.exists() else fresh_state(now.isoformat())
-    with YahooOptions(state, spacing=config.option_request_spacing) as reader:
-        return _run_loaded(path, config, now, state, reader)
+    progress = Progress()
+    progress('Starting')
+    try:
+        with YahooOptions(state, spacing=config.option_request_spacing,
+                cache_path=path.parent/'option-chains.json.gz', max_age=config.freshness_minutes*60) as reader:
+            result = _run_loaded(path, config, now, state, reader, progress)
+        progress('Results prepared — awaiting durable save', status='saving')
+        return result
+    except Exception:
+        progress('Runner failed — see automation logs', status='failed')
+        raise
 
 
-def _run_loaded(path, config, now, state, reader):
+def _run_loaded(path, config, now, state, reader, progress=None):
+    progress = progress or (lambda *a, **kw: None)
     started = time.monotonic()
     warnings, quotes, settlements = [], {}, {}
     sched = session(now.date())
@@ -107,9 +118,10 @@ def _run_loaded(path, config, now, state, reader):
     audit = dict(config=asdict(config), stage1=[], stage2=[], stage3=[], rolling_ranking=[], eligible_symbols=[])
     if is_open:
         try:
+            progress('Loading universe')
             universe = load_universe(state, now)
             state['universe'] = universe
-            audit = scan_pipeline(state, universe, now, config, started)
+            audit = scan_pipeline(state, universe, now, config, started, progress=progress)
             warnings.extend(audit['warnings'])
             report['status'] = 'Completed' if not warnings else 'Completed with data warnings'
         except Exception as exc:
@@ -117,7 +129,9 @@ def _run_loaded(path, config, now, state, reader):
             report['status'] = 'Entry scan unavailable'
     # Preserve exit/valuation behavior with the existing exact-quote and settlement rules.
     positions = {p['contract']:p for m in state['models'].values() for p in m['positions']}
-    for contract, p in positions.items():
+    progress('Managing existing positions', total=len(positions))
+    for index, (contract, p) in enumerate(positions.items()):
+        progress('Managing existing positions', completed=index, total=len(positions), ticker=p['ticker'])
         try:
             if p['expiry'] <= now.date().isoformat():
                 px = expiry_close(p, datetime.now(NY))
@@ -130,6 +144,7 @@ def _run_loaded(path, config, now, state, reader):
             warnings.append(f'{contract}: {exc}')
     # Recompute age after scanning and position checks; a failed universe gates entries.
     candidates = rolling_ranking(state.get('option_cache', {}), time.time(), config, set(audit['eligible_symbols']))
+    qualifying_contracts = sum(not c['rejections'] for c in candidates)
     gate = audit.get('entry_gate', dict(allowed=False, reason='Market closed' if not is_open else 'New entries paused: scan coverage unavailable'))
     if not gate['allowed']:
         for c in candidates:
@@ -147,8 +162,10 @@ def _run_loaded(path, config, now, state, reader):
                 order.append(q[rank])
                 seen.add(q[rank]['contract'])
     verification_chains = {}
+    progress('Verifying entry quotes', total=len(order))
     quote_retry_tickers = set()
-    for c in order:
+    for index, c in enumerate(order):
+        progress('Verifying entry quotes', completed=index, total=len(order), ticker=c['ticker'])
         finished = datetime.now(NY)
         still_open = sched is not None and sched['market_open'] <= finished < sched['market_close']-timedelta(minutes=15)
         if not still_open:
@@ -194,6 +211,9 @@ def _run_loaded(path, config, now, state, reader):
         selected=len(audit['stage3']), option_scanned=sum(r['status'] == 'complete' for r in audit['stage3']),
         rolling_fresh_coverage=len({c['ticker'] for c in fresh_rows if not c['rejections']}),
         candidates=sum(not c['rejections'] for c in candidates), warnings=warnings,
+        qualifying_contracts=qualifying_contracts,
+        verified_contracts=sum('verified_at' in c and not c['rejections'] for c in candidates),
+        coverage_blocked_contracts=qualifying_contracts if not gate['allowed'] or reader.paused else 0,
         duration_seconds=round(time.monotonic()-started))
     state['provider_health'] = reader.health()
     audit['provider_health'] = reader.health()
@@ -207,6 +227,7 @@ def _run_loaded(path, config, now, state, reader):
     audit['entry_gate'] = report['entry_gate']
     if warnings and report['status'] == 'Completed':
         report['status'] = 'Completed with data warnings'
+    progress('Portfolio constraints and execution')
     state = run_cycle(state, candidates, quotes if is_open and finished <= sched['market_close'] else {},
         settlements, finished.isoformat(), slot, still_open and report['entry_gate']['allowed'],
         report['entry_gate']['reason'] if still_open and not report['entry_gate']['allowed'] else None)
@@ -214,6 +235,8 @@ def _run_loaded(path, config, now, state, reader):
         portfolio_constraints=state['entry_audit'],
         execution=[r for r in state['entry_audit'] if r['decision'] == 'selected'],
         path=['universe', 'stage1', 'stage2', 'stage3', 'rolling_ranking', 'portfolio_constraints', 'execution'])
+    report['selected_entries'] = len(audit['execution'])
+    progress('Saving audit and results')
     # Each complete audit is an immutable file. State retains the latest metadata.
     audit_name = 'audits/'+now.strftime('%Y%m%dT%H%M%S%z')+'.json.gz'
     report['audit_file'] = audit_name

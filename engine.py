@@ -253,7 +253,7 @@ def apply_put_scores(df: pd.DataFrame, return_weight_pct: int) -> pd.DataFrame:
 def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, max_cash: float,
                     min_cushion_pct: float, return_weight_pct: int = 30, otm_only: bool = True,
                     audit_rows: list | None = None, asof: date | None = None,
-                    deadline: float | None = None):
+                    deadline: float | None = None, expiry_audit: list | None = None):
     warnings: list[str] = []
     today = asof or date.today()
     ticker = ticker_for(symbol)
@@ -265,9 +265,6 @@ def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, ma
         raise ValueError(f"Could not load option expirations: {expiration_error}")
     rows = []
     for expiry_str in expirations:
-        if deadline is not None and time.monotonic() >= deadline:
-            warnings.append(f'{symbol}: full scan incomplete; time budget reached')
-            break
         try:
             expiry = datetime.strptime(expiry_str, "%Y-%m-%d").date()
         except Exception:
@@ -275,20 +272,35 @@ def scan_put_ticker(symbol: str, min_dte: int, max_dte: int, min_cash: float, ma
         dte = (expiry - today).days
         if dte < min_dte or dte > max_dte:
             continue
+        outcome = dict(ticker=symbol, expiry=expiry_str, status='unavailable')
+        if expiry_audit is not None:
+            expiry_audit.append(outcome)
+        if deadline is not None and time.monotonic() >= deadline:
+            outcome.update(status='deferred', reason='time budget reached')
+            warnings.append(f'{symbol} {expiry_str}: full scan incomplete; time budget reached')
+            continue
         chain, chain_error = get_option_chain(ticker, symbol, expiry_str)
         observed = getattr(chain, 'observed_at', time.time())
         if chain is None:
+            outcome['reason'] = chain_error
             warnings.append(f"{symbol} {expiry_str}: unavailable ({chain_error})")
             continue
         puts = chain.puts.copy()
+        outcome.update(observed_at=observed, puts=len(puts), calls=len(chain.calls))
         if puts.empty:
+            if getattr(chain, 'put_status', '') == 'empty_confirmed':
+                outcome.update(status='empty_confirmed', reason='Yahoo explicitly returned no puts twice; calls present. Not independently verified.')
+                continue
+            outcome['reason'] = 'Empty put side not confirmed'
             warnings.append(f"{symbol} {expiry_str}: no puts")
             continue
         atm_iv = get_atm_iv(chain, stock_price)
         _, _, expected_move, expected_source = expected_move_for_expiry(hv30, atm_iv, dte)
         if not np.isfinite(expected_move) or expected_move <= 0:
+            outcome['reason'] = 'expected move unavailable'
             warnings.append(f'{symbol} {expiry_str}: expected move unavailable')
             continue
+        outcome['status'] = 'complete'
         for _, option in puts.iterrows():
             strike = safe_float(option.get("strike"))
             bid = safe_float(option.get("bid"), 0.0)

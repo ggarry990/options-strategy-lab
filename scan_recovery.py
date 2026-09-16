@@ -2,6 +2,27 @@
 import re
 
 
+def coverage_history(state, symbols, now, freshness_minutes):
+    rows = []
+    for ticker in sorted(set(symbols)):
+        entry = state.get('option_cache', {}).get(ticker, {})
+        stamp = entry.get('last_complete_at')
+        if stamp is None and entry.get('status') == 'complete':
+            stamp = entry.get('scanned_at')  # Additive compatibility with old cache.
+        age = max(0, (now-stamp)/60) if stamp is not None else None
+        rows.append(dict(ticker=ticker, last_complete_at=stamp, age_minutes=age,
+            status=entry.get('status', 'never scanned'),
+            overdue=age is None or age > freshness_minutes,
+            outstanding_expiries=[r['expiry'] for r in entry.get('expiry_audit', [])
+                                 if r['status'] not in ('complete', 'empty_confirmed')]))
+    return sorted(rows, key=lambda r: (r['last_complete_at'] is not None, r['last_complete_at'] or 0, r['ticker']))
+
+
+def prioritize_blind_spots(state, symbols, limit, now, freshness_minutes):
+    return [r['ticker'] for r in coverage_history(state, symbols, now, freshness_minutes)
+            if r['overdue'] and not retry_waiting(state, r['ticker'], 'stage3', now)][:limit]
+
+
 def record_retry(state, ticker, stage, error, now, attempted=True):
     queue = state.setdefault('scan_retries', {})
     key = f'{stage}:{ticker}'

@@ -67,6 +67,16 @@ class DashboardTests(unittest.TestCase):
         queue=next(r.value for r in app.dataframe if 'next_retry_at' in r.value.columns)
         self.assertEqual(queue.iloc[0]['ticker'],'COST')
 
+    def test_qualifying_count_is_visible_even_when_verification_is_paused(self):
+        state=fresh_state(NOW.isoformat())
+        state['last_run']=dict(qualifying_contracts=56, verified_contracts=0,
+            coverage_blocked_contracts=56, selected_entries=0)
+        app=self.render(state)
+        metrics={m.label:m.value for m in app.metric}
+        self.assertEqual(metrics['Qualifying before coverage gate'],'56')
+        self.assertEqual(metrics['Verified entry contracts'],'0')
+        self.assertEqual(metrics['Contracts blocked by coverage / access'],'56')
+
 
 if __name__ == '__main__':
     unittest.main()

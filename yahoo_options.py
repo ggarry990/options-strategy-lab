@@ -6,6 +6,10 @@ its built-in authentication retry. We never construct or log cookies/crumbs.
 from contextvars import ContextVar
 from datetime import datetime, timezone
 from types import SimpleNamespace
+import gzip
+import json
+import os
+from pathlib import Path
 import time
 
 import pandas as pd
@@ -26,7 +30,7 @@ def ticker_for(symbol):
 
 
 class YahooOptions:
-    def __init__(self, state, spacing=.75, failure_limit=3, cooldown_minutes=15):
+    def __init__(self, state, spacing=.75, failure_limit=3, cooldown_minutes=15, cache_path=None, max_age=1800):
         self.state = state
         self.spacing = spacing
         self.failure_limit = failure_limit
@@ -36,6 +40,48 @@ class YahooOptions:
         self.requests = self.cache_hits = self.consecutive_failures = 0
         self.open_until = state.get('provider_health', {}).get('cooldown_until', 0)
         self.last_error = state.get('provider_health', {}).get('last_error', '')
+        self.cache_path = Path(cache_path) if cache_path else None
+        self.max_age = max_age
+        self.raw_chains = {}
+        if self.cache_path and self.cache_path.exists():
+            try:
+                saved = json.loads(gzip.decompress(self.cache_path.read_bytes()))
+                if not isinstance(saved, dict):
+                    raise ValueError('Invalid disposable cache')
+                for key, row in saved.items():
+                    if 0 <= time.time()-row['observed_at'] <= max_age:
+                        self.raw_chains[key] = row
+                        self._store_chain(row['ticker'], row['block'], row['observed_at'], row.get('put_status'))
+            except (ValueError, KeyError, TypeError, OSError, EOFError, OverflowError, AttributeError):
+                # A disposable quote cache cannot prevent portfolio recovery.
+                self.raw_chains, self.chains = {}, {}
+
+    def _store_chain(self, symbol, block, observed, put_status=None):
+        expiry = datetime.fromtimestamp(int(block['expirationDate']), timezone.utc).date().isoformat()
+        if not all(isinstance(block.get(side), list) for side in ('calls', 'puts')):
+            raise OptionDataError('Option response missing a calls or puts list', 'no_data')
+        if not block['calls'] and not block['puts']:
+            raise OptionDataError('Both option sides empty; expiry remains unconfirmed', 'no_data')
+        status = put_status or ('available' if block['puts'] else 'empty_unconfirmed')
+        frames = []
+        for side in ('calls', 'puts'):
+            frame = pd.DataFrame(block[side])
+            if 'lastTradeDate' in frame:
+                frame['lastTradeDate'] = pd.to_datetime(frame['lastTradeDate'], unit='s', utc=True, errors='coerce')
+            frames.append(frame)
+        self.chains[(symbol, expiry)] = SimpleNamespace(calls=frames[0], puts=frames[1],
+            observed_at=observed, put_status=status)
+        self.raw_chains[f'{symbol}:{expiry}'] = dict(ticker=symbol, block=block,
+            observed_at=observed, put_status=status)
+
+    def save_cache(self):
+        if self.cache_path:
+            rows = {k:v for k,v in self.raw_chains.items()
+                    if 0 <= time.time()-v['observed_at'] <= self.max_age}
+            self.cache_path.parent.mkdir(parents=True, exist_ok=True)
+            tmp = self.cache_path.with_suffix('.tmp')
+            tmp.write_bytes(gzip.compress(json.dumps(rows, allow_nan=False).encode(), mtime=0))
+            os.replace(tmp, self.cache_path)
 
     def __enter__(self):
         self.token = ACTIVE.set(self)
@@ -44,6 +90,10 @@ class YahooOptions:
     def __exit__(self, *args):
         self.state['provider_health'] = self.health()
         ACTIVE.reset(self.token)
+        try:
+            self.save_cache()
+        except (OSError, ValueError, TypeError):
+            print('Disposable option cache could not be saved; portfolio results are unaffected')
 
     def ticker(self, symbol):
         if symbol not in self.tickers:
@@ -92,14 +142,13 @@ class YahooOptions:
             for block in root.get('options', []):
                 block_expiry = datetime.fromtimestamp(int(block['expirationDate']), timezone.utc).date().isoformat()
                 returned.add((symbol, block_expiry))
-                frames = []
-                for side in ('calls', 'puts'):
-                    frame = pd.DataFrame(block.get(side) or [])
-                    if 'lastTradeDate' in frame:
-                        frame['lastTradeDate'] = pd.to_datetime(frame['lastTradeDate'], unit='s', utc=True, errors='coerce')
-                    frames.append(frame)
-                self.chains[(symbol, block_expiry)] = SimpleNamespace(
-                    calls=frames[0], puts=frames[1], observed_at=observed)
+                try:
+                    self._store_chain(symbol, block, observed)
+                except OptionDataError:
+                    if expiry is not None:
+                        raise
+                    # Valid expiry metadata may accompany an unusable default
+                    # chain; the requested expiry is checked separately.
             if expiry is not None and (symbol, expiry) not in returned:
                 raise OptionDataError('Requested expiry absent from Yahoo response', 'no_data')
             if expiry is None and not expirations:
@@ -128,10 +177,18 @@ class YahooOptions:
             return cached['dates']
         return self.fetch(symbol)
 
-    def chain(self, symbol, expiry, max_age=900):
+    def chain(self, symbol, expiry, max_age=None):
+        max_age = self.max_age if max_age is None else min(max_age, self.max_age)
         cached = self.chains.get((symbol, expiry))
         if cached and 0 <= time.time()-cached.observed_at <= max_age:
             self.cache_hits += 1
-            return cached
-        self.fetch(symbol, expiry)
+        else:
+            self.fetch(symbol, expiry)
+        if self.chains[(symbol, expiry)].put_status == 'empty_unconfirmed':
+            # One additional paced HTTP response, never a repeated cache read.
+            self.fetch(symbol, expiry)
+            checked = self.chains[(symbol, expiry)]
+            if checked.put_status == 'empty_unconfirmed':
+                checked.put_status = 'empty_confirmed'
+                self.raw_chains[f'{symbol}:{expiry}']['put_status'] = 'empty_confirmed'
         return self.chains[(symbol, expiry)]
