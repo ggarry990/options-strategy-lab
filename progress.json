@@ -1,1 +1,1 @@
-{"run_id": "35161301366", "started_at": "2026-09-16T23:13:42.509906+00:00", "updated_at": "2026-09-16T23:13:42.509920+00:00", "stage": "Automation success", "completed": 0, "total": 0, "ticker": null, "status": "success"}
+{"run_id": "35253704119", "started_at": "2026-09-17T17:36:25.425174+00:00", "updated_at": "2026-09-17T17:37:23.379939+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 11, "total": 180, "ticker": "CRWV", "status": "running"}
