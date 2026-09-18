@@ -1,1 +1,1 @@
-{"run_id": "35372003970", "started_at": "2026-09-18T17:03:10.576706+00:00", "updated_at": "2026-09-18T17:05:11.473629+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 148, "total": 180, "ticker": "BSX", "status": "running"}
+{"run_id": "35372003970", "started_at": "2026-09-18T17:03:10.576706+00:00", "updated_at": "2026-09-18T17:06:12.388890+00:00", "stage": "Stage 3 \u2014 full option scans", "completed": 18, "total": 120, "ticker": "PGR", "status": "running"}
