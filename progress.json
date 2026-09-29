@@ -1,1 +1,1 @@
-{"run_id": "36613001815", "started_at": "2026-09-29T18:35:33.575879+00:00", "updated_at": "2026-09-29T18:38:36.925254+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 132, "total": 180, "ticker": "FCX", "status": "running"}
+{"run_id": "36613001815", "started_at": "2026-09-29T18:35:33.575879+00:00", "updated_at": "2026-09-29T18:39:38.650386+00:00", "stage": "Stage 3 \u2014 full option scans", "completed": 0, "total": 120, "ticker": null, "status": "running"}
