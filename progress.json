@@ -1,1 +1,1 @@
-{"run_id": "36758267306", "started_at": "2026-09-30T18:24:27.375997+00:00", "updated_at": "2026-09-30T18:26:27.934871+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 120, "total": 180, "ticker": "JBHT", "status": "running"}
+{"run_id": "36758267306", "started_at": "2026-09-30T18:24:27.375997+00:00", "updated_at": "2026-09-30T18:27:29.506736+00:00", "stage": "Stage 3 \u2014 full option scans", "completed": 16, "total": 120, "ticker": "SW", "status": "running"}
