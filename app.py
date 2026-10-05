@@ -86,8 +86,9 @@ def load_results():
 def refresh_when_results_change(saved_at):
     try:
         latest = load_results()
-    except Exception:
-        return  # Keep the last visible results during a temporary refresh failure.
+    except Exception as exc:
+        st.warning(f'Automatic refresh unavailable: {exc}. Showing the last successfully loaded results; values may be stale.')
+        return
     if latest and latest.get('last_success') != saved_at:
         st.rerun()
 
@@ -131,6 +132,8 @@ with st.sidebar:
     st.link_button('Scheduler & run logs', 'https://github.com/ggarry990/options-strategy-lab/actions/workflows/paper.yml')
     if st.button('Refresh results', use_container_width=True):
         load_results.clear()
+        load_live_status.clear()
+        load_run_history.clear()
     st.divider()
     st.write('Each portfolio starts with $100,000. Original models allow five positions; separate variants allow eight, ten or fifteen. All retain 20% initial-capital collateral per stock and at least 10% cash reserve.')
     st.caption('No brokerage connection. New experiment portfolios are separate from the original manual lab.')
@@ -138,11 +141,20 @@ with st.sidebar:
 show_next_scan(display_timezone)
 show_live_status()
 
+refresh_error = None
 try:
     state = load_results()
+    if state is not None:
+        st.session_state['last_valid_results'] = state
+    elif st.session_state.get('last_valid_results') is not None:
+        raise ValueError('Saved results were temporarily not found')
 except Exception as exc:
-    st.error(f'Cannot fetch saved results: {exc}. Portfolio values are unavailable; this does not reset the experiment.')
-    st.stop()
+    refresh_error = str(exc)
+    state = st.session_state.get('last_valid_results')
+    if state is None:
+        st.error(f'Cannot fetch saved results: {exc}. No previously loaded results are available in this session. Try Refresh results again; portfolios have not been reset.')
+        st.stop()
+    st.warning(f'Refresh failed: {exc}. Showing the last successfully loaded results from {state.get("last_success") or "an unknown time"}; values may be stale. Try Refresh results again.')
 if state is None:
     st.info('Waiting for the first scheduled run. No simulated trades have been created yet.')
     st.table(pd.DataFrame([dict(Strategy=k, Name=v['name'], Entry_Index=v['minimum']) for k,v in STRATEGIES.items()]))
@@ -150,7 +162,8 @@ if state is None:
 
 last = state.get('last_run', {})
 stamp = state.get('last_success')
-refresh_when_results_change(stamp)
+if refresh_error is None:
+    refresh_when_results_change(stamp)
 if state.get('version') == 1:
     st.info('The updated scanner is installed, but the page is still showing results from the previous scanner. The new strategies and scan audit will appear after the first updated run saves. Results refresh automatically every minute.')
 else:
