@@ -82,7 +82,9 @@ def coverage_gate(report, config):
     good2 = sum(r.get('status') == 'checked' for r in report['stage2'])
     good3 = sum(r.get('status') == 'complete' for r in report['stage3'])
     ratio2, ratio3 = good2/s2 if s2 else 0., good3/s3 if s3 else 0.
-    allowed = ratio2 >= config.min_stage2_coverage and ratio3 >= config.min_stage3_coverage
-    return dict(allowed=allowed, stage2_successful=good2, stage2_planned=s2,
+    complete = ratio2 >= config.min_stage2_coverage and ratio3 >= config.min_stage3_coverage
+    return dict(allowed=True, coverage_ok=complete, stage2_successful=good2, stage2_planned=s2,
         stage3_complete=good3, stage3_planned=s3, stage2_ratio=ratio2, stage3_ratio=ratio3,
-        reason='' if allowed else 'New entries paused: insufficient completed scan coverage')
+        reason='', quality_warning='' if complete else
+        'QUALITY WARNING: incomplete planned scan coverage; ranking covers available data only. '
+        'Every entry still requires fresh exact quotes and all contract and portfolio checks.')

@@ -68,9 +68,13 @@ def exact_quote(p, today, chain_cache=None):
     row = match.iloc[0]
     bid, ask = float(row['bid']), float(row['ask'])
     traded = pd.Timestamp(row['lastTradeDate']).tz_convert(NY)
-    if not (ask > 0 and bid >= 0 and ask >= bid and traded.date() == today):
+    if not (valid_number(bid) and valid_number(ask) and ask > 0 and bid >= 0 and ask >= bid and traded.date() == today):
         raise ValueError('Invalid spread or no trade today; keep prior valuation')
-    return dict(ask=ask, bid=bid, observed_at=observed)
+    try:
+        interest = float(row.get('openInterest', float('nan')))
+    except (ValueError, TypeError):
+        interest = None
+    return dict(ask=ask, bid=bid, observed_at=observed, open_interest=interest)
 
 def expiry_close(p, now):
     # The previous session handles rare expirations falling on a market holiday.
@@ -144,14 +148,19 @@ def _run_loaded(path, config, now, state, reader, progress=None):
             warnings.append(f'{contract}: {exc}')
     # Recompute age after scanning and position checks; a failed universe gates entries.
     candidates = rolling_ranking(state.get('option_cache', {}), time.time(), config, set(audit['eligible_symbols']))
+    for c in candidates:
+        c['pre_gate_qualified'] = not c['rejections']
     qualifying_contracts = sum(not c['rejections'] for c in candidates)
     gate = audit.get('entry_gate', dict(allowed=False, reason='Market closed' if not is_open else 'New entries paused: scan coverage unavailable'))
+    if gate.get('quality_warning'):
+        warnings.append(gate['quality_warning'])
+        report['status'] = 'Completed with data warnings'
     if not gate['allowed']:
         for c in candidates:
             c['rejections'].append(gate['reason'])
         if is_open:
             warnings.append(gate['reason'])
-            report['status'] = 'New entries paused: incomplete scan coverage'
+            report['status'] = 'New entries paused: '+gate['reason']
     # Interleave rankings so verification budgets do not privilege the 30/70 model.
     queues = [sorted((c for c in candidates if not c['rejections']),
                      key=lambda c: (-score_candidate(c, w), c['contract'])) for w in (30, 40, 50, 60)]
@@ -179,12 +188,19 @@ def _run_loaded(path, config, now, state, reader, progress=None):
             continue
         try:
             q = exact_quote(c, finished.date(), verification_chains)
-            if q['bid'] < c['bid'] or q['ask'] > c['ask']:
+            if not valid_number(q.get('observed_at')) or not 0 <= time.time()-q['observed_at'] <= 45:
+                c['rejections'].append('stale data: exact quote verification')
+            elif not valid_number(q.get('open_interest')) or q['open_interest'] < config.min_open_interest:
+                c['rejections'].append('open interest on entry verification')
+            elif not (valid_number(q.get('bid')) and valid_number(q.get('ask'))
+                      and q['ask'] >= q['bid'] > 0):
+                c['rejections'].append('invalid exact bid/ask')
+            elif q['bid'] < c['bid'] or q['ask'] > c['ask']:
                 c['rejections'].append('quote changed adversely: rescan required')
             elif q['bid'] <= 0 or (q['ask']-q['bid'])/q['ask'] > config.max_spread:
                 c['rejections'].append('spread on entry verification')
             else:
-                c['verified_at'] = q.get('observed_at', time.time())
+                c['verified_at'] = q['observed_at']
         except Exception as exc:
             c['rejections'].append('exact quote unavailable')
             warnings.append(f"Entry {c['contract']}: {exc}")
@@ -199,6 +215,10 @@ def _run_loaded(path, config, now, state, reader, progress=None):
         c['age_minutes'] = round((time.time()-c['fetched'])/60, 2)
         if not 0 <= time.time()-c['fetched'] <= config.freshness_minutes*60:
             c['rejections'].append('stale data: cache freshness')
+        if 'verified_at' in c and not 0 <= time.time()-c['verified_at'] <= 45:
+            c['rejections'].append('stale data: exact quote verification')
+        if not still_open:
+            c['rejections'].append('entry window closed')
         if not c['rejections'] and 'verified_at' not in c:
             c['rejections'].append('exact quote unverified')
         c['rejections'] = list(dict.fromkeys(c['rejections']))
@@ -236,6 +256,8 @@ def _run_loaded(path, config, now, state, reader, progress=None):
         execution=[r for r in state['entry_audit'] if r['decision'] == 'selected'],
         path=['universe', 'stage1', 'stage2', 'stage3', 'rolling_ranking', 'portfolio_constraints', 'execution'])
     report['selected_entries'] = len(audit['execution'])
+    report['strategy_diagnostics'] = state['strategy_diagnostics']
+    audit['strategy_diagnostics'] = state['strategy_diagnostics']
     progress('Saving audit and results')
     # Each complete audit is an immutable file. State retains the latest metadata.
     audit_name = 'audits/'+now.strftime('%Y%m%dT%H%M%S%z')+'.json.gz'
@@ -258,7 +280,8 @@ def _run_loaded(path, config, now, state, reader, progress=None):
     path.parent.mkdir(parents=True, exist_ok=True)
     audit_path = path.parent/audit_name
     audit_path.parent.mkdir(parents=True, exist_ok=True)
-    audit_path.write_bytes(gzip.compress(json.dumps(clean(audit), allow_nan=False).encode('utf-8'), mtime=0))
+    with audit_path.open('xb') as handle:
+        handle.write(gzip.compress(json.dumps(clean(audit), allow_nan=False).encode('utf-8'), mtime=0))
     tmp = path.with_suffix('.tmp')
     tmp.write_text(json.dumps(state, indent=2, allow_nan=False), encoding='utf-8')
     os.replace(tmp, path)

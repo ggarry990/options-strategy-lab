@@ -151,12 +151,15 @@ class RecoveryTests(TestCase):
         report = dict(stage2_planned=list(range(180)),stage3_planned=list(range(100)),
             stage2=[dict(status='checked')]*67,stage3=[dict(status='complete')]*100)
         gate = coverage_gate(report,ScanConfig())
-        self.assertFalse(gate['allowed'])
+        self.assertTrue(gate['allowed'])
+        self.assertFalse(gate['coverage_ok'])
+        self.assertTrue(gate['quality_warning'])
         self.assertEqual(gate['stage2_ratio'],67/180)
         report['stage2'] = [dict(status='checked')]*162
         self.assertTrue(coverage_gate(report,ScanConfig())['allowed'])
         report['stage3'] = [dict(status='complete')]*89
-        self.assertFalse(coverage_gate(report,ScanConfig())['allowed'])
+        self.assertTrue(coverage_gate(report,ScanConfig())['allowed'])
+        self.assertFalse(coverage_gate(report,ScanConfig())['coverage_ok'])
 
     def test_failed_stock_gets_reserved_slot_and_recovers(self):
         symbols = [f'S{i:03}' for i in range(220)]

@@ -93,18 +93,31 @@ def rotate(symbols, count, cursor):
     return selected, (start + len(selected)) % len(names)
 
 
+def select_atm_expiry(expirations, today):
+    """Prefer 30–45 days; otherwise nearest to 37.5 within 21–60 days."""
+    suitable = [(abs((pd.Timestamp(e).date()-today).days-37.5), e,
+                 (pd.Timestamp(e).date()-today).days) for e in expirations
+                if 21 <= (pd.Timestamp(e).date()-today).days <= 60]
+    preferred = [r for r in suitable if 30 <= r[2] <= 45]
+    if not suitable:
+        raise ValueError('No suitable ATM expiry within 21–60 DTE')
+    _, expiry, dte = min(preferred or suitable)
+    return expiry, dte, ('preferred 30–45 DTE' if preferred else
+                        'fallback: no 30–45 DTE expiry; nearest to 37.5 within 21–60 DTE')
+
+
 def atm_snapshot(row, today):
     symbol, spot, hv = row['Ticker'], row['Stock Price'], row['HV30']
     ticker = ticker_for(symbol)
     expirations, error = get_option_expirations(ticker, symbol)
-    choices = [(abs((pd.Timestamp(e).date()-today).days-37.5), e) for e in expirations
-               if 30 <= (pd.Timestamp(e).date()-today).days <= 45]
-    if not choices:
-        raise ValueError(error or 'No representative expiry at 30–45 DTE')
-    expiry = min(choices)[1]
+    if error:
+        raise ValueError(error)
+    expiry, expiry_dte, expiry_reason = select_atm_expiry(expirations, today)
     chain, error = get_option_chain(ticker, symbol, expiry)
     if chain is None:
-        raise ValueError(error)
+        # Do not hide a Yahoo failure by trying another expiry.
+        return dict(ticker=symbol, expiry=expiry, expiry_dte=expiry_dte,
+                    expiry_reason=expiry_reason, status='unavailable', error=error)
     iv = float(get_atm_iv(chain, spot))
     spreads, interests, volumes = [], [], []
     for side in (chain.calls, chain.puts):
@@ -122,7 +135,8 @@ def atm_snapshot(row, today):
     # Richness, discounted by quoted ATM spread; raw IV never determines rank.
     rank_score = richness * (1-spread) if richness is not None and spread is not None else None
     earnings = get_earnings_dates(ticker)
-    return clean(dict(ticker=symbol, expiry=expiry, atm_iv=iv, hv30=hv, iv_richness=richness,
+    return clean(dict(ticker=symbol, expiry=expiry, expiry_dte=expiry_dte,
+        expiry_reason=expiry_reason, atm_iv=iv, hv30=hv, iv_richness=richness,
         atm_spread=spread, atm_open_interest=sum(x for x in interests if math.isfinite(x)) if any(math.isfinite(x) for x in interests) else None,
         atm_volume=sum(x for x in volumes if math.isfinite(x)) if any(math.isfinite(x) for x in volumes) else None,
         next_earnings=next_earnings_date(earnings, today),
@@ -176,6 +190,12 @@ def rolling_ranking(cache, now_epoch, config, eligible_symbols):
     for ticker, entry in cache.items():
         for saved in entry.get('contracts', []):
             c = dict(saved, rejections=list(saved.get('rejections', [])))
+            # Verification belongs to this execution pass, never a saved cache.
+            c.pop('verified_at', None)
+            if c.get('earnings_known') is not True:
+                c['rejections'].append('earnings unknown')
+            if c.get('earnings') != 'No':
+                c['rejections'].append('earnings in period')
             age = (now_epoch-c['fetched'])/60
             c['age_minutes'] = round(age, 2)
             c['dte'] = (datetime.fromisoformat(c['expiry']).date()-today).days
@@ -279,7 +299,9 @@ def scan_pipeline(state, universe, now, config, started, progress=None):
             if snapshot.get('status') == 'checked':
                 clear_retry(state, symbol, 'stage2')
             else:
-                record_retry(state, symbol, 'stage2', 'ATM IV or liquidity data incomplete', time.time())
+                error = snapshot.get('error') or 'ATM IV or liquidity data incomplete'
+                report['warnings'].append(f'{symbol} ATM: {error}')
+                record_retry(state, symbol, 'stage2', error, time.time())
         except Exception as exc:
             report['stage2'].append(dict(ticker=symbol, status='unavailable', error=str(exc)))
             report['warnings'].append(f'{symbol} ATM: {exc}')
@@ -362,6 +384,8 @@ def scan_pipeline(state, universe, now, config, started, progress=None):
     report['retry_queue'] = list(state.get('scan_retries', {}).values())
     if ACTIVE.get():
         report['provider_health'] = ACTIVE.get().health()
+        if ACTIVE.get().paused:
+            report['entry_gate'].update(allowed=False, reason='Yahoo access cooldown: new entries paused')
     report['missed_opportunities'] = missed_opportunities(scanned_rows, primary, rotating, config.material_improvement)
     report['rolling_ranking'] = rolling_ranking(cache, time.time(), config, set(eligible))
     report['eligible_symbols'] = eligible

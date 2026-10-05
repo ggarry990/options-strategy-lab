@@ -4,6 +4,7 @@ on:
     - cron: '7,37 13-21 * * 1-5'
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - '.github/workflows/paper.yml'
 permissions:
@@ -13,6 +14,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   simulate:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -50,6 +52,7 @@ jobs:
         env:
           SCAN_PROGRESS_PATH: ${{ runner.temp }}/scan-progress.json
         run: |
+          python -c "from scan_progress import Progress; Progress()('Preparing evaluation')"
           python scan_progress.py --publish "$SCAN_PROGRESS_PATH" &
           publisher=$!
           trap 'kill "$publisher" 2>/dev/null || true' EXIT

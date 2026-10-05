@@ -8,7 +8,7 @@ from unittest.mock import patch, Mock
 import streamlit as st
 from streamlit.testing.v1 import AppTest
 
-from paper_core import fresh_state
+from paper_core import fresh_state, run_cycle, BASE_STRATEGIES
 from test_pipeline import NOW, candidate, entry, CFG
 from dataclasses import asdict
 from scan_recovery import record_retry
@@ -76,6 +76,30 @@ class DashboardTests(unittest.TestCase):
         self.assertEqual(metrics['Qualifying before coverage gate'],'56')
         self.assertEqual(metrics['Verified entry contracts'],'0')
         self.assertEqual(metrics['Contracts blocked by coverage / access'],'56')
+
+    def test_quality_warning_and_model_metrics_render(self):
+        state = run_cycle(fresh_state(NOW.isoformat()),
+            [candidate(verified_at=NOW.timestamp(), pre_gate_qualified=True)], {}, {}, NOW.isoformat(), 'one')
+        state['last_run'] = dict(status='Completed with data warnings',
+            entry_gate=dict(allowed=True, quality_warning='QUALITY WARNING: incomplete scan coverage'))
+        app = self.render(state)
+        self.assertTrue(any('QUALITY WARNING' in w.value for w in app.warning))
+        table = next(r.value for r in app.dataframe if 'Open / limit' in r.value.columns).set_index('Model')
+        self.assertEqual(table.loc['A_P10','Open / limit'], '1 / 10')
+        self.assertEqual(table.loc['A_P10','Remaining slots'], 9)
+        self.assertEqual(table.loc['A_P10','Executed opens'], 1)
+        self.assertEqual(table.loc['A','Verified contracts'], 1)
+        self.assertTrue(any('missed/delayed counts are unknown' in w.value for w in app.warning))
+
+    def test_version_two_portfolios_render_without_initializing_variants(self):
+        state = fresh_state(NOW.isoformat())
+        state['version'] = 2
+        state['models'] = {k:v for k,v in state['models'].items() if k in BASE_STRATEGIES}
+        app = self.render(state)
+        table = next(r.value for r in app.dataframe if 'Open / limit' in r.value.columns)
+        self.assertEqual(len(table), 13)
+        rules = next(t.value for t in app.table if 'Portfolio status' in t.value.columns)
+        self.assertEqual(rules.loc[rules['Strategy']=='A_P8', 'Portfolio status'].iloc[0], 'Waiting for first saved run')
 
 
 if __name__ == '__main__':

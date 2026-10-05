@@ -304,14 +304,14 @@ class RunnerTests(unittest.TestCase):
             with patch('auto_runner.datetime', Clock), patch('auto_runner.session', return_value=sched), \
                  patch('auto_runner.load_universe', return_value={'symbols':['TEST']}), \
                  patch('auto_runner.scan_pipeline', side_effect=scan), patch('auto_runner.time.time', return_value=EPOCH), \
-                 patch('auto_runner.exact_quote', return_value={'bid':2.,'ask':2.2}):
+                 patch('auto_runner.exact_quote', return_value={'bid':2.,'ask':2.2, 'observed_at':EPOCH, 'open_interest':500}):
                 run(path, CFG)
                 saved = json.loads(path.read_text())
                 run(path, CFG)  # Same slot must not append another audit or trade.
             self.assertEqual(saved, json.loads(path.read_text()))
             self.assertEqual(saved['version'], VERSION)
             self.assertEqual(saved['models']['A']['cash'], 100199.)
-            self.assertEqual(len(saved['last_audit']['execution']), 13)
+            self.assertEqual(len(saved['last_audit']['execution']), len(STRATEGIES))
             self.assertTrue((path.parent/saved['last_run']['audit_file']).exists())
             self.assertEqual(saved['last_audit']['path'][-1], 'execution')
 

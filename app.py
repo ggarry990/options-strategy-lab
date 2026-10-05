@@ -8,7 +8,7 @@ import requests
 import streamlit as st
 from paper_core import STRATEGIES, CAPITAL, VERSION
 from pipeline import ScanConfig, rolling_ranking
-from scan_schedule import next_events
+from scan_schedule import next_events, schedule_diagnostics
 from scan_progress import progress_view
 from scan_recovery import coverage_history
 
@@ -23,7 +23,7 @@ def load_live_status():
     workflow, progress = {}, {}
     try:
         response = requests.get('https://api.github.com/repos/ggarry990/options-strategy-lab/actions/workflows/paper.yml/runs',
-            params={'per_page':1}, timeout=8)
+            params={'per_page':1, 'branch':'main'}, timeout=8)
         response.raise_for_status()
         runs = response.json().get('workflow_runs', [])
         workflow = runs[0] if isinstance(runs, list) and runs and isinstance(runs[0], dict) else {}
@@ -38,6 +38,18 @@ def load_live_status():
     except Exception:
         pass
     return workflow, progress
+
+
+@st.cache_data(ttl=60, show_spinner=False)
+def load_run_history():
+    try:
+        response = requests.get('https://api.github.com/repos/ggarry990/options-strategy-lab/actions/workflows/paper.yml/runs',
+            params={'per_page':100, 'branch':'main'}, timeout=8)
+        response.raise_for_status()
+        runs = response.json().get('workflow_runs', [])
+        return runs if isinstance(runs, list) else []
+    except Exception:
+        return []
 
 
 @st.fragment(run_every='60s')
@@ -65,7 +77,7 @@ def load_results():
         return None
     r.raise_for_status()
     data = r.json()
-    if data.get('version') not in (1, VERSION) or not set('ABCDEFGHIJ').issubset(data.get('models', {})) or set(data.get('models', {}))-set(STRATEGIES):
+    if data.get('version') not in (1, 2, VERSION) or not set('ABCDEFGHIJ').issubset(data.get('models', {})) or set(data.get('models', {}))-set(STRATEGIES):
         raise ValueError('Unexpected results format')
     return data
 
@@ -113,14 +125,14 @@ def load_audit(filename):
 
 with st.sidebar:
     st.header('Automatic schedule')
-    st.write('Automated every 30 minutes during US market hours. This runs on GitHub even when this page and your computer are closed.')
+    st.write('Scheduled every 30 minutes in the configured weekday window. GitHub may delay or skip triggers; your computer and this page can be closed.')
     st.caption('Target minutes: :07 and :37. The slower cadence reduces Yahoo request pressure. Runs cannot overlap. After-close runs check settlements rather than scanning new opportunities.')
     display_timezone = st.selectbox('Schedule timezone', ['America/New_York', 'America/Edmonton', 'UTC'])
     st.link_button('Scheduler & run logs', 'https://github.com/ggarry990/options-strategy-lab/actions/workflows/paper.yml')
     if st.button('Refresh results', use_container_width=True):
         load_results.clear()
     st.divider()
-    st.write('Each portfolio starts with $100,000. Maximum five positions, 20% per stock, at least 10% cash reserve.')
+    st.write('Each portfolio starts with $100,000. Original models allow five positions; separate variants allow eight or ten. All retain 20% initial-capital collateral per stock and at least 10% cash reserve.')
     st.caption('No brokerage connection. New experiment portfolios are separate from the original manual lab.')
 
 show_next_scan(display_timezone)
@@ -153,12 +165,14 @@ if 'qualifying_contracts' in last:
     a.metric('Qualifying before coverage gate', last['qualifying_contracts'])
     b.metric('Contracts blocked by coverage / access', last.get('coverage_blocked_contracts', 0))
     c.metric('Selected portfolio entries', last.get('selected_entries', 0))
-    st.caption('Qualifying contracts pass data and contract rules before the run-wide coverage check. Verification and portfolio constraints can reduce this count; selected entries count each portfolio separately.')
+    st.caption('Qualifying contracts pass preliminary data and contract rules. Coverage shortfalls warn; fresh exact verification and portfolio constraints determine entry. Historical coverage-blocked counts remain as recorded.')
 else:
     st.caption('This older run did not save the pre-gate qualifying count. Zero verified contracts does not mean no opportunities were found.')
 st.caption(f"Last saved: {stamp} • Last run started: {last.get('time', 'Unknown')} • Experiment started: {state['created']} • All times include their UTC offset.")
 gate = last.get('entry_gate')
 if gate and last.get('status') != 'Market closed':
+    if gate.get('quality_warning'):
+        st.warning(gate['quality_warning'])
     if not gate['allowed']:
         st.warning(gate['reason']+'. Existing positions are still managed. Missing quotes are not evidence that these stocks lack opportunities.')
     st.caption(f"Planned-scan coverage: ATM {gate.get('stage2_successful', 0)}/{gate.get('stage2_planned', 0)}; full scans {gate.get('stage3_complete', 0)}/{gate.get('stage3_planned', 0)}. This is coverage of the planned sample, not the entire index universe.")
@@ -170,6 +184,26 @@ st.caption('Full index universe → underlying diagnostics → ATM IV richness �
 
 overview, holdings, decisions, scanning, rules, health = st.tabs(['Results over time','Current holdings','Trades & decisions','Scan & selection audit','Strategy rules','Data & schedule'])
 with overview:
+    st.subheader('Per-model entry diagnostics — last saved cycle')
+    diagnostics = state.get('strategy_diagnostics', last.get('strategy_diagnostics', {}))
+    metrics, reasons = [], []
+    for key, model in state['models'].items():
+        detail = diagnostics.get(key, {})
+        limit = STRATEGIES[key]['max_positions']
+        metrics.append({'Model':key, 'Started':model.get('created', state['created']),
+            'Open / limit':f"{len(model['positions'])} / {limit}",
+            'Remaining slots':max(0, limit-len(model['positions'])),
+            'Qualifying before gate':detail.get('qualifying_contracts'),
+            'Verified contracts':detail.get('verified_contracts'),
+            'Executed opens':detail.get('executed_opens'),
+            'Rejected contracts':detail.get('rejected_contracts'),
+            'Entry pause':detail.get('entry_block_reason', '')})
+        reasons.extend({'Model':key, 'Reason':reason, 'Contracts':count}
+                       for reason, count in detail.get('rejection_counts', {}).items())
+    st.dataframe(pd.DataFrame(metrics), use_container_width=True, hide_index=True)
+    st.caption('Qualifying and verified counts apply each model’s score and DTE rules, before portfolio capacity. Rejection counts include all inspected contracts and can overlap across reasons. Blank historical metrics were not recorded. New variants appear after the first updated runner save; start dates differ.')
+    if reasons:
+        st.dataframe(pd.DataFrame(reasons), use_container_width=True, hide_index=True)
     rows, points = [], []
     for key,m in state['models'].items():
         nav = m['history'][-1]['nav'] if m['history'] else CAPITAL
@@ -203,7 +237,7 @@ with decisions:
     st.dataframe(pd.DataFrame(list(reversed(m['events']))[:500]),use_container_width=True,hide_index=True)
     st.download_button('Download all portfolios & history',json.dumps(state,indent=2),file_name='automated_paper_results.json',mime='application/json')
 with rules:
-    st.table(pd.DataFrame([{'Strategy':k,'Rule':v['name'],'Minimum entry Index':v['minimum'], 'Return / protection':f"{v['return_weight']}/{100-v['return_weight']}", 'Portfolio status':'Initialized' if k in state['models'] else 'Waiting for first saved run'} for k,v in STRATEGIES.items()]))
+    st.table(pd.DataFrame([{'Strategy':k,'Rule':v['name'],'Position limit':v['max_positions'],'Minimum entry Index':v['minimum'], 'Return / protection':f"{v['return_weight']}/{100-v['return_weight']}", 'Portfolio status':'Initialized' if k in state['models'] else 'Waiting for first saved run'} for k,v in STRATEGIES.items()]))
     st.write('Default entry scan: 21–60 DTE OTM puts, $3,000–$20,000 collateral. A–J retain 30% return / 70% protection. A40, A50 and A60 use the same rules as A with only entry weights changed. Scores are weighted harmonic means of return/day relative to 0.10%/day and cushion/expected move relative to 1.0. Expected move uses the larger of HV30 and ATM-IV moves. Each strategy ranks all cached contracts independently.')
     st.write('Baseline put execution excludes earnings in the holding period and unknown earnings timing. Earnings candidates remain visible with their scores. Entries require positive bids, spread at most 25% of ask, at least 100 open interest and a trade today. Saved run configuration shows the actual thresholds.')
     st.caption('A–J retain their historical portfolios. New weight portfolios start when migration runs; compare overlapping periods, since their start dates and capital paths differ. The entry pipeline change is recorded in migration history.')
@@ -212,6 +246,17 @@ with rules:
     st.write('At expiry, puts use cash-equivalent intrinsic settlement at the expiry session’s unadjusted stock close. This experiment does not model physical assignment, covered calls, dividends, interest, early assignment or exercise fees. It differs from a full wheel portfolio.')
     st.write('The separate legacy covered-call scanner allows earnings and labels that policy on its candidates. No automatic earnings exclusion is added to calls; covered-call execution is not part of these automated portfolios.')
 with health:
+    cadence = schedule_diagnostics(load_run_history(), datetime.now(timezone.utc))
+    st.subheader('Observed GitHub schedule')
+    if cadence['available']:
+        st.write(f"{cadence['unobserved_windows']} of {cadence['expected_windows']} completed cron windows have no observed scheduled launch.")
+        st.caption(f"History examined since {cadence['since']}. Each window lasts 30 minutes plus a 10-minute reporting grace period. Includes all weekday cron slots, including after-close and holidays. A late launch cannot be assigned reliably to its intended trigger; empty windows mean missed OR delayed, not proven skipped. Queue delay is creation-to-start only, not total cron delay. At most 100 returned runs and seven days are examined.")
+        if cadence['unobserved_windows']:
+            st.warning('Scheduled launches are missing or delayed in the observed history. GitHub cron is not guaranteed.')
+        st.dataframe(pd.DataFrame(cadence['windows']), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(cadence['runs']), use_container_width=True, hide_index=True)
+    else:
+        st.warning('Workflow history unavailable; missed/delayed counts are unknown.')
     st.json(last)
     st.write('Universe source', state.get('universe',{}).get('source','Not loaded yet'))
     st.dataframe(pd.DataFrame(list(reversed(state.get('runs',[])))),use_container_width=True,hide_index=True)
@@ -262,6 +307,11 @@ with scanning:
         st.info('Full scan audits appear after the updated runner saves a market-hours run.')
     else:
         summary = audit.get('summary', last)
+        audit_gate = audit.get('entry_gate', summary.get('entry_gate', {}))
+        if audit_gate.get('quality_warning'):
+            st.warning(audit_gate['quality_warning'])
+        elif audit_gate.get('allowed') is False and audit_gate.get('reason'):
+            st.warning('Recorded entry pause: '+audit_gate['reason'])
         metrics = st.columns(6)
         for col, label, field in zip(metrics,
                 ['Total universe', 'Stage 1 eligible', 'ATM names checked', 'Full scans completed', 'Fresh eligible tickers at run', 'Verified contracts'],
@@ -278,6 +328,7 @@ with scanning:
             st.dataframe(pd.DataFrame(audit.get('stage1', [])), use_container_width=True, hide_index=True)
         with st.expander('Stage 2 — ATM IV, IV richness, liquidity and earnings'):
             st.caption('Prescreen score = ATM IV / HV30 × (1 − ATM spread/ask). Earnings are labeled, never removed here. Missing data stays unavailable. The underlying proxy orders the first-stage budget only.')
+            st.caption('ATM expiry prefers 30–45 DTE, then the nearest to 37.5 days within 21–60 DTE. Selected expiry, DTE and reason are recorded; a Yahoo failure does not trigger substitution.')
             st.dataframe(pd.DataFrame(audit.get('stage2', [])), use_container_width=True, hide_index=True)
             st.write('Planned but deferred', audit.get('stage2_deferred', []))
         with st.expander('Stage 3 — full scans, rotation, and all observed contracts'):
@@ -298,6 +349,9 @@ with scanning:
         st.dataframe(pd.json_normalize([dict(r, rank=i) for i, r in enumerate(ranking, 1)]), use_container_width=True, hide_index=True)
         st.subheader('Portfolio constraints and selected contracts')
         strategy = st.selectbox('Entry decision strategy', list(state['models']), format_func=lambda k:k+' · '+STRATEGIES[k]['name'])
+        model_metrics = audit.get('strategy_diagnostics', {}).get(strategy)
+        if model_metrics:
+            st.json(model_metrics)
         decisions_for_model = [r for r in audit.get('portfolio_constraints', []) if r['strategy'] == strategy]
         selected = [r for r in decisions_for_model if r['decision'] == 'selected']
         if selected:

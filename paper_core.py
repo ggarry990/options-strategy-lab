@@ -2,10 +2,11 @@
 from __future__ import annotations
 import copy
 import math
+from collections import Counter
 from scoring import score_candidate
 from datetime import datetime, date, timezone
 
-VERSION = 2
+VERSION = 3
 CAPITAL = 100_000.0
 FEE = 1.0
 STRATEGIES = {
@@ -22,18 +23,26 @@ STRATEGIES = {
 }
 for _cfg in STRATEGIES.values():
     _cfg['return_weight'] = 30
+    _cfg['max_positions'] = 5
 # Same entry threshold and exit as A; only the entry weight differs.
 for _weight in (40, 50, 60):
     STRATEGIES[f'A{_weight}'] = dict(STRATEGIES['A'], return_weight=_weight,
         name=f'Hold to expiry | {_weight}% return / {100-_weight}% protection')
 
+BASE_STRATEGIES = tuple(STRATEGIES)
+for _key in BASE_STRATEGIES:
+    for _limit in (8, 10):
+        STRATEGIES[f'{_key}_P{_limit}'] = dict(STRATEGIES[_key], max_positions=_limit,
+            name=f"{STRATEGIES[_key]['name']} | {_limit} positions")
+
 
 def migrate_state(state, now):
     """Add portfolios and metadata, never reconstruct existing balances/history."""
-    if state.get('version') not in (1, VERSION):
+    if state.get('version') not in (1, 2, VERSION):
         raise ValueError('Unknown state version; refusing to reset portfolios')
     models = state.get('models', {})
-    if not set('ABCDEFGHIJ').issubset(models) or set(models) - set(STRATEGIES):
+    expected = set('ABCDEFGHIJ') if state['version'] == 1 else set(BASE_STRATEGIES)
+    if not expected.issubset(models) or set(models) - set(STRATEGIES):
         raise ValueError('Missing original or unknown portfolios; refusing to reset')
     required = {'cash', 'positions', 'closed', 'events', 'history', 'fees', 'peak', 'max_drawdown'}
     if any(not required.issubset(m) for m in models.values()):
@@ -47,7 +56,7 @@ def migrate_state(state, now):
             added.append(key)
     if state['version'] != VERSION or added:
         result.setdefault('migrations', []).append(dict(time=now, from_version=state['version'],
-            to_version=VERSION, added_models=added, note='Existing portfolios unchanged; broader entry pipeline begins now'))
+            to_version=VERSION, added_models=added, note='Existing portfolios unchanged; new independent position-limit portfolios start now'))
     result['version'] = VERSION
     result.setdefault('pipeline_started', now)
     result.setdefault('option_cache', {})
@@ -103,9 +112,13 @@ def run_cycle(state, candidates, quotes, settlements, now, slot, allow_entries=T
         return state
     state = copy.deepcopy(state)
     state['entry_audit'] = []
+    state['strategy_diagnostics'] = {}
     today = date.fromisoformat(now[:10])
     for key, model in state['models'].items():
         cfg = STRATEGIES[key]
+        limit = cfg['max_positions']
+        if type(limit) is not int or limit < 1:
+            raise ValueError('max_positions must be a positive integer')
         touched = set()
         for p in list(model['positions']):
             reason, cost, fee = None, None, FEE
@@ -135,12 +148,22 @@ def run_cycle(state, candidates, quotes, settlements, now, slot, allow_entries=T
                 reason = 'Hold: no exit threshold reached' if fresh else 'Hold: fresh quote / expiry close unavailable'
                 model['events'].append(dict(time=now, action='HOLD', ticker=p['ticker'], contract=p['contract'], reason=reason))
         ranked = [dict(c, score=score_candidate(c, cfg['return_weight']), return_weight=cfg['return_weight']) for c in candidates]
+        qualified = [c for c in ranked if c.get('pre_gate_qualified', not c.get('rejections'))
+                     and c['score'] >= cfg['minimum'] and c['dte'] > cfg.get('time_exit', 0)]
+        metrics = dict(strategy=key, started=model.get('created', state['created']),
+            position_limit=limit, open_before=len(model['positions']),
+            slots_before=max(0, limit-len(model['positions'])),
+            qualifying_contracts=len(qualified),
+            verified_contracts=sum('verified_at' in c and not c.get('rejections') for c in qualified),
+            executed_opens=0, rejected_contracts=0, rejection_counts={},
+            entry_block_reason=(entry_block_reason or 'entry window closed') if not allow_entries else '')
+        rejection_counts = Counter()
         for rank, c in enumerate(sorted(ranked, key=lambda x: (-x['score'], x['contract'])), 1):
             reasons = list(c.get('rejections', []))
             if not allow_entries:
                 reasons.append(entry_block_reason or 'entry window closed')
-            if len(model['positions']) >= 5:
-                reasons.append('concentration: five-position limit')
+            if len(model['positions']) >= limit:
+                reasons.append(f'concentration: {limit}-position limit')
             held = {p['ticker'] for p in model['positions']}
             reserve = sum(p['strike']*100 for p in model['positions'])
             required = c['strike']*100
@@ -156,16 +179,24 @@ def run_cycle(state, candidates, quotes, settlements, now, slot, allow_entries=T
                 reasons.append('collateral: cash reserve')
             if c['dte'] <= cfg.get('time_exit', 0):
                 reasons.append('DTE at exit threshold')
+            reasons = list(dict.fromkeys(reasons))
             state['entry_audit'].append(dict(strategy=key, rank=rank, ticker=c['ticker'],
                 contract=c['contract'], score=c['score'], return_weight=cfg['return_weight'],
                 decision='rejected' if reasons else 'selected', reasons=reasons))
             if reasons:
+                metrics['rejected_contracts'] += 1
+                rejection_counts.update(reasons)
                 continue
+            metrics['executed_opens'] += 1
             p = dict(c, entered=now, credit=c['bid'], mark=c['ask'], mark_time=now)
             model['positions'].append(p)
             model['cash'] += c['bid']*100-FEE
             model['fees'] += FEE
             model['events'].append(dict(time=now, action='OPEN', ticker=c['ticker'], contract=c['contract'], reason=f"Opportunity Index {c['score']:.1f} >= {cfg['minimum']}; highest eligible rank", credit=c['bid']))
+        metrics.update(open_positions=len(model['positions']),
+            remaining_slots=max(0, limit-len(model['positions'])),
+            rejection_counts=dict(sorted(rejection_counts.items())))
+        state['strategy_diagnostics'][key] = metrics
         liability = sum(p['mark']*100 for p in model['positions'])
         nav = model['cash']-liability
         stale = sum(p.get('mark_time') != now for p in model['positions'])
