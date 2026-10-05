@@ -52,31 +52,47 @@ class ExpiryTests(unittest.TestCase):
 
 
 class PositionExperimentTests(unittest.TestCase):
+    def test_fifteen_position_migration_preserves_existing_five_eight_ten_models(self):
+        old = run_cycle(fresh_state(NOW.isoformat()), [candidate()], {}, {}, NOW.isoformat(), 'one')
+        old['models'] = {k:v for k,v in old['models'].items() if not k.endswith('_P15')}
+        before = copy.deepcopy(old)
+        start = (NOW+timedelta(days=1)).isoformat()
+        new = migrate_state(old, start)
+        self.assertEqual(old, before)
+        for k, model in old['models'].items():
+            self.assertEqual(new['models'][k], model)
+        self.assertEqual(set(new['migrations'][-1]['added_models']), {k+'_P15' for k in BASE_STRATEGIES})
+        for k in BASE_STRATEGIES:
+            self.assertEqual(new['models'][k+'_P15']['created'], start)
+            self.assertEqual(new['models'][k+'_P15']['cash'], CAPITAL)
+            self.assertEqual(new['models'][k+'_P15']['positions'], [])
+        self.assertEqual(new, migrate_state(new, start))
+
     def test_all_variants_differ_only_in_name_and_limit(self):
         self.assertEqual(len(BASE_STRATEGIES), 13)
-        self.assertEqual(len(STRATEGIES), 39)
+        self.assertEqual(len(STRATEGIES), 52)
         for key in BASE_STRATEGIES:
             self.assertEqual(STRATEGIES[key]['max_positions'], 5)
-            for limit in (8,10):
+            for limit in (8,10,15):
                 actual = dict(STRATEGIES[f'{key}_P{limit}'])
                 actual.update(name=STRATEGIES[key]['name'], max_positions=5)
                 self.assertEqual(actual, STRATEGIES[key])
 
-    def test_five_eight_ten_caps_and_diagnostics(self):
-        rows = [candidate(f'T{i:02}', strike=50., pre_gate_qualified=True, verified_at=EPOCH) for i in range(15)]
+    def test_five_eight_ten_fifteen_caps_and_diagnostics(self):
+        rows = [candidate(f'T{i:02}', strike=50., pre_gate_qualified=True, verified_at=EPOCH) for i in range(20)]
         result = run_cycle(fresh_state(NOW.isoformat()), rows, {}, {}, NOW.isoformat(), 'one')
         for key, model in result['models'].items():
             limit = STRATEGIES[key]['max_positions']
             self.assertEqual(len(model['positions']), limit)
             metric = result['strategy_diagnostics'][key]
-            self.assertEqual(metric['qualifying_contracts'], 15)
-            self.assertEqual(metric['verified_contracts'], 15)
+            self.assertEqual(metric['qualifying_contracts'], 20)
+            self.assertEqual(metric['verified_contracts'], 20)
             self.assertEqual(metric['executed_opens'], limit)
             self.assertEqual(metric['remaining_slots'], 0)
-            self.assertEqual(metric['rejection_counts'][f'concentration: {limit}-position limit'], 15-limit)
+            self.assertEqual(metric['rejection_counts'][f'concentration: {limit}-position limit'], 20-limit)
 
     def test_collateral_and_reserve_apply_to_every_limit(self):
-        rows = [candidate(f'T{i:02}', strike=200.) for i in range(15)]
+        rows = [candidate(f'T{i:02}', strike=200.) for i in range(20)]
         rows += [candidate('TOOBIG', strike=200.01)]
         result = run_cycle(fresh_state(NOW.isoformat()), rows, {}, {}, NOW.isoformat(), 'one')
         for key, model in result['models'].items():
@@ -105,7 +121,7 @@ class PositionExperimentTests(unittest.TestCase):
         for k in BASE_STRATEGIES:
             self.assertEqual(new['models'][k], old['models'][k])
         self.assertEqual(new['last_audit'], old['last_audit'])
-        self.assertEqual(len(new['migrations'][-1]['added_models']), 26)
+        self.assertEqual(len(new['migrations'][-1]['added_models']), 39)
         for k in set(STRATEGIES)-set(BASE_STRATEGIES):
             self.assertEqual(new['models'][k]['created'], start)
             self.assertEqual(new['models'][k]['cash'], CAPITAL)

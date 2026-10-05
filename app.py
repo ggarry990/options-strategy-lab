@@ -132,7 +132,7 @@ with st.sidebar:
     if st.button('Refresh results', use_container_width=True):
         load_results.clear()
     st.divider()
-    st.write('Each portfolio starts with $100,000. Original models allow five positions; separate variants allow eight or ten. All retain 20% initial-capital collateral per stock and at least 10% cash reserve.')
+    st.write('Each portfolio starts with $100,000. Original models allow five positions; separate variants allow eight, ten or fifteen. All retain 20% initial-capital collateral per stock and at least 10% cash reserve.')
     st.caption('No brokerage connection. New experiment portfolios are separate from the original manual lab.')
 
 show_next_scan(display_timezone)

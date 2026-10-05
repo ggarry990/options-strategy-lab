@@ -31,7 +31,7 @@ for _weight in (40, 50, 60):
 
 BASE_STRATEGIES = tuple(STRATEGIES)
 for _key in BASE_STRATEGIES:
-    for _limit in (8, 10):
+    for _limit in (8, 10, 15):
         STRATEGIES[f'{_key}_P{_limit}'] = dict(STRATEGIES[_key], max_positions=_limit,
             name=f"{STRATEGIES[_key]['name']} | {_limit} positions")
 
