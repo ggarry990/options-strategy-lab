@@ -1,1 +1,1 @@
-{"run_id": "37514635318", "started_at": "2026-10-06T18:53:21.994905+00:00", "updated_at": "2026-10-06T18:58:30.758828+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 174, "total": 180, "ticker": "ARE", "status": "running"}
+{"run_id": "37514635318", "started_at": "2026-10-06T18:53:21.994905+00:00", "updated_at": "2026-10-06T18:59:34.165607+00:00", "stage": "Stage 3 \u2014 full option scans", "completed": 32, "total": 120, "ticker": "JKHY", "status": "running"}
