@@ -1,8 +1,8 @@
 {
   "version": 3,
   "created": "2026-09-13T16:34:01.246224-04:00",
-  "last_slot": "2026-10-05T17:00",
-  "last_success": "2026-10-05T17:09:36.894814-04:00",
+  "last_slot": "2026-10-05T21:30",
+  "last_success": "2026-10-05T21:44:28.554879-04:00",
   "models": {
     "A": {
       "cash": 100915.0,
@@ -1678,6 +1678,41 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261009P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "MRVL",
+          "contract": "MRVL261009P00190000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00054000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00085000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -1947,6 +1982,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100756.0,
+          "stale": 5,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100756.0,
           "stale": 5,
           "drawdown": 0.0
@@ -2826,6 +2867,13 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -3095,6 +3143,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100499.0,
+          "stale": 1,
+          "drawdown": -0.0001094418465824587
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100499.0,
           "stale": 1,
           "drawdown": -0.0001094418465824587
@@ -3924,6 +3978,13 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -4193,6 +4254,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100460.0,
+          "stale": 1,
+          "drawdown": -0.00010948432881130454
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100460.0,
           "stale": 1,
           "drawdown": -0.00010948432881130454
@@ -5183,6 +5250,13 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -5452,6 +5526,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100622.0,
+          "stale": 1,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100622.0,
           "stale": 1,
           "drawdown": 0.0
@@ -6281,6 +6361,13 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -6550,6 +6637,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100460.0,
+          "stale": 1,
+          "drawdown": -0.00010948432881130454
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100460.0,
           "stale": 1,
           "drawdown": -0.00010948432881130454
@@ -7379,6 +7472,13 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -7648,6 +7748,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100460.0,
+          "stale": 1,
+          "drawdown": -0.00010948432881130454
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100460.0,
           "stale": 1,
           "drawdown": -0.00010948432881130454
@@ -8477,6 +8583,13 @@
           "ticker": "CVNA",
           "contract": "CVNA261016P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -8746,6 +8859,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100460.0,
+          "stale": 1,
+          "drawdown": -0.00010948432881130454
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100460.0,
           "stale": 1,
           "drawdown": -0.00010948432881130454
@@ -9030,6 +9149,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -9311,6 +9436,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -9589,6 +9720,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -11299,6 +11436,41 @@
           "ticker": "KLAC",
           "contract": "KLAC261016P00155000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00056000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00089000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261016P00100000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "KLAC",
+          "contract": "KLAC261016P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -11556,6 +11728,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100910.0,
+          "stale": 5,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100910.0,
           "stale": 5,
           "drawdown": 0.0
@@ -13266,6 +13444,41 @@
           "ticker": "KLAC",
           "contract": "KLAC261016P00160000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00056000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00090000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261016P00100000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "KLAC",
+          "contract": "KLAC261016P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -13523,6 +13736,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 101109.0,
+          "stale": 5,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 101109.0,
           "stale": 5,
           "drawdown": 0.0
@@ -15233,6 +15452,41 @@
           "ticker": "KLAC",
           "contract": "KLAC261016P00160000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261009P00058000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "INTC",
+          "contract": "INTC261009P00092000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261016P00105000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "action": "HOLD",
+          "ticker": "KLAC",
+          "contract": "KLAC261016P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -15493,6 +15747,12 @@
           "nav": 101350.0,
           "stale": 5,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 101350.0,
+          "stale": 5,
+          "drawdown": 0.0
         }
       ],
       "fees": 5.0,
@@ -15520,6 +15780,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -15553,6 +15819,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -15580,6 +15852,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -15613,6 +15891,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -15640,6 +15924,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -15673,6 +15963,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -15700,6 +15996,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -15733,6 +16035,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -15760,6 +16068,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -15793,6 +16107,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -15820,6 +16140,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -15853,6 +16179,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -15880,6 +16212,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -15913,6 +16251,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -15940,6 +16284,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -15973,6 +16323,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16000,6 +16356,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -16033,6 +16395,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16060,6 +16428,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -16093,6 +16467,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16120,6 +16500,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -16153,6 +16539,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16180,6 +16572,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -16213,6 +16611,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16240,6 +16644,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -16273,6 +16683,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16294,6 +16710,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -16321,6 +16743,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16342,6 +16770,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -16369,6 +16803,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16390,6 +16830,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -16417,6 +16863,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16438,6 +16890,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -16465,6 +16923,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16486,6 +16950,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -16513,6 +16983,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16534,6 +17010,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -16561,6 +17043,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -16582,6 +17070,12 @@
         },
         {
           "time": "2026-10-05T17:09:36.894814-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-05T21:44:28.554879-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -22696,10 +23190,1462 @@
         }
       },
       "audit_file": "audits/20261005T170936-0400.json.gz"
+    },
+    {
+      "time": "2026-10-05T21:44:28.074791-04:00",
+      "status": "Market closed",
+      "checked": 518,
+      "selected": 0,
+      "candidates": 0,
+      "eligible_underlyings": 0,
+      "stage2_checked": 0,
+      "stage2_successful": 0,
+      "option_scanned": 0,
+      "rolling_fresh_coverage": 0,
+      "warnings": [],
+      "qualifying_contracts": 0,
+      "verified_contracts": 0,
+      "coverage_blocked_contracts": 0,
+      "duration_seconds": 0,
+      "entry_gate": {
+        "allowed": false,
+        "reason": "Market closed"
+      },
+      "pending_retries": 183,
+      "selected_entries": 0,
+      "strategy_diagnostics": {
+        "A": {
+          "strategy": "A",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 5,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "concentration: 5-position limit": 7112,
+            "concentration: ticker already held": 474,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 0
+        },
+        "B": {
+          "strategy": "B",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 1,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "concentration: ticker already held": 54,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 1,
+          "remaining_slots": 4
+        },
+        "C": {
+          "strategy": "C",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 1,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "concentration: ticker already held": 54,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 1,
+          "remaining_slots": 4
+        },
+        "D": {
+          "strategy": "D",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 1,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "concentration: ticker already held": 54,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 1,
+          "remaining_slots": 4
+        },
+        "E": {
+          "strategy": "E",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 1,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE at exit threshold": 30,
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "concentration: ticker already held": 54,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 1,
+          "remaining_slots": 4
+        },
+        "F": {
+          "strategy": "F",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 1,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "concentration: ticker already held": 54,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 1,
+          "remaining_slots": 4
+        },
+        "G": {
+          "strategy": "G",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 1,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "concentration: ticker already held": 54,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 1,
+          "remaining_slots": 4
+        },
+        "H": {
+          "strategy": "H",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 0,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7101,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 5
+        },
+        "I": {
+          "strategy": "I",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 0,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7106,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 5
+        },
+        "J": {
+          "strategy": "J",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 0,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE at exit threshold": 840,
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7101,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 5
+        },
+        "A40": {
+          "strategy": "A40",
+          "started": "2026-09-14T15:23:18.049635-04:00",
+          "position_limit": 5,
+          "open_before": 5,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "concentration: 5-position limit": 7112,
+            "concentration: ticker already held": 355,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6789,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 0
+        },
+        "A50": {
+          "strategy": "A50",
+          "started": "2026-09-14T15:23:18.049635-04:00",
+          "position_limit": 5,
+          "open_before": 5,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "concentration: 5-position limit": 7112,
+            "concentration: ticker already held": 355,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6670,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 0
+        },
+        "A60": {
+          "strategy": "A60",
+          "started": "2026-09-14T15:23:18.049635-04:00",
+          "position_limit": 5,
+          "open_before": 5,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "concentration: 5-position limit": 7112,
+            "concentration: ticker already held": 355,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6417,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 0
+        },
+        "A_P8": {
+          "strategy": "A_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "A_P10": {
+          "strategy": "A_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "B_P8": {
+          "strategy": "B_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "B_P10": {
+          "strategy": "B_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "C_P8": {
+          "strategy": "C_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "C_P10": {
+          "strategy": "C_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "D_P8": {
+          "strategy": "D_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "D_P10": {
+          "strategy": "D_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "E_P8": {
+          "strategy": "E_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE at exit threshold": 30,
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "E_P10": {
+          "strategy": "E_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE at exit threshold": 30,
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "F_P8": {
+          "strategy": "F_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "F_P10": {
+          "strategy": "F_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "G_P8": {
+          "strategy": "G_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "G_P10": {
+          "strategy": "G_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "H_P8": {
+          "strategy": "H_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7101,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "H_P10": {
+          "strategy": "H_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7101,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "I_P8": {
+          "strategy": "I_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7106,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "I_P10": {
+          "strategy": "I_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7106,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "J_P8": {
+          "strategy": "J_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE at exit threshold": 840,
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7101,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "J_P10": {
+          "strategy": "J_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE at exit threshold": 840,
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7101,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "A40_P8": {
+          "strategy": "A40_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6789,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "A40_P10": {
+          "strategy": "A40_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6789,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "A50_P8": {
+          "strategy": "A50_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6670,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "A50_P10": {
+          "strategy": "A50_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6670,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "A60_P8": {
+          "strategy": "A60_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6417,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "A60_P10": {
+          "strategy": "A60_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6417,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "A_P15": {
+          "strategy": "A_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "B_P15": {
+          "strategy": "B_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "C_P15": {
+          "strategy": "C_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "D_P15": {
+          "strategy": "D_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "E_P15": {
+          "strategy": "E_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE at exit threshold": 30,
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "F_P15": {
+          "strategy": "F_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "G_P15": {
+          "strategy": "G_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6802,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "H_P15": {
+          "strategy": "H_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7101,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "I_P15": {
+          "strategy": "I_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7106,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "J_P15": {
+          "strategy": "J_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE at exit threshold": 840,
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 7101,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "A40_P15": {
+          "strategy": "A40_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6789,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "A50_P15": {
+          "strategy": "A50_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6670,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "A60_P15": {
+          "strategy": "A60_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 7112,
+          "rejection_counts": {
+            "DTE outside current configured range": 2466,
+            "Market closed": 7112,
+            "earnings in period": 3935,
+            "entry window closed": 7112,
+            "not Stage 1 eligible in current universe": 7112,
+            "open interest": 3853,
+            "score below strategy minimum": 6417,
+            "spread or invalid bid/ask": 3672,
+            "stale data: cache freshness": 7112,
+            "stale data: prior session": 7112,
+            "stale trade data": 2775
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        }
+      },
+      "audit_file": "audits/20261005T214428-0400.json.gz"
     }
   ],
   "last_run": {
-    "time": "2026-10-05T17:09:36.386574-04:00",
+    "time": "2026-10-05T21:44:28.074791-04:00",
     "status": "Market closed",
     "checked": 518,
     "selected": 0,
@@ -24148,7 +26094,7 @@
         "remaining_slots": 15
       }
     },
-    "audit_file": "audits/20261005T170936-0400.json.gz"
+    "audit_file": "audits/20261005T214428-0400.json.gz"
   },
   "candidates": [],
   "universe": {
@@ -292131,9 +294077,9 @@
         "error": "No representative expiry at 30\u201345 DTE"
       }
     ],
-    "time": "2026-10-05T17:09:36.386574-04:00",
+    "time": "2026-10-05T21:44:28.074791-04:00",
     "summary": {
-      "time": "2026-10-05T17:09:36.386574-04:00",
+      "time": "2026-10-05T21:44:28.074791-04:00",
       "status": "Market closed",
       "checked": 518,
       "selected": 0,
@@ -293582,7 +295528,7 @@
           "remaining_slots": 15
         }
       },
-      "audit_file": "audits/20261005T170936-0400.json.gz"
+      "audit_file": "audits/20261005T214428-0400.json.gz"
     },
     "execution": [],
     "path": [
