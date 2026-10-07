@@ -1,1 +1,1 @@
-{"run_id": "37673413932", "started_at": "2026-10-07T19:18:45.407599+00:00", "updated_at": "2026-10-07T19:18:45.407611+00:00", "stage": "Preparing evaluation", "completed": 0, "total": 0, "ticker": null, "status": "running"}
+{"run_id": "37673413932", "started_at": "2026-10-07T19:18:46.511780+00:00", "updated_at": "2026-10-07T19:19:47.432059+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 14, "total": 180, "ticker": "PRU", "status": "running"}
