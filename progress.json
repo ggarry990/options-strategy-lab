@@ -1,1 +1,1 @@
-{"run_id": "37830442151", "started_at": "2026-10-08T19:15:07.171274+00:00", "updated_at": "2026-10-08T19:18:12.234524+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 160, "total": 180, "ticker": "LEN", "status": "running"}
+{"run_id": "37830442151", "started_at": "2026-10-08T19:15:07.171274+00:00", "updated_at": "2026-10-08T19:19:14.012770+00:00", "stage": "Stage 3 \u2014 full option scans", "completed": 26, "total": 120, "ticker": "KKR", "status": "running"}
