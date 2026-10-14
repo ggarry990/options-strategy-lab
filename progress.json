@@ -1,1 +1,1 @@
-{"run_id": "38611007657", "started_at": "2026-10-14T17:57:55.259704+00:00", "updated_at": "2026-10-14T17:57:55.259723+00:00", "stage": "Preparing evaluation", "completed": 0, "total": 0, "ticker": null, "status": "running"}
+{"run_id": "38611007657", "started_at": "2026-10-14T17:57:56.955064+00:00", "updated_at": "2026-10-14T17:58:57.000633+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 22, "total": 180, "ticker": "EQT", "status": "running"}
