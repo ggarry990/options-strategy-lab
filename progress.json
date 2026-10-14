@@ -1,1 +1,1 @@
-{"run_id": "38611007657", "started_at": "2026-10-14T17:57:56.955064+00:00", "updated_at": "2026-10-14T18:05:08.777370+00:00", "stage": "Stage 3 \u2014 full option scans", "completed": 107, "total": 120, "ticker": "EOG", "status": "running"}
+{"run_id": "38611007657", "started_at": "2026-10-14T18:05:56.621426+00:00", "updated_at": "2026-10-14T18:05:56.621440+00:00", "stage": "Automation success", "completed": 0, "total": 0, "ticker": null, "status": "success"}
