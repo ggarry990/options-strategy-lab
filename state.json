@@ -1,8 +1,8 @@
 {
   "version": 3,
   "created": "2026-09-13T16:34:01.246224-04:00",
-  "last_slot": "2026-10-15T17:00",
-  "last_success": "2026-10-15T17:17:04.600920-04:00",
+  "last_slot": "2026-10-15T19:30",
+  "last_success": "2026-10-15T19:48:25.002211-04:00",
   "models": {
     "A": {
       "cash": 101432.0,
@@ -2275,6 +2275,34 @@
           "ticker": "CRWV",
           "contract": "CRWV261106P00055000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00150000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261106P00050000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -2646,6 +2674,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 100507.0,
+          "stale": 4,
+          "drawdown": -0.003420854321183553
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 100507.0,
           "stale": 4,
           "drawdown": -0.003420854321183553
@@ -4297,6 +4331,34 @@
           "ticker": "NBIS",
           "contract": "NBIS261106P00200000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -4668,6 +4730,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 95381.0,
+          "stale": 4,
+          "drawdown": -0.05102974828375284
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 95381.0,
           "stale": 4,
           "drawdown": -0.05102974828375284
@@ -6220,6 +6288,41 @@
           "ticker": "NBIS",
           "contract": "NBIS261106P00200000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -6591,6 +6694,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 95228.0,
+          "stale": 5,
+          "drawdown": -0.05218421235978543
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 95228.0,
           "stale": 5,
           "drawdown": -0.05218421235978543
@@ -8304,6 +8413,41 @@
           "ticker": "NBIS",
           "contract": "NBIS261106P00200000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -8675,6 +8819,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 95390.0,
+          "stale": 5,
+          "drawdown": -0.05199658126453455
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 95390.0,
           "stale": 5,
           "drawdown": -0.05199658126453455
@@ -10278,6 +10428,41 @@
           "ticker": "MRNA",
           "contract": "MRNA261030P00160000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MRNA",
+          "contract": "MRNA261030P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -10649,6 +10834,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 95343.0,
+          "stale": 5,
+          "drawdown": -0.05103960346766734
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 95343.0,
           "stale": 5,
           "drawdown": -0.05103960346766734
@@ -12245,6 +12436,27 @@
           "ticker": "RKLB",
           "contract": "RKLB261106P00045000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261106P00045000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -12616,6 +12828,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 95832.0,
+          "stale": 3,
+          "drawdown": -0.046172527395965
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 95832.0,
           "stale": 3,
           "drawdown": -0.046172527395965
@@ -14168,6 +14386,41 @@
           "ticker": "NBIS",
           "contract": "NBIS261106P00200000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -14542,6 +14795,12 @@
           "nav": 95228.0,
           "stale": 5,
           "drawdown": -0.05218421235978543
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "nav": 95228.0,
+          "stale": 5,
+          "drawdown": -0.05218421235978543
         }
       ],
       "fees": 13.0,
@@ -14764,6 +15023,27 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MRNA",
+          "contract": "MRNA261030P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "action": "HOLD",
           "ticker": "CRWV",
           "contract": "CRWV261106P00055000",
@@ -15139,6 +15419,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 100024.0,
+          "stale": 3,
+          "drawdown": -0.0002498775599956149
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 100024.0,
           "stale": 3,
           "drawdown": -0.0002498775599956149
@@ -15525,6 +15811,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -15746,6 +16038,20 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "action": "HOLD",
           "ticker": "CRWV",
           "contract": "CRWV261106P00055000",
@@ -16121,6 +16427,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 100023.0,
+          "stale": 2,
+          "drawdown": -0.00025987266239546614
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 100023.0,
           "stale": 2,
           "drawdown": -0.00025987266239546614
@@ -18475,6 +18787,41 @@
           "ticker": "RKLB",
           "contract": "RKLB261106P00055000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261016P00100000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "KLAC",
+          "contract": "KLAC261016P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -18834,6 +19181,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 99712.0,
+          "stale": 5,
+          "drawdown": -0.013065167471692174
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 99712.0,
           "stale": 5,
           "drawdown": -0.013065167471692174
@@ -21188,6 +21541,41 @@
           "ticker": "RKLB",
           "contract": "RKLB261106P00055000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261016P00100000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "KLAC",
+          "contract": "KLAC261016P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -21547,6 +21935,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 99896.0,
+          "stale": 5,
+          "drawdown": -0.013285131517863369
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 99896.0,
           "stale": 5,
           "drawdown": -0.013285131517863369
@@ -23901,6 +24295,41 @@
           "ticker": "RKLB",
           "contract": "RKLB261106P00055000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CVNA",
+          "contract": "CVNA261016P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261016P00105000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "KLAC",
+          "contract": "KLAC261016P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00165000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -24260,6 +24689,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 99608.0,
+          "stale": 5,
+          "drawdown": -0.019007662156040106
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 99608.0,
           "stale": 5,
           "drawdown": -0.019007662156040106
@@ -25441,6 +25876,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -25560,6 +26051,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -26741,6 +27238,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -26860,6 +27413,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -28041,6 +28600,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -28160,6 +28775,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -29341,6 +29962,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -29460,6 +30137,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -30641,6 +31324,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -30760,6 +31499,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -31941,6 +32686,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -32060,6 +32861,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -33241,6 +34048,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -33360,6 +34223,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -34541,6 +35410,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -34660,6 +35585,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -35841,6 +36772,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -35960,6 +36947,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -37141,6 +38134,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -37260,6 +38309,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -38486,6 +39541,48 @@
           "ticker": "RKLB",
           "contract": "RKLB261106P00045000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261106P00045000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -38605,6 +39702,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 94166.0,
+          "stale": 6,
+          "drawdown": -0.05833999999999995
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 94166.0,
           "stale": 6,
           "drawdown": -0.05833999999999995
@@ -39831,6 +40934,48 @@
           "ticker": "RKLB",
           "contract": "RKLB261106P00045000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261106P00045000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -39950,6 +41095,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 94166.0,
+          "stale": 6,
+          "drawdown": -0.05833999999999995
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 94166.0,
           "stale": 6,
           "drawdown": -0.05833999999999995
@@ -41131,6 +42282,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -41250,6 +42457,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -42431,6 +43644,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -42550,6 +43819,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -42780,6 +44055,27 @@
           "ticker": "CRWV",
           "contract": "CRWV261106P00055000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MRNA",
+          "contract": "MRNA261030P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -42899,6 +44195,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 100024.0,
+          "stale": 3,
+          "drawdown": -0.0002498775599956149
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 100024.0,
           "stale": 3,
           "drawdown": -0.0002498775599956149
@@ -43129,6 +44431,27 @@
           "ticker": "CRWV",
           "contract": "CRWV261106P00055000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MRNA",
+          "contract": "MRNA261030P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -43248,6 +44571,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 100024.0,
+          "stale": 3,
+          "drawdown": -0.0002498775599956149
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 100024.0,
           "stale": 3,
           "drawdown": -0.0002498775599956149
@@ -43383,6 +44712,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -43512,6 +44847,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -43741,6 +45082,20 @@
           "ticker": "CRWV",
           "contract": "CRWV261106P00055000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -43860,6 +45215,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 100023.0,
+          "stale": 2,
+          "drawdown": -0.00025987266239546614
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 100023.0,
           "stale": 2,
           "drawdown": -0.00025987266239546614
@@ -44089,6 +45450,20 @@
           "ticker": "CRWV",
           "contract": "CRWV261106P00055000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -44208,6 +45583,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 100023.0,
+          "stale": 2,
+          "drawdown": -0.00025987266239546614
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 100023.0,
           "stale": 2,
           "drawdown": -0.00025987266239546614
@@ -45389,6 +46770,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00081000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00040000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00134000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -45508,6 +46945,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92299.0,
+          "stale": 8,
+          "drawdown": -0.07701000000000002
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92299.0,
           "stale": 8,
           "drawdown": -0.07701000000000002
@@ -46689,6 +48132,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00081000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00040000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00134000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -46808,6 +48307,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92299.0,
+          "stale": 8,
+          "drawdown": -0.07701000000000002
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92299.0,
           "stale": 8,
           "drawdown": -0.07701000000000002
@@ -48031,6 +49536,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00078000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00083000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00040000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00136000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00162500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ANET",
+          "contract": "ANET261030P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00078000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -48150,6 +49711,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92496.0,
+          "stale": 8,
+          "drawdown": -0.07504
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92496.0,
           "stale": 8,
           "drawdown": -0.07504
@@ -49373,6 +50940,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00078000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00083000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00040000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00136000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00162500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ANET",
+          "contract": "ANET261030P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00078000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -49492,6 +51115,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92496.0,
+          "stale": 8,
+          "drawdown": -0.07504
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92496.0,
           "stale": 8,
           "drawdown": -0.07504
@@ -50715,6 +52344,62 @@
           "ticker": "PLTR",
           "contract": "PLTR261030P00185000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00085000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00041000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00072000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00138000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00165000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00078000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261030P00185000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -50834,6 +52519,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 93588.0,
+          "stale": 8,
+          "drawdown": -0.06411999999999995
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 93588.0,
           "stale": 8,
           "drawdown": -0.06411999999999995
@@ -52057,6 +53748,62 @@
           "ticker": "PLTR",
           "contract": "PLTR261030P00185000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00085000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00041000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00072000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00138000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00165000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00078000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261030P00185000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -52176,6 +53923,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 93588.0,
+          "stale": 8,
+          "drawdown": -0.06411999999999995
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 93588.0,
           "stale": 8,
           "drawdown": -0.06411999999999995
@@ -53357,6 +55110,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -53470,6 +55279,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -54651,6 +56466,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -54764,6 +56635,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -55945,6 +57822,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -56058,6 +57991,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -57239,6 +59178,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -57352,6 +59347,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -58533,6 +60534,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -58646,6 +60703,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -59872,6 +61935,48 @@
           "ticker": "RKLB",
           "contract": "RKLB261106P00045000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261106P00045000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -59985,6 +62090,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 94166.0,
+          "stale": 6,
+          "drawdown": -0.05833999999999995
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 94166.0,
           "stale": 6,
           "drawdown": -0.05833999999999995
@@ -61166,6 +63277,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00037000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00132000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00157500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -61279,6 +63446,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92854.0,
+          "stale": 8,
+          "drawdown": -0.07145999999999997
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92854.0,
           "stale": 8,
           "drawdown": -0.07145999999999997
@@ -61509,6 +63682,27 @@
           "ticker": "CRWV",
           "contract": "CRWV261106P00055000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MRNA",
+          "contract": "MRNA261030P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -61622,6 +63816,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 100024.0,
+          "stale": 3,
+          "drawdown": -0.0002498775599956149
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 100024.0,
           "stale": 3,
           "drawdown": -0.0002498775599956149
@@ -61748,6 +63948,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -61977,6 +64183,20 @@
           "ticker": "CRWV",
           "contract": "CRWV261106P00055000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00145000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261106P00055000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -62090,6 +64310,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 100023.0,
+          "stale": 2,
+          "drawdown": -0.00025987266239546614
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 100023.0,
           "stale": 2,
           "drawdown": -0.00025987266239546614
@@ -63271,6 +65497,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00069000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00081000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00040000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00134000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "NBIS",
+          "contract": "NBIS261106P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00069000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -63384,6 +65666,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92299.0,
+          "stale": 8,
+          "drawdown": -0.07701000000000002
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92299.0,
           "stale": 8,
           "drawdown": -0.07701000000000002
@@ -64607,6 +66895,62 @@
           "ticker": "MCHP",
           "contract": "MCHP261030P00078000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00083000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00040000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00066000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00136000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00162500",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ANET",
+          "contract": "ANET261030P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00078000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -64720,6 +67064,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 92496.0,
+          "stale": 8,
+          "drawdown": -0.07504
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 92496.0,
           "stale": 8,
           "drawdown": -0.07504
@@ -65943,6 +68293,62 @@
           "ticker": "PLTR",
           "contract": "PLTR261030P00185000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "CRWV",
+          "contract": "CRWV261030P00085000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SMCI",
+          "contract": "SMCI261030P00041000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "RKLB",
+          "contract": "RKLB261030P00072000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "ORCL",
+          "contract": "ORCL261030P00138000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "SPCX",
+          "contract": "SPCX261030P00165000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "MCHP",
+          "contract": "MCHP261030P00078000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261030P00185000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -66056,6 +68462,12 @@
         },
         {
           "time": "2026-10-15T17:17:04.600920-04:00",
+          "nav": 93588.0,
+          "stale": 8,
+          "drawdown": -0.06411999999999995
+        },
+        {
+          "time": "2026-10-15T19:48:25.002211-04:00",
           "nav": 93588.0,
           "stale": 8,
           "drawdown": -0.06411999999999995
@@ -98383,10 +100795,1583 @@
         }
       },
       "audit_file": "audits/20261015T171703-0400.json.gz"
+    },
+    {
+      "time": "2026-10-15T19:48:24.240340-04:00",
+      "status": "Market closed",
+      "checked": 518,
+      "selected": 0,
+      "candidates": 0,
+      "eligible_underlyings": 0,
+      "stage2_checked": 0,
+      "stage2_successful": 0,
+      "option_scanned": 0,
+      "rolling_fresh_coverage": 0,
+      "warnings": [],
+      "qualifying_contracts": 0,
+      "verified_contracts": 0,
+      "coverage_blocked_contracts": 0,
+      "duration_seconds": 0,
+      "entry_gate": {
+        "allowed": false,
+        "reason": "Market closed"
+      },
+      "pending_retries": 11,
+      "selected_entries": 0,
+      "strategy_diagnostics": {
+        "A": {
+          "strategy": "A",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 4,
+          "slots_before": 1,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 149,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 4,
+          "remaining_slots": 1
+        },
+        "B": {
+          "strategy": "B",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 4,
+          "slots_before": 1,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 109,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 4,
+          "remaining_slots": 1
+        },
+        "C": {
+          "strategy": "C",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 5,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: 5-position limit": 6759,
+            "concentration: ticker already held": 169,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 0
+        },
+        "D": {
+          "strategy": "D",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 5,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: 5-position limit": 6759,
+            "concentration: ticker already held": 169,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 0
+        },
+        "E": {
+          "strategy": "E",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 5,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 34,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: 5-position limit": 6759,
+            "concentration: ticker already held": 204,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 0
+        },
+        "F": {
+          "strategy": "F",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 3,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 89,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 3,
+          "remaining_slots": 2
+        },
+        "G": {
+          "strategy": "G",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 5,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: 5-position limit": 6759,
+            "concentration: ticker already held": 169,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 0
+        },
+        "H": {
+          "strategy": "H",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 3,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 171,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6734,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 3,
+          "remaining_slots": 2
+        },
+        "I": {
+          "strategy": "I",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 0,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6750,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 5
+        },
+        "J": {
+          "strategy": "J",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 2,
+          "slots_before": 3,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 192,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 76,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6734,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 3
+        },
+        "A40": {
+          "strategy": "A40",
+          "started": "2026-09-14T15:23:18.049635-04:00",
+          "position_limit": 5,
+          "open_before": 5,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: 5-position limit": 6759,
+            "concentration: ticker already held": 196,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6106,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 0
+        },
+        "A50": {
+          "strategy": "A50",
+          "started": "2026-09-14T15:23:18.049635-04:00",
+          "position_limit": 5,
+          "open_before": 5,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: 5-position limit": 6759,
+            "concentration: ticker already held": 196,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 5946,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 0
+        },
+        "A60": {
+          "strategy": "A60",
+          "started": "2026-09-14T15:23:18.049635-04:00",
+          "position_limit": 5,
+          "open_before": 5,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: 5-position limit": 6759,
+            "concentration: ticker already held": 196,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 5677,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 0
+        },
+        "A_P8": {
+          "strategy": "A_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 8,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: 8-position limit": 6759,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 0
+        },
+        "A_P10": {
+          "strategy": "A_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 8,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 2
+        },
+        "B_P8": {
+          "strategy": "B_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 8,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: 8-position limit": 6759,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 0
+        },
+        "B_P10": {
+          "strategy": "B_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 8,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 2
+        },
+        "C_P8": {
+          "strategy": "C_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 8,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: 8-position limit": 6759,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 0
+        },
+        "C_P10": {
+          "strategy": "C_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 8,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 2
+        },
+        "D_P8": {
+          "strategy": "D_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 8,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: 8-position limit": 6759,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 0
+        },
+        "D_P10": {
+          "strategy": "D_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 8,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 2
+        },
+        "E_P8": {
+          "strategy": "E_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 8,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 34,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: 8-position limit": 6759,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 0
+        },
+        "E_P10": {
+          "strategy": "E_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 8,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 34,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 2
+        },
+        "F_P8": {
+          "strategy": "F_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 6,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 242,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 6,
+          "remaining_slots": 2
+        },
+        "F_P10": {
+          "strategy": "F_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 6,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 242,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 6,
+          "remaining_slots": 4
+        },
+        "G_P8": {
+          "strategy": "G_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 8,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: 8-position limit": 6759,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 0
+        },
+        "G_P10": {
+          "strategy": "G_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 8,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 2
+        },
+        "H_P8": {
+          "strategy": "H_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 3,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 171,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6734,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 3,
+          "remaining_slots": 5
+        },
+        "H_P10": {
+          "strategy": "H_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 3,
+          "slots_before": 7,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 171,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6734,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 3,
+          "remaining_slots": 7
+        },
+        "I_P8": {
+          "strategy": "I_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6750,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "I_P10": {
+          "strategy": "I_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6750,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "J_P8": {
+          "strategy": "J_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 2,
+          "slots_before": 6,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 192,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 76,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6734,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 6
+        },
+        "J_P10": {
+          "strategy": "J_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 2,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 192,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 76,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6734,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 8
+        },
+        "A40_P8": {
+          "strategy": "A40_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 8,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 6430,
+            "concentration: 8-position limit": 6759,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6106,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 0
+        },
+        "A40_P10": {
+          "strategy": "A40_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 8,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 6430,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6106,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 2
+        },
+        "A50_P8": {
+          "strategy": "A50_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 8,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 6759,
+            "concentration: 8-position limit": 6759,
+            "concentration: ticker already held": 362,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 5946,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 0
+        },
+        "A50_P10": {
+          "strategy": "A50_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 8,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 6759,
+            "concentration: ticker already held": 362,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 5946,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 2
+        },
+        "A60_P8": {
+          "strategy": "A60_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 8,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 6555,
+            "concentration: 8-position limit": 6759,
+            "concentration: ticker already held": 449,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 5677,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 0
+        },
+        "A60_P10": {
+          "strategy": "A60_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 8,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 6555,
+            "concentration: ticker already held": 449,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 5677,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 2
+        },
+        "A_P15": {
+          "strategy": "A_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 8,
+          "slots_before": 7,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 7
+        },
+        "B_P15": {
+          "strategy": "B_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 8,
+          "slots_before": 7,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 7
+        },
+        "C_P15": {
+          "strategy": "C_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 8,
+          "slots_before": 7,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 7
+        },
+        "D_P15": {
+          "strategy": "D_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 8,
+          "slots_before": 7,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 7
+        },
+        "E_P15": {
+          "strategy": "E_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 8,
+          "slots_before": 7,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 34,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 7
+        },
+        "F_P15": {
+          "strategy": "F_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 6,
+          "slots_before": 9,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 242,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 6,
+          "remaining_slots": 9
+        },
+        "G_P15": {
+          "strategy": "G_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 8,
+          "slots_before": 7,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 5932,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6134,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 7
+        },
+        "H_P15": {
+          "strategy": "H_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 3,
+          "slots_before": 12,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 171,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6734,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 3,
+          "remaining_slots": 12
+        },
+        "I_P15": {
+          "strategy": "I_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6750,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "J_P15": {
+          "strategy": "J_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 2,
+          "slots_before": 13,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 192,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "concentration: ticker already held": 76,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6734,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 13
+        },
+        "A40_P15": {
+          "strategy": "A40_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 8,
+          "slots_before": 7,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 6430,
+            "concentration: ticker already held": 373,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 6106,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 7
+        },
+        "A50_P15": {
+          "strategy": "A50_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 8,
+          "slots_before": 7,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 6759,
+            "concentration: ticker already held": 362,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 5946,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 7
+        },
+        "A60_P15": {
+          "strategy": "A60_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 8,
+          "slots_before": 7,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6759,
+          "rejection_counts": {
+            "DTE at exit threshold": 1,
+            "DTE outside current configured range": 914,
+            "Market closed": 6759,
+            "collateral: cash reserve": 6555,
+            "concentration: ticker already held": 449,
+            "earnings in period": 5455,
+            "entry window closed": 6759,
+            "not Stage 1 eligible in current universe": 6759,
+            "open interest": 4036,
+            "score below strategy minimum": 5677,
+            "spread or invalid bid/ask": 3458,
+            "stale data: cache freshness": 6759,
+            "stale data: prior session": 3988,
+            "stale trade data": 2644
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 7
+        }
+      },
+      "audit_file": "audits/20261015T194824-0400.json.gz"
     }
   ],
   "last_run": {
-    "time": "2026-10-15T17:17:03.552266-04:00",
+    "time": "2026-10-15T19:48:24.240340-04:00",
     "status": "Market closed",
     "checked": 518,
     "selected": 0,
@@ -98400,7 +102385,7 @@
     "qualifying_contracts": 0,
     "verified_contracts": 0,
     "coverage_blocked_contracts": 0,
-    "duration_seconds": 1,
+    "duration_seconds": 0,
     "entry_gate": {
       "allowed": false,
       "reason": "Market closed"
@@ -99956,7 +103941,7 @@
         "remaining_slots": 7
       }
     },
-    "audit_file": "audits/20261015T171703-0400.json.gz"
+    "audit_file": "audits/20261015T194824-0400.json.gz"
   },
   "candidates": [],
   "universe": {
@@ -346429,9 +350414,9 @@
         "error": "No representative expiry at 30\u201345 DTE"
       }
     ],
-    "time": "2026-10-15T17:17:03.552266-04:00",
+    "time": "2026-10-15T19:48:24.240340-04:00",
     "summary": {
-      "time": "2026-10-15T17:17:03.552266-04:00",
+      "time": "2026-10-15T19:48:24.240340-04:00",
       "status": "Market closed",
       "checked": 518,
       "selected": 0,
@@ -346445,7 +350430,7 @@
       "qualifying_contracts": 0,
       "verified_contracts": 0,
       "coverage_blocked_contracts": 0,
-      "duration_seconds": 1,
+      "duration_seconds": 0,
       "entry_gate": {
         "allowed": false,
         "reason": "Market closed"
@@ -348001,7 +351986,7 @@
           "remaining_slots": 7
         }
       },
-      "audit_file": "audits/20261015T171703-0400.json.gz"
+      "audit_file": "audits/20261015T194824-0400.json.gz"
     },
     "execution": [],
     "path": [
