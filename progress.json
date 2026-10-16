@@ -1,1 +1,1 @@
-{"run_id": "38938784186", "started_at": "2026-10-16T17:20:19.596566+00:00", "updated_at": "2026-10-16T17:20:19.596585+00:00", "stage": "Preparing evaluation", "completed": 0, "total": 0, "ticker": null, "status": "running"}
+{"run_id": "38938784186", "started_at": "2026-10-16T17:20:20.836544+00:00", "updated_at": "2026-10-16T17:21:21.549831+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 22, "total": 180, "ticker": "NKE", "status": "running"}
