@@ -1,1 +1,1 @@
-{"run_id": "39648564072", "started_at": "2026-10-21T17:59:23.051075+00:00", "updated_at": "2026-10-21T17:59:23.051090+00:00", "stage": "Preparing evaluation", "completed": 0, "total": 0, "ticker": null, "status": "running"}
+{"run_id": "39648564072", "started_at": "2026-10-21T17:59:23.946368+00:00", "updated_at": "2026-10-21T18:00:25.627436+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 13, "total": 180, "ticker": "NBIS", "status": "running"}
