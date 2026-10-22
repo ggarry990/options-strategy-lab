@@ -1,1 +1,1 @@
-{"run_id": "39826932831", "started_at": "2026-10-22T17:56:44.014208+00:00", "updated_at": "2026-10-22T17:56:44.014226+00:00", "stage": "Preparing evaluation", "completed": 0, "total": 0, "ticker": null, "status": "running"}
+{"run_id": "39826932831", "started_at": "2026-10-22T17:56:45.811239+00:00", "updated_at": "2026-10-22T17:57:45.732799+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 23, "total": 180, "ticker": "MSTR", "status": "running"}
