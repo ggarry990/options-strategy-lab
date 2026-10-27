@@ -1,1 +1,1 @@
-{"run_id": "40561849085", "started_at": "2026-10-27T18:39:36.381068+00:00", "updated_at": "2026-10-27T18:45:48.714120+00:00", "stage": "Stage 3 \u2014 full option scans", "completed": 100, "total": 120, "ticker": "VRSK", "status": "running"}
+{"run_id": "40561849085", "started_at": "2026-10-27T18:39:36.381068+00:00", "updated_at": "2026-10-27T18:46:54.286399+00:00", "stage": "Verifying entry quotes", "completed": 148, "total": 194, "ticker": "OMC", "status": "running"}
