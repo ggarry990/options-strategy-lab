@@ -1,1 +1,1 @@
-{"run_id": "40935280348", "started_at": "2026-10-29T18:56:08.914035+00:00", "updated_at": "2026-10-29T18:56:08.914049+00:00", "stage": "Preparing evaluation", "completed": 0, "total": 0, "ticker": null, "status": "running"}
+{"run_id": "40935280348", "started_at": "2026-10-29T18:56:10.076073+00:00", "updated_at": "2026-10-29T18:57:10.820086+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 13, "total": 180, "ticker": "COHR", "status": "running"}
