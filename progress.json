@@ -1,1 +1,1 @@
-{"run_id": "41708824049", "started_at": "2026-11-03T20:04:29.903569+00:00", "updated_at": "2026-11-03T20:04:29.903582+00:00", "stage": "Preparing evaluation", "completed": 0, "total": 0, "ticker": null, "status": "running"}
+{"run_id": "41708824049", "started_at": "2026-11-03T20:04:31.319042+00:00", "updated_at": "2026-11-03T20:05:40.572181+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 25, "total": 180, "ticker": "FTNT", "status": "running"}
