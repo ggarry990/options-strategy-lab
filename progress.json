@@ -1,1 +1,1 @@
-{"run_id": "43093583525", "started_at": "2026-11-11T20:08:53.553903+00:00", "updated_at": "2026-11-11T20:08:53.553915+00:00", "stage": "Preparing evaluation", "completed": 0, "total": 0, "ticker": null, "status": "running"}
+{"run_id": "43093583525", "started_at": "2026-11-11T20:08:54.864140+00:00", "updated_at": "2026-11-11T20:09:55.713656+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 24, "total": 180, "ticker": "WDAY", "status": "running"}
