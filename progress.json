@@ -1,1 +1,1 @@
-{"run_id": "43093583525", "started_at": "2026-11-11T20:08:54.864140+00:00", "updated_at": "2026-11-11T20:16:06.447815+00:00", "stage": "Stage 3 \u2014 full option scans", "completed": 111, "total": 120, "ticker": "DXCM", "status": "running"}
+{"run_id": "43093583525", "started_at": "2026-11-11T20:08:54.864140+00:00", "updated_at": "2026-11-11T20:17:08.982388+00:00", "stage": "Verifying entry quotes", "completed": 235, "total": 544, "ticker": "APA", "status": "running"}
