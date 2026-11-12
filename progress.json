@@ -1,1 +1,1 @@
-{"run_id": "43303315783", "started_at": "2026-11-12T20:45:29.658498+00:00", "updated_at": "2026-11-12T20:45:29.658509+00:00", "stage": "Preparing evaluation", "completed": 0, "total": 0, "ticker": null, "status": "running"}
+{"run_id": "43303315783", "started_at": "2026-11-12T20:45:30.547975+00:00", "updated_at": "2026-11-12T20:46:30.973731+00:00", "stage": "Stage 2 \u2014 ATM IV", "completed": 27, "total": 180, "ticker": "ALNY", "status": "running"}
