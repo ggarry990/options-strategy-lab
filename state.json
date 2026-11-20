@@ -1,8 +1,8 @@
 {
   "version": 3,
   "created": "2026-09-13T16:34:01.246224-04:00",
-  "last_slot": "2026-11-19T16:00",
-  "last_success": "2026-11-19T16:24:01.073933-05:00",
+  "last_slot": "2026-11-19T21:30",
+  "last_success": "2026-11-19T21:32:42.829960-05:00",
   "models": {
     "A": {
       "cash": 94519.00033569336,
@@ -4391,6 +4391,12 @@
           "nav": 94519.00033569336,
           "stale": 0,
           "drawdown": -0.06669102164644691
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "nav": 94519.00033569336,
+          "stale": 0,
+          "drawdown": -0.06669102164644691
         }
       ],
       "fees": 10.0,
@@ -7794,6 +7800,20 @@
           "ticker": "CRWD",
           "contract": "CRWD261127P00200000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -8471,6 +8491,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 89540.00047302246,
+          "stale": 2,
+          "drawdown": -0.10914336411280012
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 89540.00047302246,
           "stale": 2,
           "drawdown": -0.10914336411280012
@@ -11877,6 +11903,34 @@
           "ticker": "PLTR",
           "contract": "PLTR261204P00155000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -12554,6 +12608,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 89673.00065612793,
+          "stale": 4,
+          "drawdown": -0.10747379187897077
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 89673.00065612793,
           "stale": 4,
           "drawdown": -0.10747379187897077
@@ -16121,6 +16181,34 @@
           "ticker": "PLTR",
           "contract": "PLTR261204P00155000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -16798,6 +16886,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 89835.00065612793,
+          "stale": 4,
+          "drawdown": -0.10720318959941233
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 89835.00065612793,
           "stale": 4,
           "drawdown": -0.10720318959941233
@@ -20457,6 +20551,13 @@
           "ticker": "MSTR",
           "contract": "MSTR261204P00110000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -21134,6 +21235,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 87715.0,
+          "stale": 1,
+          "drawdown": -0.12696200893790244
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 87715.0,
           "stale": 1,
           "drawdown": -0.12696200893790244
@@ -24405,6 +24512,13 @@
           "ticker": "MSTR",
           "contract": "MSTR261204P00110000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -25082,6 +25196,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 92700.0,
+          "stale": 1,
+          "drawdown": -0.07734570174478206
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 92700.0,
           "stale": 1,
           "drawdown": -0.07734570174478206
@@ -28488,6 +28608,34 @@
           "ticker": "PLTR",
           "contract": "PLTR261204P00155000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -29165,6 +29313,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 89673.00065612793,
+          "stale": 4,
+          "drawdown": -0.10747379187897077
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 89673.00065612793,
           "stale": 4,
           "drawdown": -0.10747379187897077
@@ -30580,6 +30734,12 @@
           "nav": 99717.00015258789,
           "stale": 0,
           "drawdown": -0.00755404123782899
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "nav": 99717.00015258789,
+          "stale": 0,
+          "drawdown": -0.00755404123782899
         }
       ],
       "fees": 5.0,
@@ -31266,6 +31426,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -32362,6 +32528,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 99413.0,
+          "stale": 0,
+          "drawdown": -0.00635688512628807
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 99413.0,
           "stale": 0,
           "drawdown": -0.00635688512628807
@@ -36268,6 +36440,13 @@
           "ticker": "P",
           "contract": "P261120P00105000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00105000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -36933,6 +37112,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 93388.00006103516,
+          "stale": 1,
+          "drawdown": -0.07565919648195463
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 93388.00006103516,
           "stale": 1,
           "drawdown": -0.07565919648195463
@@ -40847,6 +41032,20 @@
           "ticker": "NTAP",
           "contract": "NTAP261120P00195000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00105000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "NTAP",
+          "contract": "NTAP261120P00195000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -41512,6 +41711,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 96768.00061035156,
+          "stale": 2,
+          "drawdown": -0.04418169901174862
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 96768.00061035156,
           "stale": 2,
           "drawdown": -0.04418169901174862
@@ -45755,6 +45960,27 @@
           "ticker": "NEM",
           "contract": "NEM261204P00117000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "WDAY",
+          "contract": "WDAY261120P00185000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "GLW",
+          "contract": "GLW261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "NEM",
+          "contract": "NEM261204P00117000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -46420,6 +46646,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 97549.00061035156,
+          "stale": 3,
+          "drawdown": -0.0392857786212889
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 97549.00061035156,
           "stale": 3,
           "drawdown": -0.0392857786212889
@@ -50208,6 +50440,41 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -50633,6 +50900,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 86099.0004119873,
+          "stale": 5,
+          "drawdown": -0.13900999588012697
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 86099.0004119873,
           "stale": 5,
           "drawdown": -0.13900999588012697
@@ -54498,6 +54771,41 @@
           "ticker": "PLTR",
           "contract": "PLTR261204P00155000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPE",
+          "contract": "HPE261120P00050000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -54923,6 +55231,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 85835.0004119873,
+          "stale": 5,
+          "drawdown": -0.14164999588012694
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 85835.0004119873,
           "stale": 5,
           "drawdown": -0.14164999588012694
@@ -58797,6 +59111,34 @@
           "ticker": "CRWD",
           "contract": "CRWD261127P00200000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261120P00075000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -59222,6 +59564,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 86218.00059509277,
+          "stale": 4,
+          "drawdown": -0.1378199940490723
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 86218.00059509277,
           "stale": 4,
           "drawdown": -0.1378199940490723
@@ -63296,6 +63644,34 @@
           "ticker": "FCX",
           "contract": "FCX261127P00057000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261120P00075000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "FCX",
+          "contract": "FCX261127P00057000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -63721,6 +64097,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 86347.00059509277,
+          "stale": 4,
+          "drawdown": -0.1365299940490723
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 86347.00059509277,
           "stale": 4,
           "drawdown": -0.1365299940490723
@@ -67714,6 +68096,48 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPE",
+          "contract": "HPE261120P00050000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -68139,6 +68563,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 85672.00059509277,
+          "stale": 6,
+          "drawdown": -0.1432799940490722
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 85672.00059509277,
           "stale": 6,
           "drawdown": -0.1432799940490722
@@ -72260,6 +72690,48 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPE",
+          "contract": "HPE261120P00050000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -72685,6 +73157,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 85727.00059509277,
+          "stale": 6,
+          "drawdown": -0.14272999404907227
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 85727.00059509277,
           "stale": 6,
           "drawdown": -0.14272999404907227
@@ -76678,6 +77156,48 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPE",
+          "contract": "HPE261120P00050000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -77103,6 +77623,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 85672.00059509277,
+          "stale": 6,
+          "drawdown": -0.1432799940490722
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 85672.00059509277,
           "stale": 6,
           "drawdown": -0.1432799940490722
@@ -81224,6 +81750,48 @@
           "ticker": "IBKR",
           "contract": "IBKR261127P00072000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPE",
+          "contract": "HPE261120P00050000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "IBKR",
+          "contract": "IBKR261127P00072000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -81649,6 +82217,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 85807.00059509277,
+          "stale": 6,
+          "drawdown": -0.14192999404907225
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 85807.00059509277,
           "stale": 6,
           "drawdown": -0.14192999404907225
@@ -85753,6 +86327,20 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -86178,6 +86766,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 83844.0,
+          "stale": 2,
+          "drawdown": -0.16156000000000004
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 83844.0,
           "stale": 2,
           "drawdown": -0.16156000000000004
@@ -90282,6 +90876,20 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -90707,6 +91315,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 83844.0,
+          "stale": 2,
+          "drawdown": -0.16156000000000004
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 83844.0,
           "stale": 2,
           "drawdown": -0.16156000000000004
@@ -94589,6 +95203,20 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -95014,6 +95642,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 88896.0,
+          "stale": 2,
+          "drawdown": -0.11104000000000003
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 88896.0,
           "stale": 2,
           "drawdown": -0.11104000000000003
@@ -98896,6 +99530,20 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -99321,6 +99969,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 88896.0,
+          "stale": 2,
+          "drawdown": -0.11104000000000003
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 88896.0,
           "stale": 2,
           "drawdown": -0.11104000000000003
@@ -103109,6 +103763,41 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -103534,6 +104223,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 86099.0004119873,
+          "stale": 5,
+          "drawdown": -0.13900999588012697
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 86099.0004119873,
           "stale": 5,
           "drawdown": -0.13900999588012697
@@ -107399,6 +108094,41 @@
           "ticker": "PLTR",
           "contract": "PLTR261204P00155000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPE",
+          "contract": "HPE261120P00050000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -107824,6 +108554,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 85835.0004119873,
+          "stale": 5,
+          "drawdown": -0.14164999588012694
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 85835.0004119873,
           "stale": 5,
           "drawdown": -0.14164999588012694
@@ -108988,6 +109724,12 @@
           "nav": 99717.00015258789,
           "stale": 0,
           "drawdown": -0.00755404123782899
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "nav": 99717.00015258789,
+          "stale": 0,
+          "drawdown": -0.00755404123782899
         }
       ],
       "fees": 5.0,
@@ -110149,6 +110891,12 @@
           "nav": 99717.00015258789,
           "stale": 0,
           "drawdown": -0.00755404123782899
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "nav": 99717.00015258789,
+          "stale": 0,
+          "drawdown": -0.00755404123782899
         }
       ],
       "fees": 5.0,
@@ -110587,6 +111335,12 @@
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
         }
       ],
       "fees": 0.0,
@@ -111022,6 +111776,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -111870,6 +112630,12 @@
           "nav": 99413.0,
           "stale": 0,
           "drawdown": -0.00635688512628807
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "nav": 99413.0,
+          "stale": 0,
+          "drawdown": -0.00635688512628807
         }
       ],
       "fees": 6.0,
@@ -112712,6 +113478,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 99413.0,
+          "stale": 0,
+          "drawdown": -0.00635688512628807
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 99413.0,
           "stale": 0,
           "drawdown": -0.00635688512628807
@@ -116500,6 +117272,41 @@
           "ticker": "HOOD",
           "contract": "HOOD261218P00075000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "COIN",
+          "contract": "COIN261204P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261218P00075000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -116925,6 +117732,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 84163.0004119873,
+          "stale": 5,
+          "drawdown": -0.1583699958801269
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 84163.0004119873,
           "stale": 5,
           "drawdown": -0.1583699958801269
@@ -120713,6 +121526,41 @@
           "ticker": "HOOD",
           "contract": "HOOD261218P00075000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "COIN",
+          "contract": "COIN261204P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261218P00075000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -121138,6 +121986,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 84163.0004119873,
+          "stale": 5,
+          "drawdown": -0.1583699958801269
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 84163.0004119873,
           "stale": 5,
           "drawdown": -0.1583699958801269
@@ -125484,6 +126338,62 @@
           "ticker": "IBKR",
           "contract": "IBKR261127P00072000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "COIN",
+          "contract": "COIN261204P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261204P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "FCX",
+          "contract": "FCX261127P00057000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "IBKR",
+          "contract": "IBKR261127P00072000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -125909,6 +126819,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 87755.99955749512,
+          "stale": 8,
+          "drawdown": -0.12244000442504888
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 87755.99955749512,
           "stale": 8,
           "drawdown": -0.12244000442504888
@@ -130255,6 +131171,62 @@
           "ticker": "IBKR",
           "contract": "IBKR261127P00072000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "COIN",
+          "contract": "COIN261204P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261204P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "FCX",
+          "contract": "FCX261127P00057000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "IBKR",
+          "contract": "IBKR261127P00072000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -130680,6 +131652,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 87755.99955749512,
+          "stale": 8,
+          "drawdown": -0.12244000442504888
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 87755.99955749512,
           "stale": 8,
           "drawdown": -0.12244000442504888
@@ -135026,6 +136004,62 @@
           "ticker": "IBKR",
           "contract": "IBKR261127P00075000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00125000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "COIN",
+          "contract": "COIN261204P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261204P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "FCX",
+          "contract": "FCX261127P00057000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "IBKR",
+          "contract": "IBKR261127P00075000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -135451,6 +136485,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 89682.99955749512,
+          "stale": 8,
+          "drawdown": -0.10317000442504887
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 89682.99955749512,
           "stale": 8,
           "drawdown": -0.10317000442504887
@@ -140053,6 +141093,69 @@
           "ticker": "IBKR",
           "contract": "IBKR261127P00075000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPQ",
+          "contract": "HPQ261120P00032000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00125000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "COIN",
+          "contract": "COIN261204P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261204P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "FCX",
+          "contract": "FCX261127P00057000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "IBKR",
+          "contract": "IBKR261127P00075000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -140478,6 +141581,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 89419.99955749512,
+          "stale": 9,
+          "drawdown": -0.10580000442504878
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 89419.99955749512,
           "stale": 9,
           "drawdown": -0.10580000442504878
@@ -144343,6 +145452,41 @@
           "ticker": "PLTR",
           "contract": "PLTR261204P00155000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPE",
+          "contract": "HPE261120P00050000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -144762,6 +145906,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 85835.0004119873,
+          "stale": 5,
+          "drawdown": -0.14164999588012694
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 85835.0004119873,
           "stale": 5,
           "drawdown": -0.14164999588012694
@@ -148836,6 +149986,34 @@
           "ticker": "FCX",
           "contract": "FCX261127P00057000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "FLEX",
+          "contract": "FLEX261120P00075000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "FCX",
+          "contract": "FCX261127P00057000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -149255,6 +150433,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 86347.00059509277,
+          "stale": 4,
+          "drawdown": -0.1365299940490723
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 86347.00059509277,
           "stale": 4,
           "drawdown": -0.1365299940490723
@@ -153376,6 +154560,48 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPE",
+          "contract": "HPE261120P00050000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -153795,6 +155021,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 85727.00059509277,
+          "stale": 6,
+          "drawdown": -0.14272999404907227
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 85727.00059509277,
           "stale": 6,
           "drawdown": -0.14272999404907227
@@ -157916,6 +159148,48 @@
           "ticker": "IBKR",
           "contract": "IBKR261127P00072000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPE",
+          "contract": "HPE261120P00050000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261120P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "IBKR",
+          "contract": "IBKR261127P00072000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -158335,6 +159609,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 85807.00059509277,
+          "stale": 6,
+          "drawdown": -0.14192999404907225
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 85807.00059509277,
           "stale": 6,
           "drawdown": -0.14192999404907225
@@ -162439,6 +163719,20 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -162858,6 +164152,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 83844.0,
+          "stale": 2,
+          "drawdown": -0.16156000000000004
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 83844.0,
           "stale": 2,
           "drawdown": -0.16156000000000004
@@ -166740,6 +168040,20 @@
           "ticker": "ON",
           "contract": "ON261218P00060000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00060000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -167159,6 +168473,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 88896.0,
+          "stale": 2,
+          "drawdown": -0.11104000000000003
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 88896.0,
           "stale": 2,
           "drawdown": -0.11104000000000003
@@ -171024,6 +172344,41 @@
           "ticker": "PLTR",
           "contract": "PLTR261204P00155000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00120000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPE",
+          "contract": "HPE261120P00050000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00110000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "CRWD",
+          "contract": "CRWD261127P00200000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00155000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -171443,6 +172798,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 85835.0004119873,
+          "stale": 5,
+          "drawdown": -0.14164999588012694
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 85835.0004119873,
           "stale": 5,
           "drawdown": -0.14164999588012694
@@ -172601,6 +173962,12 @@
           "nav": 99717.00015258789,
           "stale": 0,
           "drawdown": -0.00755404123782899
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "nav": 99717.00015258789,
+          "stale": 0,
+          "drawdown": -0.00755404123782899
         }
       ],
       "fees": 5.0,
@@ -173030,6 +174397,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 100000.0,
+          "stale": 0,
+          "drawdown": 0.0
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 100000.0,
           "stale": 0,
           "drawdown": 0.0
@@ -173869,6 +175242,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 99413.0,
+          "stale": 0,
+          "drawdown": -0.00635688512628807
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 99413.0,
           "stale": 0,
           "drawdown": -0.00635688512628807
@@ -177657,6 +179036,41 @@
           "ticker": "HOOD",
           "contract": "HOOD261218P00075000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "COIN",
+          "contract": "COIN261204P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261218P00075000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -178076,6 +179490,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 84163.0004119873,
+          "stale": 5,
+          "drawdown": -0.1583699958801269
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 84163.0004119873,
           "stale": 5,
           "drawdown": -0.1583699958801269
@@ -182422,6 +183842,62 @@
           "ticker": "IBKR",
           "contract": "IBKR261127P00072000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00115000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "COIN",
+          "contract": "COIN261204P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261204P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "FCX",
+          "contract": "FCX261127P00057000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "IBKR",
+          "contract": "IBKR261127P00072000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -182841,6 +184317,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 87755.99955749512,
+          "stale": 8,
+          "drawdown": -0.12244000442504888
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 87755.99955749512,
           "stale": 8,
           "drawdown": -0.12244000442504888
@@ -187443,6 +188925,69 @@
           "ticker": "IBKR",
           "contract": "IBKR261127P00075000",
           "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "P",
+          "contract": "P261120P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HPQ",
+          "contract": "HPQ261120P00032000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "MSTR",
+          "contract": "MSTR261204P00125000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "COIN",
+          "contract": "COIN261204P00130000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "HOOD",
+          "contract": "HOOD261204P00080000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "PLTR",
+          "contract": "PLTR261204P00160000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "ON",
+          "contract": "ON261218P00065000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "FCX",
+          "contract": "FCX261127P00057000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
+          "action": "HOLD",
+          "ticker": "IBKR",
+          "contract": "IBKR261127P00075000",
+          "reason": "Hold: fresh quote / expiry close unavailable"
         }
       ],
       "history": [
@@ -187862,6 +189407,12 @@
         },
         {
           "time": "2026-11-19T16:24:01.073933-05:00",
+          "nav": 89419.99955749512,
+          "stale": 9,
+          "drawdown": -0.10580000442504878
+        },
+        {
+          "time": "2026-11-19T21:32:42.829960-05:00",
           "nav": 89419.99955749512,
           "stale": 9,
           "drawdown": -0.10580000442504878
@@ -301174,10 +302725,1606 @@
         }
       },
       "audit_file": "audits/20261119T162400-0500.json.gz"
+    },
+    {
+      "time": "2026-11-19T21:32:42.180891-05:00",
+      "status": "Market closed",
+      "checked": 518,
+      "selected": 0,
+      "candidates": 0,
+      "eligible_underlyings": 0,
+      "stage2_checked": 0,
+      "stage2_successful": 0,
+      "option_scanned": 0,
+      "rolling_fresh_coverage": 0,
+      "warnings": [],
+      "qualifying_contracts": 0,
+      "verified_contracts": 0,
+      "coverage_blocked_contracts": 0,
+      "duration_seconds": 0,
+      "entry_gate": {
+        "allowed": false,
+        "reason": "Market closed"
+      },
+      "pending_retries": 6,
+      "selected_entries": 0,
+      "strategy_diagnostics": {
+        "A": {
+          "strategy": "A",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 0,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 5
+        },
+        "B": {
+          "strategy": "B",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 2,
+          "slots_before": 3,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 77,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 3
+        },
+        "C": {
+          "strategy": "C",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 4,
+          "slots_before": 1,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 234,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 4,
+          "remaining_slots": 1
+        },
+        "D": {
+          "strategy": "D",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 4,
+          "slots_before": 1,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 234,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 4,
+          "remaining_slots": 1
+        },
+        "E": {
+          "strategy": "E",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 1,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 60,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 51,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 1,
+          "remaining_slots": 4
+        },
+        "F": {
+          "strategy": "F",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 1,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 51,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 1,
+          "remaining_slots": 4
+        },
+        "G": {
+          "strategy": "G",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 4,
+          "slots_before": 1,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 234,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 4,
+          "remaining_slots": 1
+        },
+        "H": {
+          "strategy": "H",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 0,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6878,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 5
+        },
+        "I": {
+          "strategy": "I",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 0,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6893,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 5
+        },
+        "J": {
+          "strategy": "J",
+          "started": "2026-09-13T16:34:01.246224-04:00",
+          "position_limit": 5,
+          "open_before": 0,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 457,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6878,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 5
+        },
+        "A40": {
+          "strategy": "A40",
+          "started": "2026-09-14T15:23:18.049635-04:00",
+          "position_limit": 5,
+          "open_before": 1,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 9,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6382,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 1,
+          "remaining_slots": 4
+        },
+        "A50": {
+          "strategy": "A50",
+          "started": "2026-09-14T15:23:18.049635-04:00",
+          "position_limit": 5,
+          "open_before": 2,
+          "slots_before": 3,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 23,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6270,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 3
+        },
+        "A60": {
+          "strategy": "A60",
+          "started": "2026-09-14T15:23:18.049635-04:00",
+          "position_limit": 5,
+          "open_before": 3,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 108,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6064,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 3,
+          "remaining_slots": 2
+        },
+        "A_P8": {
+          "strategy": "A_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 5,
+          "slots_before": 3,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 1663,
+            "concentration: ticker already held": 244,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 3
+        },
+        "A_P10": {
+          "strategy": "A_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 5,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 1338,
+            "concentration: ticker already held": 244,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 5
+        },
+        "B_P8": {
+          "strategy": "B_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 4,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 117,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 4,
+          "remaining_slots": 4
+        },
+        "B_P10": {
+          "strategy": "B_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 4,
+          "slots_before": 6,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 78,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 4,
+          "remaining_slots": 6
+        },
+        "C_P8": {
+          "strategy": "C_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 6,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 835,
+            "concentration: ticker already held": 238,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 6,
+          "remaining_slots": 2
+        },
+        "C_P10": {
+          "strategy": "C_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 6,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 834,
+            "concentration: ticker already held": 238,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 6,
+          "remaining_slots": 4
+        },
+        "D_P8": {
+          "strategy": "D_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 6,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 835,
+            "concentration: ticker already held": 238,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 6,
+          "remaining_slots": 2
+        },
+        "D_P10": {
+          "strategy": "D_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 6,
+          "slots_before": 4,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 1160,
+            "concentration: ticker already held": 242,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 6,
+          "remaining_slots": 4
+        },
+        "E_P8": {
+          "strategy": "E_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 2,
+          "slots_before": 6,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 60,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 88,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 6
+        },
+        "E_P10": {
+          "strategy": "E_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 2,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 60,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 88,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 8
+        },
+        "F_P8": {
+          "strategy": "F_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 2,
+          "slots_before": 6,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 88,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 6
+        },
+        "F_P10": {
+          "strategy": "F_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 2,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 88,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 8
+        },
+        "G_P8": {
+          "strategy": "G_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 5,
+          "slots_before": 3,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 1663,
+            "concentration: ticker already held": 244,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 3
+        },
+        "G_P10": {
+          "strategy": "G_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 5,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 1338,
+            "concentration: ticker already held": 244,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 5
+        },
+        "H_P8": {
+          "strategy": "H_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6878,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "H_P10": {
+          "strategy": "H_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6878,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "I_P8": {
+          "strategy": "I_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6893,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "I_P10": {
+          "strategy": "I_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6893,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "J_P8": {
+          "strategy": "J_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 0,
+          "slots_before": 8,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 457,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6878,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 8
+        },
+        "J_P10": {
+          "strategy": "J_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 0,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 457,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6878,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 10
+        },
+        "A40_P8": {
+          "strategy": "A40_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 5,
+          "slots_before": 3,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 546,
+            "concentration: ticker already held": 219,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6382,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 3
+        },
+        "A40_P10": {
+          "strategy": "A40_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 5,
+          "slots_before": 5,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 546,
+            "concentration: ticker already held": 219,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6382,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 5
+        },
+        "A50_P8": {
+          "strategy": "A50_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 8,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 6910,
+            "concentration: 8-position limit": 6910,
+            "concentration: ticker already held": 326,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6270,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 0
+        },
+        "A50_P10": {
+          "strategy": "A50_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 8,
+          "slots_before": 2,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 6910,
+            "concentration: ticker already held": 326,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6270,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 2
+        },
+        "A60_P8": {
+          "strategy": "A60_P8",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 8,
+          "open_before": 8,
+          "slots_before": 0,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 6609,
+            "concentration: 8-position limit": 6910,
+            "concentration: ticker already held": 326,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6064,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 0
+        },
+        "A60_P10": {
+          "strategy": "A60_P10",
+          "started": "2026-10-04T21:28:53.401325-04:00",
+          "position_limit": 10,
+          "open_before": 9,
+          "slots_before": 1,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 6910,
+            "concentration: ticker already held": 340,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6064,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 9,
+          "remaining_slots": 1
+        },
+        "A_P15": {
+          "strategy": "A_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 5,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 1338,
+            "concentration: ticker already held": 244,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 10
+        },
+        "B_P15": {
+          "strategy": "B_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 4,
+          "slots_before": 11,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 78,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 4,
+          "remaining_slots": 11
+        },
+        "C_P15": {
+          "strategy": "C_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 6,
+          "slots_before": 9,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 834,
+            "concentration: ticker already held": 238,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 6,
+          "remaining_slots": 9
+        },
+        "D_P15": {
+          "strategy": "D_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 6,
+          "slots_before": 9,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 1160,
+            "concentration: ticker already held": 242,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 6,
+          "remaining_slots": 9
+        },
+        "E_P15": {
+          "strategy": "E_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 2,
+          "slots_before": 13,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 60,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 88,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 13
+        },
+        "F_P15": {
+          "strategy": "F_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 2,
+          "slots_before": 13,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "concentration: ticker already held": 88,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 2,
+          "remaining_slots": 13
+        },
+        "G_P15": {
+          "strategy": "G_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 5,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 1338,
+            "concentration: ticker already held": 244,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6383,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 10
+        },
+        "H_P15": {
+          "strategy": "H_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6878,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "I_P15": {
+          "strategy": "I_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6893,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "J_P15": {
+          "strategy": "J_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 0,
+          "slots_before": 15,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 457,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6878,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 0,
+          "remaining_slots": 15
+        },
+        "A40_P15": {
+          "strategy": "A40_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 5,
+          "slots_before": 10,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 546,
+            "concentration: ticker already held": 219,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6382,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 5,
+          "remaining_slots": 10
+        },
+        "A50_P15": {
+          "strategy": "A50_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 8,
+          "slots_before": 7,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 6910,
+            "concentration: ticker already held": 326,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6270,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 8,
+          "remaining_slots": 7
+        },
+        "A60_P15": {
+          "strategy": "A60_P15",
+          "started": "2026-10-04T22:19:42.164333-04:00",
+          "position_limit": 15,
+          "open_before": 9,
+          "slots_before": 6,
+          "qualifying_contracts": 0,
+          "verified_contracts": 0,
+          "executed_opens": 0,
+          "rejected_contracts": 6910,
+          "rejection_counts": {
+            "DTE at exit threshold": 14,
+            "DTE outside current configured range": 2080,
+            "Market closed": 6910,
+            "collateral: cash reserve": 6910,
+            "concentration: ticker already held": 340,
+            "earnings in period": 1621,
+            "earnings unknown": 10,
+            "entry window closed": 6910,
+            "not Stage 1 eligible in current universe": 6910,
+            "open interest": 3780,
+            "score below strategy minimum": 6064,
+            "spread or invalid bid/ask": 3984,
+            "stale data: cache freshness": 6910,
+            "stale data: prior session": 6910,
+            "stale trade data": 2826
+          },
+          "entry_block_reason": "entry window closed",
+          "open_positions": 9,
+          "remaining_slots": 6
+        }
+      },
+      "audit_file": "audits/20261119T213242-0500.json.gz"
     }
   ],
   "last_run": {
-    "time": "2026-11-19T16:24:00.361754-05:00",
+    "time": "2026-11-19T21:32:42.180891-05:00",
     "status": "Market closed",
     "checked": 518,
     "selected": 0,
@@ -302770,7 +305917,7 @@
         "remaining_slots": 6
       }
     },
-    "audit_file": "audits/20261119T162400-0500.json.gz"
+    "audit_file": "audits/20261119T213242-0500.json.gz"
   },
   "candidates": [],
   "universe": {
@@ -566777,9 +569924,9 @@
         "error": "No representative expiry at 30\u201345 DTE"
       }
     ],
-    "time": "2026-11-19T16:24:00.361754-05:00",
+    "time": "2026-11-19T21:32:42.180891-05:00",
     "summary": {
-      "time": "2026-11-19T16:24:00.361754-05:00",
+      "time": "2026-11-19T21:32:42.180891-05:00",
       "status": "Market closed",
       "checked": 518,
       "selected": 0,
@@ -568372,7 +571519,7 @@
           "remaining_slots": 6
         }
       },
-      "audit_file": "audits/20261119T162400-0500.json.gz"
+      "audit_file": "audits/20261119T213242-0500.json.gz"
     },
     "execution": [],
     "path": [
